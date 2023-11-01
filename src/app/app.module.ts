@@ -10,6 +10,7 @@ import { ResortServicesComponent } from './pages/resort-services/resort-services
 import { WeddingServicesComponent } from './pages/wedding-services/wedding-services.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { HomeComponent } from './pages/home/home.component';
 
 
 @NgModule({
@@ -19,13 +20,15 @@ import { HttpClientModule } from '@angular/common/http';
     LayoutComponent,
     WeddingPackagesComponent,
     ResortServicesComponent,
-    WeddingServicesComponent
+    WeddingServicesComponent,
+    HomeComponent
   ],
-  imports: [
+  imports:[
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule,
+    HttpClientModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

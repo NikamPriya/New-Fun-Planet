@@ -1,0 +1,29 @@
+.page {
+    overflow-x: hidden;
+    background-color: #ECF0F2;
+
+}
+
+li {
+    list-style-type: none;
+    margin: 0px 10px;
+}
+
+.header-top {
+    height: 45px;
+}
+.success {
+    border-color: #1B7261;
+    color: white;
+    background-color:  #1B7261;
+    border: solid;
+  }
+  
+  .success:hover {
+    background-color:white;
+    color:  #1B7261;
+  }
+  .logo-light{
+    width: 200px;
+    height: 80px;
+  }
