@@ -4,8 +4,7 @@ export const APIConstant = {
         addWeddingServices:'https://freeapi.miniprojectideas.com/api/Resort/AddweddingService',
         updateWeddingServices:'https://freeapi.miniprojectideas.com/api/Resort/AddUpdateBulkWeddingService',
         deleteWeddingServices:'https://freeapi.miniprojectideas.com/api/Resort/DeleteweddingService'
-    }
-=======
+    },
 
  Resort:{
     get:"https://freeapi.miniprojectideas.com/api/Resort/GetAllService",
