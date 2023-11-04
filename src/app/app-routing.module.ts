@@ -8,26 +8,32 @@ import { LayoutComponent } from './pages/layout/layout.component';
 
 const routes: Routes = [
   {
-    path:'login',
+    path: "",
+    redirectTo: "login",
+    pathMatch: "full"
+  },
+  {
+    path: "login",
     component: LoginComponent
   },
   {
-    path:'',
+    path: '',
     component: LayoutComponent,
     children: [
       {
-        path: 'weddingPackages',
+        path: "weddingPackages",
         component: WeddingPackagesComponent
       },
       {
-        path:'weddingServices',
-        component:WeddingServicesComponent,
+        path : "weddingServices",
+        component : WeddingServicesComponent
       },
       {
-        path:'resortServices',
+        path:"resortServices",
         component:ResortServicesComponent
-      }
-    
+      },
+
+
     ]
   }
 ];
