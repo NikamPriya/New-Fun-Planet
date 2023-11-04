@@ -11,6 +11,8 @@ import { WeddingServicesComponent } from './pages/wedding-services/wedding-servi
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './pages/home/home.component';
+import { FoodTypeComponent } from './pages/food-type/food-type.component';
+import { FoodItemListComponent } from './pages/food-item-list/food-item-list.component';
 
 
 @NgModule({
@@ -21,7 +23,9 @@ import { HomeComponent } from './pages/home/home.component';
     WeddingPackagesComponent,
     ResortServicesComponent,
     WeddingServicesComponent,
-    HomeComponent
+    HomeComponent,
+    FoodTypeComponent,
+    FoodItemListComponent
   ],
   imports:[
     BrowserModule,
