@@ -1,1 +1,113 @@
-<p>resort-services works!</p>
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="#">Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page">ResortService</li>
+    </ol>
+</nav>
+
+<div class="row">
+    <div class="col-12 text-end">
+        <button type="button" class="btn btn-sm text-end btn-outline-secondary" data-bs-toggle="modal"
+            data-bs-target="#exampleModal" data-bs-whatever="@mdo" (click)="openModel()">Add New Package</button>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12 text-center">
+        <h1>Resort Services</h1>
+    </div>
+</div>
+
+<div class="parent">
+    <div class="row">
+        <div class="col-12  pt-2 ">
+            <div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':isModalPopUp}">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header" style="background-color: rgb(241, 194, 241);">
+                            <h4 class="modal-title text-center" >Add New Package</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row mx-2 ">
+                                <div class="col-6 ">
+                                    <label>Service Name</label>
+                                    <input type="text" [(ngModel)]="resortServiceObj.serviceName" class="form-control">
+                                </div>
+                                <div class="col-6">
+                                    <label for="">Taxable Amount</label>
+                                    <input type="number" class="form-control"
+                                        [(ngModel)]="resortServiceObj.taxableAmount" placeholder="" />
+                                </div>
+                            </div>
+                            <div class="row mx-2 pt-3">
+
+                                <div class="col-6">
+                                    <label for="">Cgst</label>
+                                    <input type="number" class="form-control" [(ngModel)]="resortServiceObj.cgst"
+                                        placeholder="" />
+                                </div>
+                                <div class="col-6">
+                                    <label for="">Sgst</label>
+                                    <input type="number" class="form-control" [(ngModel)]="resortServiceObj.sgst"
+                                        placeholder="Package Name" />
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                               <div class="row">
+                                <div class="col-12 text-center">
+                                    <button type="button" class="btn btn-sm btn-outline-danger" (click)="closeModel()">
+                                        Close </button>
+                                    <button class="btn btn-sm  btn-outline-success mx-5" *ngIf="resortServiceObj.serviceId == 0" (click)="creatAllResortSrvice()">Save
+                                    </button>
+                                    <button class="btn btn-sm  btn-outline-success mx-5" *ngIf="resortServiceObj.serviceId != 0" (click)="upAllResortSrvice()">Update
+                                    </button>
+                                </div>
+                               </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row ">
+            <div class="col-4 pt-4" *ngFor="let item of resortServiceList">
+                <div class="card">
+                    <div class="card-header" style="background-color:rgb(238, 173, 238);">
+                        <div class="row">
+                            <div class="col-12">
+                              <h5> {{item.serviceName}}</h5> 
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-6 text-start">
+                                Cgst:{{item.cgst}}
+                            </div>
+                            <div class="col-6 text-end">
+                                Sgst:{{item.sgst}}
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    Amount: {{item.taxableAmount}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <div class="row">
+                            <div class="col-6 text-start">
+                                <i class="fa fa-pencil-square-o fa-lg"
+                                    aria-hidden="true" (click)="onEdit(item);openModel()"></i>
+                            </div>
+                            <div class="col-6 text-end">
+                                <i class="fa fa-trash fa-lg" aria-hidden="true"
+                                    (click)="deletAllResortService(item)"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>

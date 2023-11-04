@@ -5,29 +5,46 @@ import { WeddingServicesComponent } from './pages/wedding-services/wedding-servi
 import { ResortServicesComponent } from './pages/resort-services/resort-services.component';
 import { LoginComponent } from './pages/login/login.component';
 import { LayoutComponent } from './pages/layout/layout.component';
+import { HomeComponent } from './pages/home/home.component';
 
 const routes: Routes = [
   {
-    path:'login',
+    path: "",
+    redirectTo: "login",
+    pathMatch: "full"
+  },
+  {
+    path: "login",
     component: LoginComponent
   },
   {
-    path:'',
+    path: '',
     component: LayoutComponent,
     children: [
       {
-        path: 'weddingPackages',
+<<<<<<< HEAD
+        path: "weddingPackages",
         component: WeddingPackagesComponent
+=======
+        path:'home',
+        component:HomeComponent,
+      },  
+
+      {
+        path: 'weddingPackages',
+        component: WeddingPackagesComponent,
+>>>>>>> 33bf22ae135da090baa88273dd841c0c7c82ff3f
       },
       {
-        path:'weddingServices',
-        component:WeddingServicesComponent,
+        path : "weddingServices",
+        component : WeddingServicesComponent
       },
       {
-        path:'resortServices',
+        path:"resortServices",
         component:ResortServicesComponent
-      }
-    
+      },
+
+
     ]
   }
 ];
