@@ -22,6 +22,5 @@ export const APIConstant = {
 
 
  
->>>>>>> 39fc90598d52a3159d329269ba48ba5398d30988
 
 }

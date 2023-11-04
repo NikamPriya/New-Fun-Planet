@@ -22,10 +22,6 @@ const routes: Routes = [
     component: LayoutComponent,
     children: [
       {
-<<<<<<< HEAD
-        path: "weddingPackages",
-        component: WeddingPackagesComponent
-=======
         path:'home',
         component:HomeComponent,
       },  
@@ -33,7 +29,6 @@ const routes: Routes = [
       {
         path: 'weddingPackages',
         component: WeddingPackagesComponent,
->>>>>>> 33bf22ae135da090baa88273dd841c0c7c82ff3f
       },
       {
         path : "weddingServices",
