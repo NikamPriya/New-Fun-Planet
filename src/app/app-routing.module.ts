@@ -6,6 +6,8 @@ import { ResortServicesComponent } from './pages/resort-services/resort-services
 import { LoginComponent } from './pages/login/login.component';
 import { LayoutComponent } from './pages/layout/layout.component';
 import { HomeComponent } from './pages/home/home.component';
+import { FoodTypeComponent } from './pages/food-type/food-type.component';
+import { FoodItemListComponent } from './pages/food-item-list/food-item-list.component';
 
 const routes: Routes = [
   {
@@ -38,6 +40,16 @@ const routes: Routes = [
         path:"resortServices",
         component:ResortServicesComponent
       },
+      {
+        path:'FoodType',
+        component:FoodTypeComponent
+      },
+      {
+        path:'FoodItemList',
+        component:FoodItemListComponent
+      },
+
+    
 
 
     ]
