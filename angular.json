@@ -26,7 +26,8 @@
             ],
             "styles": [
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "src/styles.css"
+              "src/styles.css",
+              "node_modules/font-awesome/css/font-awesome.min.css"
             ],
             "scripts": []
           },
@@ -97,6 +98,10 @@
     }
   },
   "cli": {
+<<<<<<< HEAD
     "analytics": "829a0e34-d750-4c78-ab59-55931deab7ba"
+=======
+    "analytics": "b9361ea2-a31b-4594-bb47-ef8186dbe52c"
+>>>>>>> 33bf22ae135da090baa88273dd841c0c7c82ff3f
   }
 }
