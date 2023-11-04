@@ -11,11 +11,16 @@ import { FoodItemListComponent } from './pages/food-item-list/food-item-list.com
 
 const routes: Routes = [
   {
-    path:'login',
+    path: "",
+    redirectTo: "login",
+    pathMatch: "full"
+  },
+  {
+    path: "login",
     component: LoginComponent
   },
   {
-    path:'',
+    path: '',
     component: LayoutComponent,
     children: [
       {
@@ -28,11 +33,11 @@ const routes: Routes = [
         component: WeddingPackagesComponent,
       },
       {
-        path:'weddingServices',
-        component:WeddingServicesComponent,
+        path : "weddingServices",
+        component : WeddingServicesComponent
       },
       {
-        path:'resortServices',
+        path:"resortServices",
         component:ResortServicesComponent
       },
       {
@@ -45,6 +50,8 @@ const routes: Routes = [
       },
 
     
+
+
     ]
   }
 ];
