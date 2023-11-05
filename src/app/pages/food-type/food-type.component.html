@@ -17,7 +17,7 @@
         <div class="modal-body">
           <div class="row">
             <div class="col-6">
-              <label for="">Item Name</label>
+              <label for="">Item Name<span class="text-danger">*</span></label>
               <input type="text" [(ngModel)]="foodItemTypeObj.foodItemName" name="foodItemName" class="form-control">
             </div>
           </div>
@@ -33,14 +33,14 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-5">
+    <div class="col-5" style="margin-left: 321px;">
       <div class="card mt-3">
         <div class="row">
         <!-- <div class="col-6">
           <div class="card-header text-center">Food Item Types</div>
         </div> -->
         <div class="col-12 text-end pt-2 pe-4">
-          <button type="button" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          <button type="button" class="btn  btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
             Add Food Type
           </button>
         </div>
