@@ -1,5 +1,5 @@
 export const APIConstant = {
-    weddingServices:{
+   weddingServices:{
         getWeddingServices:'https://freeapi.miniprojectideas.com/api/Resort/GetweddingService',
         addWeddingServices:'https://freeapi.miniprojectideas.com/api/Resort/AddweddingService',
         updateWeddingServices:'https://freeapi.miniprojectideas.com/api/Resort/AddUpdateBulkWeddingService',
@@ -16,6 +16,10 @@ export const APIConstant = {
    getWeddingPackages: "https://freeapi.miniprojectideas.com/api/Resort/GetAllWeddingPackages",
    createWeddingPackage: "https://freeapi.miniprojectideas.com/api/Resort/CreateUpdateWeddingPackage",
    deleteWeddingPackage: "https://freeapi.miniprojectideas.com/api/Resort/DeleteWeddingPackageById?id="
+},
+foodItemType:{
+   getAllFoodItemType:"https://freeapi.miniprojectideas.com/api/Resort/GetAllFoodItemType",
+   addFoodItemType:"https://freeapi.miniprojectideas.com/api/Resort/AddFoodItemtype"
 }
 
 
