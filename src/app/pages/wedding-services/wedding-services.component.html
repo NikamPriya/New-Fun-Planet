@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-12 text-end pt-3">
             <button type="button" class="btn  text-end btn-sm btn-primary" data-bs-toggle="modal"
-                data-bs-target="#exampleModal" data-bs-whatever="@mdo" (click)="openPopup()">Add New Package</button>
+                data-bs-target="#exampleModal" data-bs-whatever="@mdo" (click)="openPopup()">Add Service</button>
         </div>
     </div>
     <div class="row">
@@ -13,18 +13,21 @@
 </div>
 <div class="parent">
     <div class="row">
-        <div class="col-12  pt-2 ">
+        <div class="col-12  pt-2">
             <div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':displayStyle}">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h4 class="modal-title text-center">Add New Services</h4>
+                            <h4 class="modal-title text-center">Add Services</h4>
                         </div>
                         <div class="modal-body">
                             <div class="row mx-2 ">
                                 <div class="col-6 ">
-                                    <label>Services Name</label>
-                                    <input type="text" [(ngModel)]="weddingServicesObj.name" class="form-control">
+                                    <label>Services Name<span class="text-danger">*</span></label>
+                                    <input type="text" [(ngModel)]="weddingServicesObj.name" #name="ngModel" required name="name" class="form-control">
+                                    <div class="text-danger" *ngIf="name.touched || name.dirty">
+                                        <span *ngIf="name.errors?.['required']"> Name is Required</span>
+                                    </div>
                                 </div>
                                 <div class="col-6">
                                     <label>Service Type <span class="text-danger">*</span></label>
@@ -37,21 +40,24 @@
                             </div>
                             <div class="row mx-2 pt-3">
                                 <div class="col-6">
-                                    <label for="">Order No</label>
-                                    <input type="text" class="form-control" [(ngModel)]="weddingServicesObj.orderNo"
-                                        placeholder="" />
+                                    <label for="">Order No<span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" #orderNo="ngModel" name="orderNo" [(ngModel)]="weddingServicesObj.orderNo" required/>
+                                        <div class="text-danger" *ngIf="orderNo.touched || orderNo.dirty">
+                                            <span *ngIf="orderNo.errors?.['required']">Required Field</span>
+                                        </div>
                                 </div>
                                 <div class="col-6">
-                                    <label for="">Rate</label>
-                                    <input type="text" class="form-control" [(ngModel)]="weddingServicesObj.rate"
-                                        placeholder="" />
+                                    <label for="">Rate<span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" name="rate" #rate="ngModel" required [(ngModel)]="weddingServicesObj.rate" />
+                                        <div class="text-danger" *ngIf="rate.touched || rate.dirty">
+                                            <span *ngIf="rate.errors?.['required']">Required Field</span>
+                                        </div>
                                 </div>
                             </div>
 
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-sm btn-danger" (click)="closePopup()">Close
-                            </button>
+                            <button type="button" class="btn btn-sm btn-danger" (click)="closePopup()">Close</button>
                             <button class="btn btn-sm btn-success mx-5" (click)="saveWeddingServices()" *ngIf="weddingServicesObj.serviceId==0">Save </button>
                             <button class="btn btn-sm btn-warning mx-5" (click)="UpdateProduct()" *ngIf="weddingServicesObj.serviceId!=0">Update </button>
                         </div>

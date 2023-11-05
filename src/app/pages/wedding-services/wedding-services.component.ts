@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component,OnInit } from '@angular/core';
 import { weddingServicesList } from 'src/app/core/models/classes/wedding-Services';
 import { IweddingServicesList } from 'src/app/core/models/interface/Iwedding-servicves';
 import { WeddingServicesService } from 'src/app/core/services/wedding-services.service';
@@ -8,7 +8,7 @@ import { WeddingServicesService } from 'src/app/core/services/wedding-services.s
   templateUrl: './wedding-services.component.html',
   styleUrls: ['./wedding-services.component.css']
 })
-export class WeddingServicesComponent {
+export class WeddingServicesComponent implements OnInit {
 
   displayStyle: string = 'none';
 
@@ -77,7 +77,7 @@ export class WeddingServicesComponent {
   }
   closePopup() {
     this.displayStyle = 'none'
-    this.weddingServicesObj = new weddingServicesList()
+    this.weddingServicesObj = new weddingServicesList
   }
 
 }
