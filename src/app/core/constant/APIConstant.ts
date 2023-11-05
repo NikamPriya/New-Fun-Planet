@@ -18,6 +18,12 @@ export const APIConstant = {
    deleteWeddingPackage: "https://freeapi.miniprojectideas.com/api/Resort/DeleteWeddingPackageById?id="
 },
 
+FoodItemList:{
+   getFoodItem:"http://freeapi.miniprojectideas.com/api/Resort/GetFoodItemList",
+   createFoodItem:"http://freeapi.miniprojectideas.com/api/Resort/AddFoodItem",
+   deleteFoodItem:"http://freeapi.miniprojectideas.com/api/Resort/DeleteFoodItem"
+}
+
 
  
 

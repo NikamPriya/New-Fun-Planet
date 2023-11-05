@@ -1,1 +1,112 @@
-<p>food-item-list works!</p>
+
+
+<div class="row pt-3">
+    <div class="col-12 text-end">
+        <button type="button" class="btn btn-sm text-end btn-outline-secondary" data-bs-toggle="modal"
+            data-bs-target="#exampleModal" data-bs-whatever="@mdo" (click)="openModel()">Add New Item</button>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12 text-center">
+        <h1>Resort Services</h1>
+    </div>
+</div>
+
+<div class="parent">
+    <div class="row">
+        <div class="col-12  pt-2 ">
+            <div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':isModalPopUp}">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header" style="background-color: rgb(241, 194, 241);">
+                            <h4 class="modal-title text-center" >Add New Package</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row mx-2 ">
+                                <div class="col-6 ">
+                                    <label>Item Name</label>
+                                    <input type="text" [(ngModel)]="foodItemObj.itemName" class="form-control">
+                                </div>
+                            </div>
+                            <!-- <div class="col-6">
+                                <label for="">Select Category </label>
+                                <select class="form-control" [(ngModel)]="foodItemObj.categoryId">
+                                  <option value="">Select Category</option>
+                                  <option *ngFor="let data of categoryList" [value]="data.categoryId">
+                                    {{data.categoryName}}
+                                  </option>
+                                </select>
+                              </div> -->
+                            <div class="row mx-2 pt-3">
+
+                                <div class="col-6">
+                                    <label for="">Half Price</label>
+                                    <input type="number" class="form-control" [(ngModel)]="foodItemObj.halfPrice"
+                                        placeholder="" />
+                                </div>
+                                <div class="col-6">
+                                    <label for="">Full Price</label>
+                                    <input type="number" class="form-control" [(ngModel)]="foodItemObj.fullPrice"
+                                        placeholder="Package Name" />
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                               <div class="row">
+                                <div class="col-12 text-center">
+                                    <button type="button" class="btn btn-sm btn-outline-danger" (click)="closeModel()">
+                                        Close </button>
+                                    <button class="btn btn-sm  btn-outline-success mx-5" *ngIf="foodItemObj.itemId == 0" (click)="saveFoodItem()">Save
+                                    </button>
+                                    <button class="btn btn-sm  btn-outline-success mx-5" *ngIf="foodItemObj.itemId != 0" (click)="onUpdateFoodItem()">Update
+                                    </button>
+                                </div>
+                               </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row ">
+            <div class="col-4 pt-4" *ngFor="let item of foodItemList">
+                <div class="card">
+                    <div class="card-header" style="background-color:rgb(238, 173, 238);">
+                        <div class="row">
+                            <div class="col-12">
+                              <h5> {{item.itemName}}</h5> 
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-6 text-start">
+                                Cgst:{{item.halfPrice}}
+                            </div>
+                            <div class="col-6 text-end">
+                                Sgst:{{item.fullPrice}}
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    Name: {{item.foodItemName}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <div class="row">
+                            <div class="col-6 text-start">
+                                <i class="fa fa-pencil-square-o fa-lg"
+                                    aria-hidden="true" (click)="onEditFoodItem(item);openModel()"></i>
+                            </div>
+                            <div class="col-6 text-end">
+                                <i class="fa fa-trash fa-lg" aria-hidden="true"
+                                    (click)="deleteFoodItem(item)"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
