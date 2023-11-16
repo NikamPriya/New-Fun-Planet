@@ -1,0 +1,14 @@
+.card{
+    text-align: center;
+    background: #fff;
+    /* padding: 0px 5px 10px 10px; */
+    display: block;
+    box-shadow: 0 0 7px 0 rgb(0 0 0/25);
+    border-radius: 3px;
+    height:170px
+}
+
+.fa{
+
+    font-size: 23px;
+}

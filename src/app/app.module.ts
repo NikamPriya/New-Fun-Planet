@@ -11,7 +11,12 @@ import { WeddingServicesComponent } from './pages/wedding-services/wedding-servi
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './pages/home/home.component';
+<<<<<<< HEAD
 import { UsersComponent } from './pages/users/users.component';
+=======
+import { FoodTypeComponent } from './pages/food-type/food-type.component';
+import { FoodItemListComponent } from './pages/food-item-list/food-item-list.component';
+>>>>>>> efaa06c1b07d71f384165225a91008754e13ab93
 
 
 @NgModule({
@@ -23,7 +28,12 @@ import { UsersComponent } from './pages/users/users.component';
     ResortServicesComponent,
     WeddingServicesComponent,
     HomeComponent,
+<<<<<<< HEAD
     UsersComponent
+=======
+    FoodTypeComponent,
+    FoodItemListComponent
+>>>>>>> efaa06c1b07d71f384165225a91008754e13ab93
   ],
   imports:[
     BrowserModule,
