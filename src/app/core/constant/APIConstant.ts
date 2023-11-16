@@ -10,9 +10,12 @@ export const APIConstant = {
    getWeddingPackages: "https://freeapi.miniprojectideas.com/api/Resort/GetAllWeddingPackages",
    createWeddingPackage: "https://freeapi.miniprojectideas.com/api/Resort/CreateUpdateWeddingPackage",
    deleteWeddingPackage: "https://freeapi.miniprojectideas.com/api/Resort/DeleteWeddingPackageById?id="
-},
+  },
 
-
- 
+  Users:{
+  get:"https://freeapi.miniprojectideas.com/api/Resort/GetAllUser",
+  Create:"https://freeapi.miniprojectideas.com/api/Resort/AddUser",
+  Delete:"https://freeapi.miniprojectideas.com/api/Resort/DeleteUser"
+   },
 
 }

@@ -6,6 +6,7 @@ import { ResortServicesComponent } from './pages/resort-services/resort-services
 import { LoginComponent } from './pages/login/login.component';
 import { LayoutComponent } from './pages/layout/layout.component';
 import { HomeComponent } from './pages/home/home.component';
+import { UsersComponent } from './pages/users/users.component';
 
 const routes: Routes = [
   {
@@ -22,18 +23,14 @@ const routes: Routes = [
     component: LayoutComponent,
     children: [
       {
-<<<<<<< HEAD
-        path: "weddingPackages",
-        component: WeddingPackagesComponent
-=======
+
         path:'home',
         component:HomeComponent,
-      },  
+      },
 
       {
         path: 'weddingPackages',
         component: WeddingPackagesComponent,
->>>>>>> 33bf22ae135da090baa88273dd841c0c7c82ff3f
       },
       {
         path : "weddingServices",
@@ -43,7 +40,10 @@ const routes: Routes = [
         path:"resortServices",
         component:ResortServicesComponent
       },
-
+      {
+        path:"Users",
+        component:UsersComponent
+      },
 
     ]
   }
