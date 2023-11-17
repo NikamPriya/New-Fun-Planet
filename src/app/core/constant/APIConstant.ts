@@ -17,6 +17,20 @@ export const APIConstant = {
       createWeddingPackage: "https://freeapi.miniprojectideas.com/api/Resort/CreateUpdateWeddingPackage",
       deleteWeddingPackage: "https://freeapi.miniprojectideas.com/api/Resort/DeleteWeddingPackageById?id="
    },
+<<<<<<< HEAD
+   bookings: {
+      getBookings: "https://freeapi.miniprojectideas.com/api/Resort/GetAllBookings",
+      getBookingById: "https://freeapi.miniprojectideas.com/api/Resort/GetBookingByBookingId?id=",
+      createBookings: "https://freeapi.miniprojectideas.com/api/Resort/CreateUpdateBooking",
+      deleteBookings: "https://freeapi.miniprojectideas.com/api/Resort/DeleteBookingById?id="
+   },
+   order:{
+      getOrder: "https://freeapi.miniprojectideas.com/api/Resort/GetOrderList",
+      createOrder:"https://freeapi.miniprojectideas.com/api/Resort/AddOrder",
+      updateOrder:"https://freeapi.miniprojectideas.com/api/Resort/UpddateOrder",
+      deleteOrder:"https://freeapi.miniprojectideas.com/api/Resort/DeleteOrder"
+   }
+=======
    foodItemType: {
       getAllFoodItemType: "https://freeapi.miniprojectideas.com/api/Resort/GetAllFoodItemType",
       addFoodItemType: "https://freeapi.miniprojectideas.com/api/Resort/AddFoodItemtype"
@@ -39,6 +53,7 @@ FoodItemList:{
    createFoodItem:"http://freeapi.miniprojectideas.com/api/Resort/AddFoodItem",
    deleteFoodItem:"http://freeapi.miniprojectideas.com/api/Resort/DeleteFoodItem"
 }
+>>>>>>> efaa06c1b07d71f384165225a91008754e13ab93
 
 
 
