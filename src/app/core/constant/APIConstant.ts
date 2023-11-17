@@ -22,6 +22,17 @@ export const APIConstant = {
       addFoodItemType: "https://freeapi.miniprojectideas.com/api/Resort/AddFoodItemtype"
    },
 
+   Users:{
+    get:"https://freeapi.miniprojectideas.com/api/Resort/GetAllUser",
+    Create:"https://freeapi.miniprojectideas.com/api/Resort/AddUser",
+    Delete:"https://freeapi.miniprojectideas.com/api/Resort/DeleteUser"
+    },
+
+    // Offers:{
+    //   getOffers:"https://freeapi.miniprojectideas.com/api/Resort/GetAllOffer",
+    //   createOffers:"https://freeapi.miniprojectideas.com/api/Resort/AddOffer",
+    //   deleteOffers:"https://freeapi.miniprojectideas.com/api/Resort/DeleteOffer"
+    // },
 
 FoodItemList:{
    getFoodItem:"http://freeapi.miniprojectideas.com/api/Resort/GetFoodItemList",
@@ -30,6 +41,7 @@ FoodItemList:{
    deleteFoodItem:"http://freeapi.miniprojectideas.com/api/Resort/DeleteFoodItem"
 },
 
+<<<<<<< HEAD
 Visit:{
    addVisit:"http://freeapi.miniprojectideas.com/api/Resort/AddVisit",
 }
@@ -38,3 +50,23 @@ Visit:{
 
 
 }
+=======
+bookings: {
+   getBookings: "https://freeapi.miniprojectideas.com/api/Resort/GetAllBookings",
+   getBookingById: "https://freeapi.miniprojectideas.com/api/Resort/GetBookingByBookingId?id=",
+   createBookings: "https://freeapi.miniprojectideas.com/api/Resort/CreateUpdateBooking",
+   deleteBookings: "https://freeapi.miniprojectideas.com/api/Resort/DeleteBookingById?id="
+},
+order:{
+   getOrder: "https://freeapi.miniprojectideas.com/api/Resort/GetOrderList",
+   createOrder:"https://freeapi.miniprojectideas.com/api/Resort/AddOrder",
+   updateOrder:"https://freeapi.miniprojectideas.com/api/Resort/UpddateOrder",
+   deleteOrder:"https://freeapi.miniprojectideas.com/api/Resort/DeleteOrder"
+},
+
+
+
+
+
+}
+>>>>>>> 420c060748fc2871a30f2f04d6effd57030085a1

@@ -21,7 +21,11 @@
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header" style="background-color: rgb(241, 194, 241);">
+<<<<<<< HEAD
                             <h5 class="modal-title text-center">Add Resort Service</h5>
+=======
+                            <h4 class="modal-title text-center">Add New Package</h4>
+>>>>>>> 420c060748fc2871a30f2f04d6effd57030085a1
                         </div>
                         <form #userForm="ngForm">
                             <div class="modal-body">
@@ -62,6 +66,7 @@
                                             </div>
                                     </div>
                                 </div>
+<<<<<<< HEAD
                                 <div class="modal-footer mt-3">
                                     <div class="row">
                                         <div class="col-12 text-center">
@@ -78,6 +83,29 @@
                                             </button>
                                         </div>
                                     </div>
+=======
+                                <div class="col-6">
+                                    <label for="">Sgst</label>
+                                    <input type="number" class="form-control" [(ngModel)]="resortServiceObj.sgst"
+                                        placeholder="Package Name" />
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <div class="row">
+                                    <div class="col-12 text-center">
+                                        <button type="button" class="btn btn-sm btn-outline-danger"
+                                            (click)="closeModel()">
+                                            Close </button>
+                                        <button class="btn btn-sm  btn-outline-success mx-5"
+                                            *ngIf="resortServiceObj.serviceId == 0"
+                                            (click)="creatAllResortSrvice()">Save
+                                        </button>
+                                        <button class="btn btn-sm  btn-outline-success mx-5"
+                                            *ngIf="resortServiceObj.serviceId != 0" (click)="upAllResortSrvice()">Update
+                                        </button>
+                                    </div>
+                                </div>
+>>>>>>> 420c060748fc2871a30f2f04d6effd57030085a1
 
                                 </div>
                             </div>
@@ -95,7 +123,11 @@
                     <div class="card-header" style="background-color:rgb(238, 173, 238);">
                         <div class="row">
                             <div class="col-12">
+<<<<<<< HEAD
                                 <h6> {{item.serviceName | titlecase}}</h6>
+=======
+                                <h5> {{item.serviceName}}</h5>
+>>>>>>> 420c060748fc2871a30f2f04d6effd57030085a1
                             </div>
                         </div>
                     </div>
@@ -127,3 +159,7 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+</div>
