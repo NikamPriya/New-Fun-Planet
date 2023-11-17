@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component ,OnInit} from '@angular/core';
 import { users } from 'src/app/core/models/classes/Users';
 import { Iusers } from 'src/app/core/models/interface/Iusers';
 import { UsersService } from 'src/app/core/services/users.service';
@@ -8,7 +8,7 @@ import { UsersService } from 'src/app/core/services/users.service';
   templateUrl: './users.component.html',
   styleUrls: ['./users.component.css']
 })
-export class UsersComponent {
+export class UsersComponent implements OnInit{
   isModalPopUp: String = "none";
   displayStyle='none';
   usersList: Iusers[] = [];

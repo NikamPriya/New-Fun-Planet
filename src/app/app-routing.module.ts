@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { WeddingPackagesComponent } from './pages/wedding-packages/wedding-packages.component';
 import { WeddingServicesComponent } from './pages/wedding-services/wedding-services.component';
@@ -6,12 +6,9 @@ import { ResortServicesComponent } from './pages/resort-services/resort-services
 import { LoginComponent } from './pages/login/login.component';
 import { LayoutComponent } from './pages/layout/layout.component';
 import { HomeComponent } from './pages/home/home.component';
-<<<<<<< HEAD
 import { UsersComponent } from './pages/users/users.component';
-=======
 import { FoodTypeComponent } from './pages/food-type/food-type.component';
 import { FoodItemListComponent } from './pages/food-item-list/food-item-list.component';
->>>>>>> efaa06c1b07d71f384165225a91008754e13ab93
 
 const routes: Routes = [
   {
@@ -28,10 +25,7 @@ const routes: Routes = [
     component: LayoutComponent,
     children: [
       {
-<<<<<<< HEAD
 
-=======
->>>>>>> efaa06c1b07d71f384165225a91008754e13ab93
         path:'home',
         component:HomeComponent,
       },
@@ -49,11 +43,10 @@ const routes: Routes = [
         component:ResortServicesComponent
       },
       {
-<<<<<<< HEAD
         path:"Users",
         component:UsersComponent
       },
-=======
+      {
         path:'FoodType',
         component:FoodTypeComponent
       },
@@ -62,9 +55,8 @@ const routes: Routes = [
         component:FoodItemListComponent
       },
 
-    
 
->>>>>>> efaa06c1b07d71f384165225a91008754e13ab93
+
 
     ]
   }

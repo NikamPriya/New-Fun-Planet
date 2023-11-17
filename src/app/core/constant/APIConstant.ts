@@ -11,14 +11,6 @@ export const APIConstant = {
       Create: "https://freeapi.miniprojectideas.com/api/Resort/AddService",
       Delete: "https://freeapi.miniprojectideas.com/api/Resort/DeleteService"
 
-<<<<<<< HEAD
- },
- weddingPackages: {
-   getWeddingPackages: "https://freeapi.miniprojectideas.com/api/Resort/GetAllWeddingPackages",
-   createWeddingPackage: "https://freeapi.miniprojectideas.com/api/Resort/CreateUpdateWeddingPackage",
-   deleteWeddingPackage: "https://freeapi.miniprojectideas.com/api/Resort/DeleteWeddingPackageById?id="
-  },
-=======
    },
    weddingPackages: {
       getWeddingPackages: "https://freeapi.miniprojectideas.com/api/Resort/GetAllWeddingPackages",
@@ -36,23 +28,19 @@ export const APIConstant = {
     Delete:"https://freeapi.miniprojectideas.com/api/Resort/DeleteUser"
     },
 
+    // Offers:{
+    //   getOffers:"https://freeapi.miniprojectideas.com/api/Resort/GetAllOffer",
+    //   createOffers:"https://freeapi.miniprojectideas.com/api/Resort/AddOffer",
+    //   deleteOffers:"https://freeapi.miniprojectideas.com/api/Resort/DeleteOffer"
+    // },
 
 FoodItemList:{
    getFoodItem:"http://freeapi.miniprojectideas.com/api/Resort/GetFoodItemList",
    createFoodItem:"http://freeapi.miniprojectideas.com/api/Resort/AddFoodItem",
    deleteFoodItem:"http://freeapi.miniprojectideas.com/api/Resort/DeleteFoodItem"
 }
->>>>>>> efaa06c1b07d71f384165225a91008754e13ab93
 
-  Users:{
-  get:"https://freeapi.miniprojectideas.com/api/Resort/GetAllUser",
-  Create:"https://freeapi.miniprojectideas.com/api/Resort/AddUser",
-  Delete:"https://freeapi.miniprojectideas.com/api/Resort/DeleteUser"
-   },
 
-<<<<<<< HEAD
-}
-=======
+
 
 }
->>>>>>> efaa06c1b07d71f384165225a91008754e13ab93
