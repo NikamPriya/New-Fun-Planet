@@ -22,6 +22,17 @@ export const APIConstant = {
       addFoodItemType: "https://freeapi.miniprojectideas.com/api/Resort/AddFoodItemtype"
    },
 
+   Users:{
+    get:"https://freeapi.miniprojectideas.com/api/Resort/GetAllUser",
+    Create:"https://freeapi.miniprojectideas.com/api/Resort/AddUser",
+    Delete:"https://freeapi.miniprojectideas.com/api/Resort/DeleteUser"
+    },
+
+    // Offers:{
+    //   getOffers:"https://freeapi.miniprojectideas.com/api/Resort/GetAllOffer",
+    //   createOffers:"https://freeapi.miniprojectideas.com/api/Resort/AddOffer",
+    //   deleteOffers:"https://freeapi.miniprojectideas.com/api/Resort/DeleteOffer"
+    // },
 
 FoodItemList:{
    getFoodItem:"http://freeapi.miniprojectideas.com/api/Resort/GetFoodItemList",
@@ -41,6 +52,7 @@ order:{
    updateOrder:"https://freeapi.miniprojectideas.com/api/Resort/UpddateOrder",
    deleteOrder:"https://freeapi.miniprojectideas.com/api/Resort/DeleteOrder"
 },
+
 
 
 
