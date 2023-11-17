@@ -6,34 +6,44 @@ import { ResortServicesComponent } from './pages/resort-services/resort-services
 import { LoginComponent } from './pages/login/login.component';
 import { LayoutComponent } from './pages/layout/layout.component';
 import { HomeComponent } from './pages/home/home.component';
+import { BookingComponent } from './pages/booking/booking.component';
+import { OrderComponent } from './pages/order/order.component';
 
 const routes: Routes = [
   {
-    path:'login',
+    path: 'login',
     component: LoginComponent
   },
   {
-    path:'',
+    path: '',
     component: LayoutComponent,
     children: [
       {
-        path:'home',
-        component:HomeComponent,
-      },  
+        path: 'home',
+        component: HomeComponent,
+      },
 
       {
         path: 'weddingPackages',
         component: WeddingPackagesComponent,
       },
       {
-        path:'weddingServices',
-        component:WeddingServicesComponent,
+        path: 'weddingServices',
+        component: WeddingServicesComponent,
       },
       {
-        path:'resortServices',
-        component:ResortServicesComponent
+        path: 'resortServices',
+        component: ResortServicesComponent,
+      },
+      {
+        path: 'booking',
+        component: BookingComponent,
+      },
+      {
+        path: 'order',
+        component: OrderComponent,
       }
-    
+
     ]
   }
 ];
