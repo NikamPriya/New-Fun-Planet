@@ -28,7 +28,13 @@ export const APIConstant = {
    foodItemType: {
       getAllFoodItemType: "https://freeapi.miniprojectideas.com/api/Resort/GetAllFoodItemType",
       addFoodItemType: "https://freeapi.miniprojectideas.com/api/Resort/AddFoodItemtype"
-   }
+   },
+
+   Users:{
+    get:"https://freeapi.miniprojectideas.com/api/Resort/GetAllUser",
+    Create:"https://freeapi.miniprojectideas.com/api/Resort/AddUser",
+    Delete:"https://freeapi.miniprojectideas.com/api/Resort/DeleteUser"
+    },
 
 
 FoodItemList:{

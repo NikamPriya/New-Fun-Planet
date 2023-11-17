@@ -35,5 +35,5 @@ export class ReturnClass {
         this.message = '';
         this.data = null;
         this.result = false;
-    }
+      }
 }
