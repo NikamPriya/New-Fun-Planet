@@ -6,16 +6,11 @@ import { ResortServicesComponent } from './pages/resort-services/resort-services
 import { LoginComponent } from './pages/login/login.component';
 import { LayoutComponent } from './pages/layout/layout.component';
 import { HomeComponent } from './pages/home/home.component';
-<<<<<<< HEAD
 import { BookingComponent } from './pages/booking/booking.component';
 import { OrderComponent } from './pages/order/order.component';
-
-const routes: Routes = [
-  {
-    path: 'login',
-=======
 import { FoodTypeComponent } from './pages/food-type/food-type.component';
 import { FoodItemListComponent } from './pages/food-item-list/food-item-list.component';
+
 
 const routes: Routes = [
   {
@@ -25,7 +20,6 @@ const routes: Routes = [
   },
   {
     path: "login",
->>>>>>> efaa06c1b07d71f384165225a91008754e13ab93
     component: LoginComponent
   },
   {
@@ -42,7 +36,6 @@ const routes: Routes = [
         component: WeddingPackagesComponent,
       },
       {
-<<<<<<< HEAD
         path: 'weddingServices',
         component: WeddingServicesComponent,
       },
@@ -57,14 +50,6 @@ const routes: Routes = [
       {
         path: 'order',
         component: OrderComponent,
-      }
-=======
-        path : "weddingServices",
-        component : WeddingServicesComponent
-      },
-      {
-        path:"resortServices",
-        component:ResortServicesComponent
       },
       {
         path:'FoodType',
@@ -77,7 +62,6 @@ const routes: Routes = [
 
     
 
->>>>>>> efaa06c1b07d71f384165225a91008754e13ab93
 
     ]
   }
