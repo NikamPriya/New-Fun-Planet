@@ -13,6 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './pages/home/home.component';
 import { FoodTypeComponent } from './pages/food-type/food-type.component';
 import { FoodItemListComponent } from './pages/food-item-list/food-item-list.component';
+import { VisitsComponent } from './pages/visits/visits.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { FoodItemListComponent } from './pages/food-item-list/food-item-list.com
     WeddingServicesComponent,
     HomeComponent,
     FoodTypeComponent,
-    FoodItemListComponent
+    FoodItemListComponent,
+    VisitsComponent
   ],
   imports:[
     BrowserModule,

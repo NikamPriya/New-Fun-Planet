@@ -20,14 +20,20 @@ export const APIConstant = {
    foodItemType: {
       getAllFoodItemType: "https://freeapi.miniprojectideas.com/api/Resort/GetAllFoodItemType",
       addFoodItemType: "https://freeapi.miniprojectideas.com/api/Resort/AddFoodItemtype"
-   }
+   },
 
 
 FoodItemList:{
    getFoodItem:"http://freeapi.miniprojectideas.com/api/Resort/GetFoodItemList",
+   getAllFoodItemType: "https://freeapi.miniprojectideas.com/api/Resort/GetAllFoodItemType",
    createFoodItem:"http://freeapi.miniprojectideas.com/api/Resort/AddFoodItem",
    deleteFoodItem:"http://freeapi.miniprojectideas.com/api/Resort/DeleteFoodItem"
+},
+
+Visit:{
+   addVisit:"http://freeapi.miniprojectideas.com/api/Resort/AddVisit",
 }
+
 
 
 

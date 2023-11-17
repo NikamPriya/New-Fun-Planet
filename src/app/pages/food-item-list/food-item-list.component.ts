@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { foodItem } from 'src/app/core/models/classes/foodItem';
 import { IfoodItemList } from 'src/app/core/models/interface/IfoodItem';
+import { IFoodTypeList } from 'src/app/core/models/interface/IfoodItemType';
 import { FoodItemService } from 'src/app/core/services/food-item.service';
 
 @Component({
@@ -13,6 +14,7 @@ export class FoodItemListComponent implements OnInit{
   isModalPopUp: String = "none";
   displayStyle='none';
   foodItemList:IfoodItemList[]=[];
+  foodTypeItemList:IFoodTypeList[]=[];
   foodItemObj:foodItem=new foodItem
   
 
@@ -21,11 +23,18 @@ export class FoodItemListComponent implements OnInit{
   }
   ngOnInit(): void {
     this.onloadFoodItem();
+    this.onLoadFoodTypeItem();
   }
 
   onloadFoodItem(){
     this.foodItemSrv.getFoodItem().subscribe((res:any)=>{
       this.foodItemList = res;
+    })
+  }
+
+  onLoadFoodTypeItem(){
+    this.foodItemSrv.getFoodTypeItem().subscribe((res:any)=>{
+      this.foodTypeItemList =res;
     })
   }
 

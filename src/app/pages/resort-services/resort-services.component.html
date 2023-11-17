@@ -1,13 +1,16 @@
-<div class="row">
-    <div class="col-12 text-end">
-        <button type="button" class="btn btn-sm text-end btn-outline-secondary" data-bs-toggle="modal"
-            data-bs-target="#exampleModal" data-bs-whatever="@mdo" (click)="openModel()">Add New Package</button>
+<div class="container">
+    <div class="row">
+        <div class="col-12 btn text-end pt-3 ">
+            <button type="button" class="btn btn-sm  text-light" style="background-color: rgb(182, 100, 182);"
+                data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo" (click)="openModel()">Add
+                Resort Service</button>
+        </div>
     </div>
-</div>
-
-<div class="row">
-    <div class="col-12 text-center">
-        <h1>Resort Services</h1>
+    
+    <div class="row">
+        <div class="col-12 text-center">
+            <h3>Resort Services</h3>
+        </div>
     </div>
 </div>
 
@@ -18,47 +21,67 @@
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header" style="background-color: rgb(241, 194, 241);">
-                            <h4 class="modal-title text-center" >Add New Package</h4>
+                            <h5 class="modal-title text-center">Add Resort Service</h5>
                         </div>
-                        <div class="modal-body">
-                            <div class="row mx-2 ">
-                                <div class="col-6 ">
-                                    <label>Service Name</label>
-                                    <input type="text" [(ngModel)]="resortServiceObj.serviceName" class="form-control">
+                        <form #userForm="ngForm">
+                            <div class="modal-body">
+                                <div class="row mx-2 ">
+                                    <div class="col-6 ">
+                                        <label>Service Name<span class="text-danger">*</span></label>
+                                        <input type="text" #serviceName="ngModel" required name="serviceName" [(ngModel)]="resortServiceObj.serviceName"
+                                            class="form-control form-control-sm">
+                                            <div class="text-danger" *ngIf="serviceName.touched || serviceName.dirty">
+                                                <span *ngIf="serviceName.errors?.['required']">This is required</span>
+                                            </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <label for="">Taxable Amount<span class="text-danger">*</span></label>
+                                        <input type="text" #taxableAmount="ngModel" required name="taxableAmount" class="form-control form-control-sm"
+                                            [(ngModel)]="resortServiceObj.taxableAmount" placeholder="" />
+                                            <div class="text-danger" *ngIf="taxableAmount.touched || taxableAmount.dirty">
+                                                <span *ngIf="taxableAmount.errors?.['requierd']">This is requierd</span>
+                                            </div>
+                                    </div>
                                 </div>
-                                <div class="col-6">
-                                    <label for="">Taxable Amount</label>
-                                    <input type="number" class="form-control"
-                                        [(ngModel)]="resortServiceObj.taxableAmount" placeholder="" />
-                                </div>
-                            </div>
-                            <div class="row mx-2 pt-3">
+                                <div class="row mx-2 pt-3">
 
-                                <div class="col-6">
-                                    <label for="">Cgst</label>
-                                    <input type="number" class="form-control" [(ngModel)]="resortServiceObj.cgst"
-                                        placeholder="" />
+                                    <div class="col-6">
+                                        <label for="">Cgst<span class="text-danger">*</span></label>
+                                        <input type="text" #cgst="ngModel" required name="cgst" class="form-control form-control-sm"
+                                            [(ngModel)]="resortServiceObj.cgst" placeholder="" />
+                                            <div class="text-danger" *ngIf="cgst.touched || cgst.dirty">
+                                                <span *ngIf="cgst.errors?.['requierd']">This is requierd</span>
+                                            </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <label for="">Sgst<span class="text-danger">*</span></label>
+                                        <input type="text" #sgst="ngModel" required name="sgst" class="form-control form-control-sm"
+                                            [(ngModel)]="resortServiceObj.sgst" placeholder="" />
+                                            <div class="text-danger" *ngIf="sgst.touched || sgst.dirty">
+                                                <span *ngIf="sgst.errors?.['requierd']">This is requierd</span>
+                                            </div>
+                                    </div>
                                 </div>
-                                <div class="col-6">
-                                    <label for="">Sgst</label>
-                                    <input type="number" class="form-control" [(ngModel)]="resortServiceObj.sgst"
-                                        placeholder="Package Name" />
-                                </div>
-                            </div>
-                            <div class="modal-footer">
-                               <div class="row">
-                                <div class="col-12 text-center">
-                                    <button type="button" class="btn btn-sm btn-outline-danger" (click)="closeModel()">
-                                        Close </button>
-                                    <button class="btn btn-sm  btn-outline-success mx-5" *ngIf="resortServiceObj.serviceId == 0" (click)="creatAllResortSrvice()">Save
-                                    </button>
-                                    <button class="btn btn-sm  btn-outline-success mx-5" *ngIf="resortServiceObj.serviceId != 0" (click)="upAllResortSrvice()">Update
-                                    </button>
-                                </div>
-                               </div>
+                                <div class="modal-footer mt-3">
+                                    <div class="row">
+                                        <div class="col-12 text-center">
+                                            <button type="button" class="btn btn-sm"  style="background-color: rgb(156, 116, 156);" class="btn btn-sm text-light"
+                                                (click)="closeModel()">
+                                                Close </button>
+                                            <button class="btn btn-sm mx-5" style="background-color: violet;"
+                                                *ngIf="resortServiceObj.serviceId == 0"[disabled]="userForm.invalid"
+                                                (click)="creatAllResortSrvice()">Save
+                                            </button>
+                                            <button class="btn btn-sm mx-5" style="background-color: violet;"
+                                                *ngIf="resortServiceObj.serviceId != 0"
+                                                (click)="upAllResortSrvice()">Update
+                                            </button>
+                                        </div>
+                                    </div>
 
+                                </div>
                             </div>
-                        </div>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -72,7 +95,7 @@
                     <div class="card-header" style="background-color:rgb(238, 173, 238);">
                         <div class="row">
                             <div class="col-12">
-                              <h5> {{item.serviceName}}</h5> 
+                                <h6> {{item.serviceName | titlecase}}</h6>
                             </div>
                         </div>
                     </div>
@@ -86,7 +109,7 @@
                             </div>
                             <div class="row">
                                 <div class="col-12">
-                                    Amount: {{item.taxableAmount}}
+                                    Amount: {{item.taxableAmount | currency:'INR' }}
                                 </div>
                             </div>
                         </div>
@@ -94,8 +117,8 @@
                     <div class="card-footer">
                         <div class="row">
                             <div class="col-6 text-start">
-                                <i class="fa fa-pencil-square-o fa-lg"
-                                    aria-hidden="true" (click)="onEdit(item);openModel()"></i>
+                                <i class="fa fa-pencil-square-o fa-lg" aria-hidden="true"
+                                    (click)="onEdit(item);openModel()"></i>
                             </div>
                             <div class="col-6 text-end">
                                 <i class="fa fa-trash fa-lg" aria-hidden="true"

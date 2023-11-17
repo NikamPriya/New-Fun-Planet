@@ -8,6 +8,7 @@ import { LayoutComponent } from './pages/layout/layout.component';
 import { HomeComponent } from './pages/home/home.component';
 import { FoodTypeComponent } from './pages/food-type/food-type.component';
 import { FoodItemListComponent } from './pages/food-item-list/food-item-list.component';
+import { VisitsComponent } from './pages/visits/visits.component';
 
 const routes: Routes = [
   {
@@ -48,6 +49,10 @@ const routes: Routes = [
         path:'FoodItemList',
         component:FoodItemListComponent
       },
+      {
+        path:'Visit',
+        component:VisitsComponent
+      }
 
     
 

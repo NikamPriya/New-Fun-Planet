@@ -1,70 +1,92 @@
-
-
-<div class="row pt-3">
-    <div class="col-12 text-end">
-        <button type="button" class="btn btn-sm text-end btn-outline-secondary" data-bs-toggle="modal"
-            data-bs-target="#exampleModal" data-bs-whatever="@mdo" (click)="openModel()">Add New Item</button>
+<div class="container">
+    <div class="row pt-3">
+        <div class="col-12 btn text-end">
+            <button type="button" class="btn btn-sm text-light text-end" style="background-color: rgb(182, 100, 182);"
+                data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo" (click)="openModel()">Add New
+                Item</button>
+        </div>
     </div>
-</div>
-
-<div class="row">
-    <div class="col-12 text-center">
-        <h1>Resort Services</h1>
+    
+    
+    <div class="row">
+        <div class="col-12 text-center">
+            <h3>Food Item List</h3>
+        </div>
     </div>
+    
 </div>
-
 <div class="parent">
     <div class="row">
         <div class="col-12  pt-2 ">
             <div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':isModalPopUp}">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
-                        <div class="modal-header" style="background-color: rgb(241, 194, 241);">
-                            <h4 class="modal-title text-center" >Add New Package</h4>
+                        <div class="modal-header text-center" style="background-color: rgb(241, 194, 241);">
+                            <h5 class="modal-title ">Add New Item</h5>
                         </div>
+                        <form #userForm="ngForm">
                         <div class="modal-body">
                             <div class="row mx-2 ">
                                 <div class="col-6 ">
-                                    <label>Item Name</label>
-                                    <input type="text" [(ngModel)]="foodItemObj.itemName" class="form-control">
+                                    <label>Item Name<span class="text-danger">*</span></label>
+                                    <input type="text" #itemName="ngModel" required="" name="itemName" [(ngModel)]="foodItemObj.itemName"
+                                        class="form-control-sm form-control">
+                                        <div class="text-danger" *ngIf="itemName.touched || itemName.dirty">
+                                            <span *ngIf="itemName.errors?.['required']">This is required</span>
+                                          </div>
+                                </div>
+                                <div class="col-6">
+                                    <label for="">Select Food Type<span class="text-danger">*</span> </label>
+                                    <select class="form-control-sm form-control"
+                                        [(ngModel)]="foodItemObj.foodItemTypeId" #foodItemName="ngModel">
+                                        <option value="">Select food Item</option>
+                                        <option *ngFor="let data of foodTypeItemList" [value]="data.foodItemName">
+                                            {{data.foodItemName}}
+                                        </option>
+                                        <div class="text-danger" *ngIf="foodItemName.touched || foodItemName.disabled">
+                                            <span *ngIf="foodItemName.errors?.['required']">Please fill out</span>
+                                        </div>
+                                    </select>
                                 </div>
                             </div>
-                            <!-- <div class="col-6">
-                                <label for="">Select Category </label>
-                                <select class="form-control" [(ngModel)]="foodItemObj.categoryId">
-                                  <option value="">Select Category</option>
-                                  <option *ngFor="let data of categoryList" [value]="data.categoryId">
-                                    {{data.categoryName}}
-                                  </option>
-                                </select>
-                              </div> -->
+
                             <div class="row mx-2 pt-3">
 
                                 <div class="col-6">
                                     <label for="">Half Price</label>
-                                    <input type="number" class="form-control" [(ngModel)]="foodItemObj.halfPrice"
-                                        placeholder="" />
+                                    <input type="text" #halfPrice="ngModel" required class="form-control-sm form-control" name="halfPrice"
+                                        [(ngModel)]="foodItemObj.halfPrice" placeholder="" />
+                                        <div class="text-danger" *ngIf="halfPrice.touched || halfPrice.dirty">
+                                            <span *ngIf="halfPrice.errors?.['required']">This is required</span>
+                                          </div>
                                 </div>
                                 <div class="col-6">
                                     <label for="">Full Price</label>
-                                    <input type="number" class="form-control" [(ngModel)]="foodItemObj.fullPrice"
-                                        placeholder="Package Name" />
+                                    <input type="text" #fullPrice="ngModel" required class="form-control-sm form-control" name="fullPrice"
+                                        [(ngModel)]="foodItemObj.fullPrice" placeholder="Package Name" />
+                                        <div class="text-danger" *ngIf="fullPrice.touched || fullPrice.dirty">
+                                            <span *ngIf="fullPrice.errors?.['required']">This is required</span>
+                                        </div>
                                 </div>
                             </div>
-                            <div class="modal-footer">
-                               <div class="row">
-                                <div class="col-12 text-center">
-                                    <button type="button" class="btn btn-sm btn-outline-danger" (click)="closeModel()">
-                                        Close </button>
-                                    <button class="btn btn-sm  btn-outline-success mx-5" *ngIf="foodItemObj.itemId == 0" (click)="saveFoodItem()">Save
-                                    </button>
-                                    <button class="btn btn-sm  btn-outline-success mx-5" *ngIf="foodItemObj.itemId != 0" (click)="onUpdateFoodItem()">Update
-                                    </button>
+                            <div class="modal-footer mt-3">
+                                <div class="row ">
+                                    <div class="col-12 ">
+                                        <button type="button" class="btn btn-sm text-light"
+                                            style="background-color: rgb(156, 116, 156);" (click)="closeModel()">
+                                            Close </button>
+                                        <button class="btn btn-sm mx-3" style="background-color: violet;"
+                                            *ngIf="foodItemObj.itemId == 0" [disabled]="userForm.invalid"  (click)="saveFoodItem()">Save 
+                                        </button>
+                                        <button class="btn btn-sm mx-3" style="background-color: violet;"
+                                            *ngIf="foodItemObj.itemId != 0" (click)="onUpdateFoodItem()">Update
+                                        </button>
+                                    </div>
                                 </div>
-                               </div>
 
                             </div>
                         </div>
+                    </form>
                     </div>
                 </div>
             </div>
@@ -78,21 +100,21 @@
                     <div class="card-header" style="background-color:rgb(238, 173, 238);">
                         <div class="row">
                             <div class="col-12">
-                              <h5> {{item.itemName}}</h5> 
+                                <h6> {{item.itemName | titlecase}}</h6>
                             </div>
                         </div>
                     </div>
                     <div class="card-body">
                         <div class="row">
                             <div class="col-6 text-start">
-                                Cgst:{{item.halfPrice}}
+                                Half: {{item.halfPrice | currency: 'INR'}}
                             </div>
                             <div class="col-6 text-end">
-                                Sgst:{{item.fullPrice}}
+                                Full: {{item.fullPrice | currency: 'INR'}}
                             </div>
                             <div class="row">
                                 <div class="col-12">
-                                    Name: {{item.foodItemName}}
+                                    {{item.foodItemName}}
                                 </div>
                             </div>
                         </div>
@@ -100,12 +122,11 @@
                     <div class="card-footer">
                         <div class="row">
                             <div class="col-6 text-start">
-                                <i class="fa fa-pencil-square-o fa-lg"
-                                    aria-hidden="true" (click)="onEditFoodItem(item);openModel()"></i>
+                                <i class="fa fa-pencil-square-o fa-lg" aria-hidden="true"
+                                    (click)="onEditFoodItem(item);openModel()"></i>
                             </div>
                             <div class="col-6 text-end">
-                                <i class="fa fa-trash fa-lg" aria-hidden="true"
-                                    (click)="deleteFoodItem(item)"></i>
+                                <i class="fa fa-trash fa-lg" aria-hidden="true" (click)="deleteFoodItem(item)"></i>
                             </div>
                         </div>
                     </div>
