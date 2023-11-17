@@ -1,1 +1,76 @@
-<p>login works!</p>
+<div class="parent">
+    <div class="row">
+      <div class="col-8 mx-auto" style="width: 70%;">
+        <div class="card flex-row my-5 border-0 shadow rounded-3 overflow-hidden">
+          <div class="card-img-left d-none d-md-flex">
+            <!-- Background image for card set in CSS! -->
+          </div>
+          <div class="card-body ">
+            <h5 class="card-title text-center mb-3" style="font-size: 42px;">...LOGIN...</h5>
+            <form>
+
+              <div class="form-floating mb-3">
+                <input type="text" name="UserName" class="form-control" id="text1"
+                  [(ngModel)]="loginObj.userName" #userName="ngModel" placeholder="myuserName" required>
+                <label for="text1">UserName</label>
+                <div class="text-danger" *ngIf="userName.touched || userName.dirty">
+                  <span *ngIf="userName.errors?.['required']">Required Field </span>
+                </div>
+              </div>
+              <!-- <div class="form-floating mb-3">
+                <input type="email" class="form-control" id="floatingInputEmail" placeholder="name@example.com">
+                <label for="floatingInputEmail">Email </label>
+              </div> -->
+
+              <div class="form-floating mb-3">
+                <input type="password" name="password" class="form-control" id="floatingPassword"
+                  [(ngModel)]="loginObj.password" #password="ngModel" placeholder="Password" required>
+                <label for="floatingPassword">Password</label>
+
+                <div class="text-danger" *ngIf="password.touched || password.dirty">
+                  <span *ngIf="password.errors?.['required']">Required Field</span>
+                </div>
+              </div>
+                 <!-- 2 column grid layout for inline styling -->
+                 <div class="row mb-3">
+                  <div class="col d-flex justify-content-center">
+                    <!-- Checkbox -->
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="form1Example3" checked />
+                      <label class="form-check-label" for="form1Example3"> Remember me </label>
+                    </div>
+                  </div>
+
+                  <div class="col">
+                    <!-- Simple link -->
+                    <a href="#!">Forgot password?</a>
+                  </div>
+                </div>
+
+              <div class="d-grid mb-2">
+                <button class="btn btn-sm  btn-login fw-bold text-uppercase" style="background-color:#9bb5dd91;"
+                  type="submit" (click)="onLogin()">LOGIN</button>
+              </div>
+              <div class="d-flex align-items-center justify-content-center pb-2">
+                <p class="mb-0 me-2">Don't have an account?</p>
+
+              </div>
+              <hr class="my-2">
+              <div class="d-grid mb-2">
+                <button class="btn btn-sm btn-google btn-login fw-bold text-uppercase" type="submit">
+                  <i class="fa-brands fa-google"></i> Sign up with Google
+                </button>
+              </div>
+
+              <div class="d-grid">
+                <button class="btn btn-sm btn-facebook btn-login fw-bold text-uppercase" type="submit">
+                  <i class="fab fa-facebook-f me-2"></i> Sign up with Facebook
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
