@@ -1,0 +1,195 @@
+<!-- <div class="container">
+    <div class="row">
+        <div class="col-12 btn text-end pt-3 ">
+            <button type="button" class="btn btn-sm  text-light" style="background-color: rgb(182, 100, 182);"
+                data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo" (click)="openModel()">Add Visit</button>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12 text-center">
+            <h3>Visits</h3>
+        </div>
+    </div>
+</div>
+
+<div class="parent">
+    <div class="row">
+        <div class="col-12  pt-2 ">
+            <div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':isModalPopUp}">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header" style="background-color: rgb(241, 194, 241);">
+                            <h5 class="modal-title text-center">Add Resort Service</h5>
+                        </div>
+                        <form #userForm="ngForm">
+                            <div class="modal-body">
+                                <div class="row mx-2 ">
+                                    <div class="col-4 ">
+                                        <label>Name</label>
+                                        <input type="text" name="name" class="form-control form-control-sm"
+                                            [(ngModel)]="visitObj.name">
+                                    </div>
+                                    <div class="col-4">
+                                        <label>Mobile</label>
+                                        <input type="text" name="mobile" class="form-control form-control-sm"
+                                            [(ngModel)]="visitObj.mobile">
+                                    </div>
+                                    <div class="col-4">
+                                        <label>Email</label>
+                                        <input type="text" name="emailId" class="form-control form-control-sm"
+                                            [(ngModel)]="visitObj.emailId">
+                                    </div>
+                                </div>
+                                <div class="row mx-2 pt-3">
+
+                                    <div class="col-4">
+                                        <label>City</label>
+                                        <input type="text" name="city" class="form-control form-control-sm"
+                                            [(ngModel)]="visitObj.city">
+                                    </div>
+                                    <div class="col-4">
+                                        <label>Ticket No</label>
+                                        <input type="text" name="ticketNo" class="form-control form-control-sm"
+                                            [(ngModel)]="visitObj.ticketNo">
+                                    </div>
+                                    <div class="col-4">
+                                        <label>Ticket Date</label>
+                                        <input type="date" name="ticketDate" class="form-control form-control-sm"
+                                            [(ngModel)]="visitObj.ticketDate">
+                                    </div>
+                                </div>
+                                <div class="row mx-2 pt-3">
+
+                                    <div class="col-4">
+                                        <label>RemainingPaidAmt</label>
+                                        <input type="text" name="remainingPaidAmt" class="form-control form-control-sm"
+                                            [(ngModel)]="visitObj.remainingPaidAmt">
+                                    </div>
+                                    <div class="col-4">
+                                        <label>Reference</label>
+                                        <input type="text" name="reference" class="form-control form-control-sm"
+                                            [(ngModel)]="visitObj.reference">
+                                    </div>
+                                    <div class="col-4">
+                                        <label>Reference Mode</label>
+                                        <input type="text" name="referenceMode" class="form-control form-control-sm"
+                                            [(ngModel)]="visitObj.referenceMode">
+                                    </div>
+                                </div>
+                                <div class="row mx-2 pt-3">
+
+                                    <div class="col-4">
+                                        <label>PaymentBy</label>
+                                        <input type="text" name="paymentBy" class="form-control form-control-sm"
+                                            [(ngModel)]="visitObj.paymentBy">
+                                    </div>
+                                    <div class="col-4">
+                                        <label>PaymentDetails</label>
+                                        <input type="text" name="paymentDetails" class="form-control form-control-sm"
+                                            [(ngModel)]="visitObj.paymentDetails">
+                                    </div>
+                                    <div class="col-4">
+                                        <label>User</label>
+                                        <input type="text" name="user" class="form-control form-control-sm"
+                                            [(ngModel)]="visitObj.user">
+                                    </div>
+                                </div>
+                                <div class="row mx-2 pt-3">
+
+                                    <div class="col-4">
+                                        <label>NoOfMembers</label>
+                                        <input type="text" name="noOfMembers" class="form-control form-control-sm"
+                                            [(ngModel)]="visitObj.noOfMembers">
+                                    </div>
+                                    <div class="col-4">
+                                        <label>TotalAmount</label>
+                                        <input type="text" name="totalAmount" class="form-control form-control-sm"
+                                            [(ngModel)]="visitObj.totalAmount">
+                                    </div>
+                                    <div class="col-4">
+                                        <label>Service</label>
+                                        <input type="text" name="service" class="form-control form-control-sm"
+                                            [(ngModel)]="visitObj.service">
+                                    </div>
+                                </div>
+                                <div class="row mx-2 pt-3">
+
+                                    <div class="col-4">
+                                        <label>Advance</label>
+                                        <input type="text" name="advance" class="form-control form-control-sm"
+                                            [(ngModel)]="visitObj.advance">
+                                    </div>
+                                    <div class="col-4">
+                                        <label>Remaining</label>
+                                        <input type="text" name="remaining" class="form-control form-control-sm"
+                                            [(ngModel)]="visitObj.remaining">
+                                    </div>
+                                    <div class="col-4">
+                                        <label>Adults</label>
+                                        <input type="text" name="adults" class="form-control form-control-sm"
+                                            [(ngModel)]="visitObj.adults">
+                                    </div>
+                                </div>
+                                <div class="row mx-2 pt-3">
+
+                                    <div class="col-4">
+                                        <label>Childrens</label>
+                                        <input type="text" name="childrens" class="form-control form-control-sm"
+                                            [(ngModel)]="visitObj.childrens">
+                                    </div>
+                                    <div class="col-4">
+                                        <label>Rate</label>
+                                        <input type="text" name="rate" class="form-control form-control-sm"
+                                            [(ngModel)]="visitObj.rate">
+                                    </div>
+                                    <div class="col-4">
+                                        <label>AdultRate</label>
+                                        <input type="text" name="adultRate" class="form-control form-control-sm"
+                                            [(ngModel)]="visitObj.adultRate">
+                                    </div>
+                                </div>
+                                <div class="row mx-2 pt-3">
+
+                                    <div class="col-4">
+                                        <label>ChildRate</label>
+                                        <input type="text" name="childRate" class="form-control form-control-sm"
+                                            [(ngModel)]="visitObj.childRate">
+                                    </div>
+                                    <div class="col-4">
+                                        <label>BookingToDate</label>
+                                        <input type="date" name="bookingToDate" class="form-control form-control-sm"
+                                            [(ngModel)]="visitObj.bookingToDate">
+                                    </div>
+                                    <div class="col-4">
+                                        <label>CityOthr</label>
+                                        <input type="text" name="cityOthr" class="form-control form-control-sm"
+                                            [(ngModel)]="visitObj.cityOthr">
+                                    </div>
+                                </div>
+
+                                <div class="modal-footer mt-3">
+                                    <div class="row">
+                                        <div class="col-12 text-center">
+                                            <button type="button" class="btn btn-sm"
+                                                style="background-color: rgb(156, 116, 156);"
+                                                class="btn btn-sm text-light" (click)="closeModel()">
+                                                Close </button>
+                                            <button class="btn btn-sm mx-5" style="background-color: violet;"
+                                                *ngIf="visitObj.visitId == 0" [disabled]="userForm.invalid"
+                                                (click)="addVisit()">Save
+                                            </button>
+                                            <button class="btn btn-sm mx-5" style="background-color: violet;"
+                                                *ngIf="visitObj.visitId != 0" (click)="onUpdateVisit()">Update
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->

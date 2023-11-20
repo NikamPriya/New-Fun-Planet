@@ -6,13 +6,15 @@
       </button>
     </div> -->
   </div>
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" [ngStyle]="{'display':displayStyle}">
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
+    [ngStyle]="{'display':displayStyle}">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel" (click)="OpenPopUp()">Add Food Type</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          <button type="button" class="btn btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
+<<<<<<< HEAD
        <div class="parent">
         <div class="modal-body">
           <div class="row">
@@ -21,17 +23,30 @@
               <input type="text" [(ngModel)]="foodItemTypeObj.foodItemName" #foodItemName="ngModel" required name="foodItemName" class="form-control">
               <div class="text-danger" *ngIf="foodItemName.touched|| foodItemName.dirty">
                 <span *ngIf="foodItemName.errors?.['required']">Required Field</span>
+=======
+        <div class="parent">
+          <form #userForm="ngForm">
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-6">
+                <label for="">Item Name<span class="text-danger">*</span></label>
+                <input type="text" #foodItemName="ngModel" required [(ngModel)]="foodItemTypeObj.foodItemName"
+                  name="foodItemName" class="form-control form-control-sm">
+                <div class="text-danger" *ngIf="foodItemName.touched || foodItemName.dirty">
+                  <span *ngIf="foodItemName.errors?.['required']">This is required</span>
+                </div>
+>>>>>>> 525de8d0324f3ce49c5e283b6360f45f3540b79f
               </div>
             </div>
           </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-sm btn-secondary" data-bs-dismiss="modal" (click)="closePopUp()">
+              Close
+            </button>
+            <button type="button" class="btn btn-sm btn-primary" [disabled]="userForm.invalid" (click)="saveFoodTypes()">Save</button>
+          </div>
+        </form>
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-sm btn-secondary" data-bs-dismiss="modal" (click)="closePopUp()">
-            Close
-          </button>
-          <button type="button" class="btn btn-sm btn-primary" (click)="saveFoodTypes()">Save</button>
-        </div>
-       </div>
       </div>
     </div>
   </div>
@@ -39,15 +54,15 @@
     <div class="col-5" style="margin-left: 321px;">
       <div class="card mt-3">
         <div class="row">
-        <!-- <div class="col-6">
+          <!-- <div class="col-6">
           <div class="card-header text-center">Food Item Types</div>
         </div> -->
-        <div class="col-12 text-end pt-2 pe-4">
-          <button type="button" class="btn  btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-            Add Food Type
-          </button>
+          <div class="col-12 text-end pt-2 pe-4">
+            <button type="button" class="btn  btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+              Add Food Type
+            </button>
+          </div>
         </div>
-      </div>
 
         <div class="card-body text-center">
           <table class="table table-bordered">
