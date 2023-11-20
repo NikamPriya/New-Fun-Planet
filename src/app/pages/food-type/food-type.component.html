@@ -18,7 +18,10 @@
           <div class="row">
             <div class="col-6">
               <label for="">Item Name<span class="text-danger">*</span></label>
-              <input type="text" [(ngModel)]="foodItemTypeObj.foodItemName" name="foodItemName" class="form-control">
+              <input type="text" [(ngModel)]="foodItemTypeObj.foodItemName" #foodItemName="ngModel" required name="foodItemName" class="form-control">
+              <div class="text-danger" *ngIf="foodItemName.touched|| foodItemName.dirty">
+                <span *ngIf="foodItemName.errors?.['required']">Required Field</span>
+              </div>
             </div>
           </div>
         </div>
