@@ -56,7 +56,7 @@ order:{
 
 vists:{
    addVisit:"http://freeapi.miniprojectideas.com/api/Resort/AddVisit",
-   getAllVisit:"http://freeapi.miniprojectideas.com/api/Resort/GetAllVisit"
+   filterAllVisit:"http://freeapi.miniprojectideas.com/api/Resort/GetAllVisit"
 }
 
 

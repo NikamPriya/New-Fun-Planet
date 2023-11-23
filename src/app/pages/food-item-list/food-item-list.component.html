@@ -21,7 +21,7 @@
             <div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':isModalPopUp}">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
-                        <div class="modal-header text-center" style="background-color: rgb(241, 194, 241);">
+                        <div class="modal-header text-center" style="background-color: rgb(241, 194, 241);padding-left: 160px;">
                             <h5 class="modal-title ">Add New Item</h5>
                         </div>
                         <form #userForm="ngForm">
@@ -40,7 +40,7 @@
                                     <select class="form-control-sm form-control"
                                         [(ngModel)]="foodItemObj.foodItemTypeId" #foodItemName="ngModel">
                                         <option value="">Select food Item</option>
-                                        <option *ngFor="let data of foodTypeItemList" [value]="data.foodItemName">
+                                        <option *ngFor="let data of foodTypeItemList" [value]="data.foodItemTypeId">
                                             {{data.foodItemName}}
                                         </option>
                                         <div class="text-danger" *ngIf="foodItemName.touched || foodItemName.disabled">
@@ -69,17 +69,17 @@
                                         </div>
                                 </div>
                             </div>
-                            <div class="modal-footer mt-3">
+                            <div class="modal-footer mt-3" style="padding-right: 147px;">
                                 <div class="row ">
                                     <div class="col-12 ">
                                         <button type="button" class="btn btn-sm text-light"
                                             style="background-color: rgb(156, 116, 156);" (click)="closeModel()">
                                             Close </button>
                                         <button class="btn btn-sm mx-3" style="background-color: violet;"
-                                            *ngIf="foodItemObj.itemId == 0" [disabled]="userForm.invalid"  (click)="saveFoodItem()">Save 
+                                            *ngIf="foodItemObj.itemId == 0" [disabled]="userForm.invalid"  (click)="saveFoodItem();closeModel()">Save 
                                         </button>
                                         <button class="btn btn-sm mx-3" style="background-color: violet;"
-                                            *ngIf="foodItemObj.itemId != 0" (click)="onUpdateFoodItem()">Update
+                                            *ngIf="foodItemObj.itemId != 0" (click)="onUpdateFoodItem();closeModel()">Update
                                         </button>
                                     </div>
                                 </div>

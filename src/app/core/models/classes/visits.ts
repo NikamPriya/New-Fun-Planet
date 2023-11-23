@@ -86,3 +86,28 @@ export class visit {
     }
 }
 
+export class visitObj{
+  name: string;
+  userId?: any;
+  contactNo: string;
+  frDate: any;
+  toDate: any;
+  serviceId: any;
+  bookingUId: any;
+  ticketNo:string;
+  isDone: boolean
+
+
+  constructor(){
+  this.name ='';
+  this.userId=null;
+  this.contactNo='';
+  this.frDate='';
+  this.toDate='';
+  this.serviceId=null;
+  this.bookingUId='';
+  this.ticketNo='';
+  this.isDone=true;
+  }
+}
+
