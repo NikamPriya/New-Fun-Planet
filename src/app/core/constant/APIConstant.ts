@@ -41,16 +41,6 @@ FoodItemList:{
    deleteFoodItem:"http://freeapi.miniprojectideas.com/api/Resort/DeleteFoodItem"
 },
 
-<<<<<<< HEAD
-Visit:{
-   addVisit:"http://freeapi.miniprojectideas.com/api/Resort/AddVisit",
-}
-
-
-
-
-}
-=======
 bookings: {
    getBookings: "https://freeapi.miniprojectideas.com/api/Resort/GetAllBookings",
    getBookingById: "https://freeapi.miniprojectideas.com/api/Resort/GetBookingByBookingId?id=",
@@ -64,9 +54,11 @@ order:{
    deleteOrder:"https://freeapi.miniprojectideas.com/api/Resort/DeleteOrder"
 },
 
-
+vists:{
+   addVisit:"http://freeapi.miniprojectideas.com/api/Resort/AddVisit",
+   getAllVisit:"http://freeapi.miniprojectideas.com/api/Resort/GetAllVisit"
+}
 
 
 
 }
->>>>>>> 420c060748fc2871a30f2f04d6effd57030085a1
