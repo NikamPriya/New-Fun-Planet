@@ -6,20 +6,9 @@ import { ResortServicesComponent } from './pages/resort-services/resort-services
 import { LoginComponent } from './pages/login/login.component';
 import { LayoutComponent } from './pages/layout/layout.component';
 import { HomeComponent } from './pages/home/home.component';
-<<<<<<< HEAD
 import { BookingComponent } from './pages/booking/booking.component';
 import { OrderComponent } from './pages/order/order.component';
 import { UsersComponent } from './pages/users/users.component';
-=======
-
-import { BookingComponent } from './pages/booking/booking.component';
-import { OrderComponent } from './pages/order/order.component';
-
-import { UsersComponent } from './pages/users/users.component';
-
-
-
->>>>>>> 4c3ac3200f492df029da5c897d25b417760d57c6
 import { FoodTypeComponent } from './pages/food-type/food-type.component';
 import { FoodItemListComponent } from './pages/food-item-list/food-item-list.component';
 import { VisitsComponent } from './pages/visits/visits.component';

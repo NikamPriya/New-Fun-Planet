@@ -11,17 +11,6 @@ import { WeddingServicesComponent } from './pages/wedding-services/wedding-servi
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './pages/home/home.component';
-<<<<<<< HEAD
-import { UsersComponent } from './pages/users/users.component';
-import { VisitsComponent } from './pages/visits/visits.component';
-import { OffersComponent } from './pages/offers/offers.component';
-import { BookingComponent } from './pages/booking/booking.component';
-import { OrderComponent } from './pages/order/order.component';
-import { FoodTypeComponent } from './pages/food-type/food-type.component';
-import { FoodItemListComponent } from './pages/food-item-list/food-item-list.component';
-
-
-=======
 
 import { UsersComponent } from './pages/users/users.component';
 import { FoodTypeComponent } from './pages/food-type/food-type.component';
@@ -33,7 +22,6 @@ import { OffersComponent } from './pages/offers/offers.component';
 
 import { BookingComponent } from './pages/booking/booking.component';
 import { OrderComponent } from './pages/order/order.component';
->>>>>>> 4c3ac3200f492df029da5c897d25b417760d57c6
 
 @NgModule({
   declarations: [
@@ -49,23 +37,15 @@ import { OrderComponent } from './pages/order/order.component';
     FoodTypeComponent,
     FoodItemListComponent,
     OffersComponent,
-<<<<<<< HEAD
-=======
-
->>>>>>> 4c3ac3200f492df029da5c897d25b417760d57c6
     BookingComponent,
     OrderComponent,
     FoodTypeComponent,
 
     FoodItemListComponent,
     VisitsComponent,
-<<<<<<< HEAD
-    FoodItemListComponent
-=======
 
     FoodItemListComponent
 
->>>>>>> 4c3ac3200f492df029da5c897d25b417760d57c6
   ],
   imports:[
     BrowserModule,

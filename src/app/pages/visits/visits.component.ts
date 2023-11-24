@@ -63,27 +63,6 @@ getAllResortService() {
   })
 }
 
-<<<<<<< HEAD
-// addVisit(){
-//   this.visitSrv.creatVisit(this.visitObj).subscribe((res:any)=>{
-//     if(res.result){
-//      alert("Visit Added Successfully")
-//     }else{
-//       alert(res.message)
-//     }
-//   })
-// }
-
-// onUpdateVisit(){
-//   this.visitSrv.updateVisit(this.visitObj).subscribe((res:any)=>{
-//     if(res.result){
-//      alert("Visit updated Successfully")
-//     }else{
-//       alert(res.message)
-//     }
-//   })
-// }
-=======
 addVisit(){
   this.visitSrv.creatVisit(this.visitObj).subscribe((res:any)=>{
     if(res.result){
@@ -105,7 +84,6 @@ onUpdateVisit(){
     }
   })
 }
->>>>>>> 4c3ac3200f492df029da5c897d25b417760d57c6
 
 onEdit(item:any){
   this.visitObj = item
