@@ -18,25 +18,25 @@ ngOnInit(): void {
   
 }
 
-addVisit(){
-  this.visitSrv.creatVisit(this.visitObj).subscribe((res:any)=>{
-    if(res.result){
-     alert("Visit Added Successfully")
-    }else{
-      alert(res.message)
-    }
-  })
-}
+// addVisit(){
+//   this.visitSrv.creatVisit(this.visitObj).subscribe((res:any)=>{
+//     if(res.result){
+//      alert("Visit Added Successfully")
+//     }else{
+//       alert(res.message)
+//     }
+//   })
+// }
 
-onUpdateVisit(){
-  this.visitSrv.updateVisit(this.visitObj).subscribe((res:any)=>{
-    if(res.result){
-     alert("Visit updated Successfully")
-    }else{
-      alert(res.message)
-    }
-  })
-}
+// onUpdateVisit(){
+//   this.visitSrv.updateVisit(this.visitObj).subscribe((res:any)=>{
+//     if(res.result){
+//      alert("Visit updated Successfully")
+//     }else{
+//       alert(res.message)
+//     }
+//   })
+// }
 
 openModel() {
   this.isModalPopUp = 'block'

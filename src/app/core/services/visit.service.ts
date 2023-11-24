@@ -9,13 +9,13 @@ export class VisitService {
 
   constructor(private http:HttpClient) { }
 
-  creatVisit(Obj:any){
-    return this.http.post(APIConstant.Visit.addVisit,Obj);
-  }
+  // creatVisit(Obj:any){
+  //   return this.http.post(APIConstant.Visit.addVisit,Obj);
+  // }
 
-  updateVisit(Obj:any){
-    return this.http.post(APIConstant.Visit.addVisit,Obj)
-  }
+  // updateVisit(Obj:any){
+  //   return this.http.post(APIConstant.Visit.addVisit,Obj)
+  // }
 
 
 }

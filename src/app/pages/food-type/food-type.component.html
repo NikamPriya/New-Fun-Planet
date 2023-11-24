@@ -3,31 +3,34 @@
     [ngStyle]="{'display':displayStyle}">
     <div class="modal-dialog">
       <div class="modal-content">
-        <div class="modal-header">
+        <div class="modal-header" style="padding-left: 200px;">
           <h5 class="modal-title" id="exampleModalLabel" (click)="OpenPopUp()">Add Food Type</h5>
           <button type="button" class="btn btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="parent">
           <form #userForm="ngForm">
-          <div class="modal-body">
-            <div class="row">
-              <div class="col-6">
-                <label for="">Item Name<span class="text-danger">*</span></label>
-                <input type="text" #foodItemName="ngModel" required [(ngModel)]="foodItemTypeObj.foodItemName"
-                  name="foodItemName" class="form-control form-control-sm">
-                <div class="text-danger" *ngIf="foodItemName.touched || foodItemName.dirty">
-                  <span *ngIf="foodItemName.errors?.['required']">This is required</span>
+            <div class="modal-body">
+              <div class="container">
+                <div class="row">
+                  <div class="col-6">
+                    <label for="">Item Name<span class="text-danger">*</span></label>
+                    <input type="text" #foodItemName="ngModel" required [(ngModel)]="foodItemTypeObj.foodItemName"
+                      name="foodItemName" class="form-control form-control-sm">
+                    <div class="text-danger" *ngIf="foodItemName.touched || foodItemName.dirty">
+                      <span *ngIf="foodItemName.errors?.['required']">This is required</span>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-sm btn-secondary" data-bs-dismiss="modal" (click)="closePopUp()">
-              Close
-            </button>
-            <button type="button" class="btn btn-sm btn-primary" [disabled]="userForm.invalid" (click)="saveFoodTypes()">Save</button>
-          </div>
-        </form>
+            <div class="modal-footer" style="padding-right: 175px;">
+              <button type="button" class="btn btn-sm btn-secondary" data-bs-dismiss="modal" (click)="closePopup()">
+                Close
+              </button>
+              <button type="button" class="btn btn-sm btn-primary" data-bs-dismiss="modal" (click)="saveFoodTypes();closePopup()" [disabled]="userForm.invalid"
+                *ngIf="foodItemTypeObj.foodItemTypeId==0" >Save</button>
+            </div>
+          </form>
         </div>
       </div>
     </div>

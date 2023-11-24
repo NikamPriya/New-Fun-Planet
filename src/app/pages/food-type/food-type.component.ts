@@ -11,8 +11,8 @@ import { FoodTypeService } from 'src/app/core/services/food-type.service';
 export class FoodTypeComponent implements OnInit {
 
   foodTypeList: IFoodTypeList[] = [];
-  foodItemTypeObj:foodTypeList = new foodTypeList() ;
-  displayStyle:string = "none";
+  foodItemTypeObj: foodTypeList = new foodTypeList();
+  displayStyle: string = "none";
 
   constructor(private foodTypeServ: FoodTypeService) { }
 
@@ -26,25 +26,26 @@ export class FoodTypeComponent implements OnInit {
     })
   }
   saveFoodTypes() {
-    this.foodTypeServ.AddFoodTypes(this.foodItemTypeObj).subscribe((res:any)=>{
-    if(res){
-      alert("Item created successfully")
-      this.getAllFoodTypes();
-    }else{
-      alert(res.message)
-    }
-  },
-  error =>{
-    alert(JSON.stringify(error.error))
-  })
+    this.foodTypeServ.AddFoodTypes(this.foodItemTypeObj).subscribe((res: any) => {
+      if (res) {
+        alert("Item created successfully")
+        this.getAllFoodTypes();
+      } else {
+        alert(res.message)
+      }
+      this.displayStyle = 'none';
+    },
+      error => {
+        alert(JSON.stringify(error.error))
+      })
   }
 
-  OpenPopUp(){
-    this.displayStyle = "block";
+  OpenPopUp() {
+    this.displayStyle = 'block';
   }
 
-  closePopUp(){
-    this.displayStyle = "none"
-    this.foodItemTypeObj = new foodTypeList
+  closePopup() {
+    this.displayStyle = 'none';
+    this.foodItemTypeObj = new foodTypeList;
   }
 }

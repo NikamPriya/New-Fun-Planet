@@ -18,9 +18,7 @@ import { BookingComponent } from './pages/booking/booking.component';
 import { OrderComponent } from './pages/order/order.component';
 import { FoodTypeComponent } from './pages/food-type/food-type.component';
 import { FoodItemListComponent } from './pages/food-item-list/food-item-list.component';
->>>>>>> 4e5d78cfd8f8aef3b275c474e21e2643a8bca902
->>>>>>> bb17f1b46001a24f8d7aa600750e52b7b85a6f6b
->>>>>>> 420c060748fc2871a30f2f04d6effd57030085a1
+
 
 
 @NgModule({
@@ -32,23 +30,17 @@ import { FoodItemListComponent } from './pages/food-item-list/food-item-list.com
     ResortServicesComponent,
     WeddingServicesComponent,
     HomeComponent,
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
+
     UsersComponent,
     FoodTypeComponent,
     FoodItemListComponent,
-    OffersComponent
-=======
-<<<<<<< HEAD
->>>>>>> bb17f1b46001a24f8d7aa600750e52b7b85a6f6b
+    OffersComponent,
     BookingComponent,
     OrderComponent,
     FoodTypeComponent,
-<<<<<<< HEAD
+
     FoodItemListComponent,
-    VisitsComponent
-=======
+    VisitsComponent,
     FoodItemListComponent
   ],
   imports:[
