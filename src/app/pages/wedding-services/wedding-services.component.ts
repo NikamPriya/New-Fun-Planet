@@ -82,7 +82,7 @@ export class WeddingServicesComponent implements OnInit {
     this.displayStyle = 'block';
   }
   closePopup() {
-    this.displayStyle = 'none';
+    this.displayStyle = 'none'
     this.weddingServicesObj = new weddingServicesList;
     
   

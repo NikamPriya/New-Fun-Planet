@@ -62,16 +62,18 @@
 
                             </div>
                             <div class="modal-footer" style="padding-right: 160px;">
-                                    <button type="button" class="btn btn-sm btn-danger"
-                                        (click)="closePopup()">Close</button>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <button type="button" class="btn btn-sm btn-danger"
+                                            (click)="closePopup()">Close</button>
+                                        <button class="btn btn-sm btn-success mx-3"
+                                            (click)="saveWeddingServices();closePopup()" [disabled]="userForm.invalid"
+                                            *ngIf="weddingServicesObj.serviceId==0">Save </button>
+                                        <button class="btn btn-sm btn-warning mx-3"
+                                            (click)="UpdateProduct();closePopup()"
+                                            *ngIf="weddingServicesObj.serviceId!=0">Update</button>
+                                    </div>
                                 </div>
-                                <div style="margin-right: -22px;">
-                                    <button class="btn btn-sm btn-success mx-5"
-                                        (click)="saveWeddingServices();closePopup()" [disabled]="userForm.invalid"
-                                        *ngIf="weddingServicesObj.serviceId==0">Save </button>
-                                </div>
-                                <button class="btn btn-sm btn-warning mx-5" (click)="UpdateProduct();closePopup()"
-                                    *ngIf="weddingServicesObj.serviceId!=0">Update</button>
                             </div>
                         </form>
                     </div>
@@ -118,4 +120,3 @@
         </div>
     </div>
 </div>
-
