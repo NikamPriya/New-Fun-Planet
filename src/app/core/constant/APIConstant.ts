@@ -41,16 +41,6 @@ FoodItemList:{
    deleteFoodItem:"http://freeapi.miniprojectideas.com/api/Resort/DeleteFoodItem"
 },
 
-<<<<<<< HEAD
-Visit:{
-   addVisit:"http://freeapi.miniprojectideas.com/api/Resort/AddVisit",
-}
-
-
-
-
-}
-=======
 bookings: {
    getBookings: "https://freeapi.miniprojectideas.com/api/Resort/GetAllBookings",
    getBookingById: "https://freeapi.miniprojectideas.com/api/Resort/GetBookingByBookingId?id=",
@@ -69,4 +59,3 @@ order:{
 
 
 }
->>>>>>> 420c060748fc2871a30f2f04d6effd57030085a1
