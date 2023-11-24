@@ -54,7 +54,10 @@ order:{
    deleteOrder:"https://freeapi.miniprojectideas.com/api/Resort/DeleteOrder"
 },
 
-
+vists:{
+   addVisit:"http://freeapi.miniprojectideas.com/api/Resort/AddVisit",
+   filterAllVisit:"http://freeapi.miniprojectideas.com/api/Resort/GetAllVisit"
+}
 
 
 

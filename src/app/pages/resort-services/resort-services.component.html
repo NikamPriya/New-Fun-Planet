@@ -20,8 +20,13 @@
             <div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':isModalPopUp}">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
+<<<<<<< HEAD
                         <div class="modal-header" style="background-color: rgb(241, 194, 241);">
                             <h4 class="modal-title text-center">Add New Package</h4>
+=======
+                        <div class="modal-header" style="background-color: rgb(241, 194, 241); padding-left: 147px;">
+                            <h5 class="modal-title text-center">Add Resort Service</h5>
+>>>>>>> 4c3ac3200f492df029da5c897d25b417760d57c6
                         </div>
                         <form #userForm="ngForm">
                             <div class="modal-body">
@@ -58,6 +63,7 @@
                                     </div>
                                     <div class="col-6">
                                         <label for="">Sgst<span class="text-danger">*</span></label>
+<<<<<<< HEAD
                                         <input type="text" #sgst="ngModel" required name="sgst"
                                             class="form-control form-control-sm" [(ngModel)]="resortServiceObj.sgst"
                                             placeholder="" />
@@ -88,6 +94,33 @@
                                     </div>
                                 </div>
 
+=======
+                                        <input type="text" #sgst="ngModel" required name="sgst" class="form-control form-control-sm"
+                                            [(ngModel)]="resortServiceObj.sgst" placeholder="" />
+                                            <div class="text-danger" *ngIf="sgst.touched || sgst.dirty">
+                                                <span *ngIf="sgst.errors?.['requierd']">This is requierd</span>
+                                            </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer mt-3 " style="padding-right: 147px;">
+                                    <div class="row">
+                                        <div class="col-12 ">
+                                            <button type="button" class="btn btn-sm"  style="background-color: rgb(156, 116, 156);" class="btn btn-sm text-light"
+                                                (click)="closeModel()">
+                                                Close </button>
+                                            <button class="btn btn-sm mx-3" style="background-color: violet;"
+                                                *ngIf="resortServiceObj.serviceId == 0"[disabled]="userForm.invalid"
+                                                (click)="creatAllResortSrvice();closeModel()">Save
+                                            </button>
+                                            <button class="btn btn-sm mx-3" style="background-color: violet;"
+                                                *ngIf="resortServiceObj.serviceId != 0"
+                                                (click)="upAllResortSrvice();closeModel()">Update
+                                            </button>
+                                        </div>
+                                    </div>
+                             
+                                </div>
+>>>>>>> 4c3ac3200f492df029da5c897d25b417760d57c6
                             </div>
                         </form>
                     </div>
@@ -103,7 +136,12 @@
                     <div class="card-header" style="background-color:rgb(238, 173, 238);">
                         <div class="row">
                             <div class="col-12">
+<<<<<<< HEAD
                                 <h5> {{item.serviceName | titlecase}}</h5>
+=======
+                                <h6> {{item.serviceName | titlecase}}</h6>
+                                
+>>>>>>> 4c3ac3200f492df029da5c897d25b417760d57c6
                             </div>
                         </div>
                     </div>
