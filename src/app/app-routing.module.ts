@@ -28,14 +28,8 @@ const routes: Routes = [
     component: LayoutComponent,
     children: [
       {
-<<<<<<< HEAD
-
-        path:'home',
-        component:HomeComponent,
-=======
         path: 'home',
         component: HomeComponent,
->>>>>>> 4e5d78cfd8f8aef3b275c474e21e2643a8bca902
       },
 
       {
@@ -43,23 +37,6 @@ const routes: Routes = [
         component: WeddingPackagesComponent,
       },
       {
-<<<<<<< HEAD
-        path: 'weddingServices',
-        component: WeddingServicesComponent,
-      },
-      {
-        path: 'resortServices',
-        component: ResortServicesComponent,
-      },
-      {
-        path: 'booking',
-        component: BookingComponent,
-      },
-      {
-        path: 'order',
-        component: OrderComponent,
-      }
-=======
         path : "weddingServices",
         component : WeddingServicesComponent
       },
@@ -79,10 +56,14 @@ const routes: Routes = [
         path:'FoodItemList',
         component:FoodItemListComponent
       },
+      {
+        path:'Offers',
+        component:OffersComponent
+      },
 
 
 
->>>>>>> efaa06c1b07d71f384165225a91008754e13ab93
+
 
     ]
   }

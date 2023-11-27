@@ -1,5 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { APIConstant } from '../constant/APIConstant';
+import { Observable } from 'rxjs';
+import { Ioffers } from '../models/interface/Ioffers';
+import { ReturnClass } from '../models/classes/wedding-packages';
 
 
 @Injectable({
@@ -9,19 +13,19 @@ export class OffersService {
 
   constructor(private http:HttpClient) { }
 
-  // loadAllOffers(){
-  //   return this.http.get(APIConstant.Offers.getOffers)
-  //  }
+  getAllOffers(): Observable<Ioffers[]> {
+    return this.http.get<Ioffers[]>(APIConstant.Offers.getOffers)
+  }
 
-  //  saveAllOffers(Obj:any){
-  //   return this.http.post(APIConstant.Offers.createOffers,Obj);
-  //  }
+  saveOffers(Obj: any): Observable<ReturnClass> {
+    return this.http.post<ReturnClass>(APIConstant.Offers.createOffers,Obj)
+  }
 
-  //  updateAllOffers(Obj:any){
-  //   return this.http.post(APIConstant.Offers.createOffers,Obj);
-  //  }
+  onUpdate(obj: any): Observable<Ioffers[]> {
+    return this.http.post<Ioffers[]>(APIConstant.Offers.createOffers,obj)
 
-  //  DeleteAllOffers(Obj:any){
-  //   return this.http.post(APIConstant.Offers.deleteOffers,Obj)
-  //  }
+  }
+  onDelete(obj:any):Observable<Ioffers[]>{
+    return this.http.post<Ioffers[]>(APIConstant.Offers.deleteOffers,obj)
+  }
 }
