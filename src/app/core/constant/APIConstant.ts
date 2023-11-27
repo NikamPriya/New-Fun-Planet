@@ -77,8 +77,7 @@ order:{
 vists:{
    addVisit:"http://freeapi.miniprojectideas.com/api/Resort/AddVisit",
    filterAllVisit:"http://freeapi.miniprojectideas.com/api/Resort/GetAllVisit"
-}
->>>>>>> 3f600853e7fb7f91a85549d63650447b12648233
+},
 
 Offers:{
   getOffers:"https://freeapi.miniprojectideas.com/api/Resort/GetAllOffer",
