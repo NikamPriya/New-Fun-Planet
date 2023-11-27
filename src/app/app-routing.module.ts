@@ -6,22 +6,14 @@ import { ResortServicesComponent } from './pages/resort-services/resort-services
 import { LoginComponent } from './pages/login/login.component';
 import { LayoutComponent } from './pages/layout/layout.component';
 import { HomeComponent } from './pages/home/home.component';
-<<<<<<< HEAD
-
-import { UsersComponent } from './pages/users/users.component';
-
-import { FoodTypeComponent } from './pages/food-type/food-type.component';
-import { FoodItemListComponent } from './pages/food-item-list/food-item-list.component';
-import { OffersComponent } from './pages/offers/offers.component';
-=======
 import { BookingComponent } from './pages/booking/booking.component';
 import { OrderComponent } from './pages/order/order.component';
 import { UsersComponent } from './pages/users/users.component';
 import { FoodTypeComponent } from './pages/food-type/food-type.component';
 import { FoodItemListComponent } from './pages/food-item-list/food-item-list.component';
 import { VisitsComponent } from './pages/visits/visits.component';
+import { OffersComponent } from './pages/offers/offers.component';
 
->>>>>>> 3f600853e7fb7f91a85549d63650447b12648233
 
 const routes: Routes = [
   {
@@ -47,14 +39,6 @@ const routes: Routes = [
         component: WeddingPackagesComponent,
       },
       {
-<<<<<<< HEAD
-        path : "weddingServices",
-        component : WeddingServicesComponent
-      },
-      {
-        path:"resortServices",
-        component:ResortServicesComponent
-=======
         path: 'weddingServices',
         component: WeddingServicesComponent,
       },
@@ -69,7 +53,6 @@ const routes: Routes = [
       {
         path: 'order',
         component: OrderComponent,
->>>>>>> 3f600853e7fb7f91a85549d63650447b12648233
       },
       {
         path:"Users",
@@ -84,16 +67,13 @@ const routes: Routes = [
         component:FoodItemListComponent
       },
       {
-<<<<<<< HEAD
-        path:'Offers',
-        component:OffersComponent
-      },
-
-=======
         path:'Visit',
         component:VisitsComponent
+      },
+      {
+        path:'Offers',
+        component:OffersComponent
       }
->>>>>>> 3f600853e7fb7f91a85549d63650447b12648233
 
 
 
