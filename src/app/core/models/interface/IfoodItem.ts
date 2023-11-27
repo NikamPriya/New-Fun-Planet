@@ -1,12 +1,12 @@
 export interface IfoodItemList {
     itemId: number,
     itemName: string,
-    isVeg: true,
+    isVeg: boolean,
     fullPrice: number,
     halfPrice: number,
-    isAvailable: true,
-    isDeleted: true,
-    isHalf: true,
+    isAvailable: boolean,
+    isDeleted: boolean,
+    isHalf: boolean,
     foodItemTypeId: number,
     foodItemName: string
 }

@@ -1,14 +1,14 @@
 <div class="container">
     <div class="row">
         <div class="col-12 text-end pt-3">
-            <button type="button" class="btn  text-end btn-sm btn-primary" data-bs-toggle="modal"
-                data-bs-target="#exampleModal" data-bs-whatever="@mdo" (click)="openPopup()">Add Service</button>
+            <button type="button" class="btn btn-sm btn-primary text-end text-light " data-bs-toggle="modal"
+                data-bs-target="#exampleModal" data-bs-whatever="@mdo" (click)="openPopup()">Add New Service</button>
         </div>
     </div>
     <div class="row">
-       <div class="col-12 text-center">
-        <h3>Wedding Services</h3>
-       </div>
+        <div class="col-12 text-center">
+            <h3>Wedding Services</h3>
+        </div>
     </div>
 </div>
 <div class="parent">
@@ -18,49 +18,64 @@
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h4 class="modal-title text-center">Add Services</h4>
+                            <h4 class="modal-title" style="padding-left: 175px">Add Services</h4>
                         </div>
-                        <div class="modal-body">
-                            <div class="row mx-2 ">
-                                <div class="col-6 ">
-                                    <label>Services Name<span class="text-danger">*</span></label>
-                                    <input type="text" [(ngModel)]="weddingServicesObj.name" #name="ngModel" required name="name" class="form-control">
-                                    <div class="text-danger" *ngIf="name.touched || name.dirty">
-                                        <span *ngIf="name.errors?.['required']"> Name is Required</span>
+                        <form #userForm="ngForm">
+                            <div class="modal-body">
+                                <div class="row mx-2 ">
+                                    <div class="col-6 ">
+                                        <label>Services Name<span class="text-danger">*</span></label>
+                                        <input type="text" [(ngModel)]="weddingServicesObj.name" #name="ngModel"
+                                            required name="name" class="form-control form-control-sm">
+                                        <div class="text-danger" *ngIf="name.touched || name.dirty">
+                                            <span *ngIf="name.errors?.['required']"> Name is Required</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <label>Service Type <span class="text-danger">*</span></label>
+                                        <input type="text" #serviceType="ngModel" required name="serviceType"
+                                            [(ngModel)]="weddingServicesObj.serviceType"
+                                            class="form-control form-control-sm">
+                                        <div class="text-danger" *ngIf="serviceType.touched || serviceType.dirty">
+                                            <span *ngIf="serviceType.errors?.['required']">Required Field</span>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="col-6">
-                                    <label>Service Type <span class="text-danger">*</span></label>
-                                    <input type="text" #serviceType="ngModel" required
-                                        [(ngModel)]="weddingServicesObj.serviceType" class="form-control">
-                                    <div class="text-danger" *ngIf="serviceType.touched || serviceType.dirty">
-                                        <span *ngIf="serviceType.errors?.['required']">Required Field</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row mx-2 pt-3">
-                                <div class="col-6">
-                                    <label for="">Order No<span class="text-danger">*</span></label>
-                                    <input type="text" class="form-control" #orderNo="ngModel" name="orderNo" [(ngModel)]="weddingServicesObj.orderNo" required/>
+                                <div class="row mx-2 pt-3">
+                                    <div class="col-6">
+                                        <label for="">Order No<span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control form-control-sm" #orderNo="ngModel"
+                                            name="orderNo" [(ngModel)]="weddingServicesObj.orderNo" required />
                                         <div class="text-danger" *ngIf="orderNo.touched || orderNo.dirty">
                                             <span *ngIf="orderNo.errors?.['required']">Required Field</span>
                                         </div>
-                                </div>
-                                <div class="col-6">
-                                    <label for="">Rate<span class="text-danger">*</span></label>
-                                    <input type="text" class="form-control" name="rate" #rate="ngModel" required [(ngModel)]="weddingServicesObj.rate" />
+                                    </div>
+                                    <div class="col-6">
+                                        <label for="">Rate<span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control form-control-sm" name="rate"
+                                            #rate="ngModel" required [(ngModel)]="weddingServicesObj.rate" />
                                         <div class="text-danger" *ngIf="rate.touched || rate.dirty">
                                             <span *ngIf="rate.errors?.['required']">Required Field</span>
                                         </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="modal-footer" style="padding-right: 160px;">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <button type="button" class="btn btn-sm btn-danger"
+                                            (click)="closePopup()">Close</button>
+                                        <button class="btn btn-sm btn-success mx-3"
+                                            (click)="saveWeddingServices();closePopup()" [disabled]="userForm.invalid"
+                                            *ngIf="weddingServicesObj.serviceId==0">Save </button>
+                                        <button class="btn btn-sm btn-warning mx-3"
+                                            (click)="UpdateProduct();closePopup()"
+                                            *ngIf="weddingServicesObj.serviceId!=0">Update</button>
+                                    </div>
                                 </div>
                             </div>
-
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-sm btn-danger" (click)="closePopup()">Close</button>
-                            <button class="btn btn-sm btn-success mx-5" (click)="saveWeddingServices()" *ngIf="weddingServicesObj.serviceId==0">Save </button>
-                            <button class="btn btn-sm btn-warning mx-5" (click)="UpdateProduct()" *ngIf="weddingServicesObj.serviceId!=0">Update </button>
-                        </div>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -71,31 +86,33 @@
     <div class="row">
         <div class="col-3 pt-3 pe-2" *ngFor="let service of weddingServiceList">
             <div class="card">
-                <div class="card-header" style="background-color: #86b7fe7d">{{service.name}}</div>
+                <div class="card-header" style="background-color: #86b7fe7d">
+                    <h6>{{service.name | titlecase}}</h6>
+                </div>
                 <div class="card-body">
                     <div class="row">
                         <div class="col-6 text-start">
-                             Type:{{service.serviceType}}
+                            Type:{{service.serviceType}}
                         </div>
                         <div class="col-6 text-end">
                             Order No:{{service.orderNo}}
                         </div>
                     </div>
-                
+
                     <div class="row">
                         <div class="col-12 text">
-                            <i class="fa-solid fa-indian-rupee-sign"
-                                style="color: #2a2828;"></i><strong>{{service.rate}}</strong>
+                            {{service.rate | currency: 'INR'}}
                         </div>
                     </div>
                 </div>
                 <div class="card-footer">
                     <div class="row">
                         <div class="col-6 text-start pb-3">
-                            <i class=" fa fa-solid fa-pen-to-square"  style="color: #034cc9;"(click)="onEdit(service);openPopup()"></i>
+                            <i class=" fa fa-solid fa-pen-to-square" style="color: #034cc9;"
+                                (click)="onEdit(service);openPopup()"></i>
                         </div>
                         <div class="col-6 text-end pb-3">
-                            <i class=" fa fa-solid fa-trash" style="color: #215dc4;"(click)="onDelete(service)"></i>
+                            <i class=" fa fa-solid fa-trash" style="color: #215dc4;" (click)="onDelete(service)"></i>
                         </div>
                     </div>
                 </div>

@@ -1,10 +1,10 @@
 export interface IweddingServicesList{
     serviceId: number,
-    rate: Number,
+    rate: number,
     isActive: true,
     isDeleted: true,
     isPax: true,
     name: string,
-    orderNo: Number,
+    orderNo: number,
     serviceType:string
 }
