@@ -1,22 +1,13 @@
-<nav aria-label="breadcrumb">
-  <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a href="#">Home</a></li>
-    <li class="breadcrumb-item active" aria-current="page">Users</li>
-  </ol>
-</nav>
-
-<div class="row">
-  <div class="col-12 text-end">
-    <button type="button" class="btn btn-sm text-end " style="background-color: rgb(185, 169, 185);" data-bs-toggle="modal"
-     data-bs-target="#exampleModal" data-bs-whatever="@mdo" (click)="openModel()">Add New Users</button>
+<div class="container">
+  <div class="row">
+    <div class="col-12 pt-2 text-end me-5">
+      <button type="button" class="btn btn-sm text-end text-light" style="background-color:  rgb(143 120 143)"
+        data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo" (click)="openModel()">Add
+        New Users</button>
+    </div>
   </div>
-</div>
 
-<div class="row">
-  <div class="col-12 text-center">
-      <h2>Users</h2>
-  </div>
-</div>
+  <h3 class="text-center"> Users</h3>
 
 <div class="parent">
   <div class="row">
@@ -24,7 +15,7 @@
       <div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':isModalPopUp}">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
-            <div class="modal-header" style="background-color: rgb(161, 147, 161);">
+            <div class="modal-header" style="background-color: rgb(185, 169, 185);">
               <h4 class="modal-title" style="padding-left: 141px;">Add New Users</h4>
             </div>
             <div class="modal-body">
@@ -117,4 +108,5 @@
       </div>
     </div>
   </div>
+</div>
 </div>
