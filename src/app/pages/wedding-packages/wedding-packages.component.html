@@ -1,62 +1,67 @@
-<div class="container">
-    <div class="row">
-        <div class="col-12 pt-3 text-end ">
-            <button type="button" class="btn btn-sm text-end text-light" style="background-color:  rgb(136, 108, 127)"
-                data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo" (click)="openPopup()">Add
-                New Package</button>
-        </div>
-    </div>
+<app-loader *ngIf="isLoading"></app-loader>
 
-    <h3 class="text-center"> Wedding Packages</h3>
-    <div class="row pt-3 px-3">
-        <div class="col-3 pt-3" style="margin-right: 90px;" *ngFor="let package of weddingPackagesList">
+<div class="container-fluid" *ngIf="!isLoading">
+    <div class="row  pt-2 ">
+        <div class="col-6">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="#">Home</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">Wedding Packages</li>
+                </ol>
+              </nav>        
+        </div>
+            <div class="col-6 text-end " >
+                <button type="button" class="btn btn-sm  text-light" style="background-color:  rgb(136, 108, 127); margin-right: 18px;"
+                    data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo" (click)="openPopup()">Add
+                    New Package</button>
+            </div>    
+    </div>
+    <div class="row ">
+        <div class="col-3 pt-3  "  *ngFor="let package of weddingPackagesList">
             <div class="card">
                 <div class="card-header" style="background-color: rgb(185, 157, 175);">
                     <h5>{{package.packageName | titlecase}}</h5>
                 </div>
                 <div class="card-body">
                     <div class="row">
-                        <div class="col-6 text-start">
+                        <div class="col-8 text-start">
                             With Food Cost:
                         </div>
-                        <div class="col-6 text-end">
+                        <div class="col-4 text-end">
                             {{package.withFoodCost}}
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-6 text-start">
+                        <div class="col-8 text-start">
                             Without Food Cost:
                         </div>
-                        <div class="col-6 text-end">
+                        <div class="col-4 text-end">
                             {{package.withoutFoodCost}}
                         </div>
                     </div>
 
                     <div class="row">
-                        <div class="col-6 text-start">
+                        <div class="col-8 text-start">
                             Per Person Cost:
                         </div>
-                        <div class="col-6 text-end">
+                        <div class="col-4 text-end">
                             {{package.perPersonCost}}
                         </div>
 
-                    </div>
-                    <div class="row">
-                        <div class="col-12 text-center">
-                            Details:{{package.description}}
-                        </div>
                     </div>
 
                 </div>
                 <div class="card-footer">
                     <div class="row">
                         <div class="col-6 text-start">
+                            <span role="button" tabindex="0"> 
                             <i class="fa fa-pencil-square-o fa-lg" style="color:  rgb(136, 108, 127)" aria-hidden="true"
-                                (click)="onEdit(package); openPopup()"></i>
+                                (click)="onEdit(package); openPopup()"></i></span>
                         </div>
                         <div class="col-6 text-end">
+                            <span role="button" tabindex="0"> 
                             <i class="fa fa-trash fa-lg" aria-hidden="true"
-                                (click)="onDelete(package.weddingPackageId)"></i>
+                                (click)="onDelete(package.weddingPackageId)"></i></span>
                         </div>
                     </div>
 
@@ -64,16 +69,32 @@
             </div>
         </div>
     </div>
+
+    
 </div>
 
+  
+
+    <!-- <div class="row">
+        <div class="col-12 pt-3 text-end " >
+            <button type="button" class="btn btn-sm text-end text-light" style="background-color:  rgb(136, 108, 127); margin-right: 18px;"
+                data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo" (click)="openPopup()">Add
+                New Package</button>
+        </div>
+    </div> -->
+    <!-- <div class="row">
+       <div class="col-12 text-center">
+        <h3>Wedding Packages</h3>
+       </div>
+    </div> -->
 <div class="parent">
     <div class="row">
         <div class="col-12  pt-2">
             <div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':displayStyle}">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content ">
-                        <div class="modal-header ">
-                            <h4 class="modal-title text-center">Add New Package</h4>
+                        <div class="modal-header "  style="padding-left: 150px; background-color: rgb(185, 157, 175)">
+                            <h5 class="modal-title text-center" >Add New Package</h5>
                         </div>
                         <form #userForm="ngForm">
                             <div class="modal-body">
@@ -145,7 +166,7 @@
                                 <div class="row mx-2 pt-3">
                                     <div class="col-12">
                                         <label>Product Description <span class="text-danger">*</span></label>
-                                        <textarea rows="1" type="text" #description="ngModel" required
+                                        <textarea rows="2" type="text" #description="ngModel" required
                                             [(ngModel)]="weddingPackageObj.description" name="description"
                                             class="form-control form-control-sm"></textarea>
                                         <div class="text-danger" *ngIf="description.touched || description.dirty">
@@ -155,16 +176,16 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="modal-footer ">
-                                <button type="button" class="btn  btn-sm float-left"
-                                    style="background-color: rgb(185, 157, 175)" (click)="closePopup()"> Close
+                            <div class="modal-footer " style="padding-right: 170px;">
+                                <button type="button" class="btn btn-secondary btn-sm float-left"
+                                    (click)="closePopup()"> Close
                                 </button>
-                                <button class="btn  btn-sm mx-5" *ngIf="weddingPackageObj.weddingPackageId==0"
-                                    style="background-color: rgb(131, 77, 112)" [disabled]="userForm.invalid"
-                                    (click)="saveWeddingPackage()">Save
+                                <button class="btn btn-success btn-sm mx-3" *ngIf="weddingPackageObj.weddingPackageId==0"
+                                   [disabled]="userForm.invalid"
+                                    (click)="saveWeddingPackage(); closePopup()">Save
                                 </button>
-                                <button class="btn btn-sm  mx-5" *ngIf="weddingPackageObj.weddingPackageId !==0"
-                                    style="background-color: rgb(141, 93, 124)" (click)="onUpdate()">Update </button>
+                                <button class="btn btn-sm btn-success mx-3" *ngIf="weddingPackageObj.weddingPackageId !==0"
+                                     (click)="onUpdate(); closePopup() ">Update </button>
                             </div>
                         </form>
 
@@ -174,3 +195,5 @@
         </div>
     </div>
 </div>
+
+

@@ -22,42 +22,47 @@ export const APIConstant = {
       addFoodItemType: "https://freeapi.miniprojectideas.com/api/Resort/AddFoodItemtype"
    },
 
-   Users:{
-    get:"https://freeapi.miniprojectideas.com/api/Resort/GetAllUser",
-    Create:"https://freeapi.miniprojectideas.com/api/Resort/AddUser",
-    Delete:"https://freeapi.miniprojectideas.com/api/Resort/DeleteUser"
-    },
+   Users: {
+      get: "https://freeapi.miniprojectideas.com/api/Resort/GetAllUser",
+      Create: "https://freeapi.miniprojectideas.com/api/Resort/AddUser",
+      Delete: "https://freeapi.miniprojectideas.com/api/Resort/DeleteUser"
+   },
 
-    // Offers:{
-    //   getOffers:"https://freeapi.miniprojectideas.com/api/Resort/GetAllOffer",
-    //   createOffers:"https://freeapi.miniprojectideas.com/api/Resort/AddOffer",
-    //   deleteOffers:"https://freeapi.miniprojectideas.com/api/Resort/DeleteOffer"
-    // },
+   Offers: {
+      getOffers: "https://freeapi.miniprojectideas.com/api/Resort/GetAllOffer",
+      createOffers: "https://freeapi.miniprojectideas.com/api/Resort/AddOffer",
+      deleteOffers: "https://freeapi.miniprojectideas.com/api/Resort/DeleteOffer"
+   },
 
-FoodItemList:{
-   getFoodItem:"http://freeapi.miniprojectideas.com/api/Resort/GetFoodItemList",
-   getAllFoodItemType: "https://freeapi.miniprojectideas.com/api/Resort/GetAllFoodItemType",
-   createFoodItem:"http://freeapi.miniprojectideas.com/api/Resort/AddFoodItem",
-   deleteFoodItem:"http://freeapi.miniprojectideas.com/api/Resort/DeleteFoodItem"
-},
+   FoodItemList: {
+      getFoodItem: "http://freeapi.miniprojectideas.com/api/Resort/GetFoodItemList",
+      createFoodItem: "http://freeapi.miniprojectideas.com/api/Resort/AddFoodItem",
+      deleteFoodItem: "http://freeapi.miniprojectideas.com/api/Resort/DeleteFoodItem",
+      getAllFoodItemType: "https://freeapi.miniprojectideas.com/api/Resort/GetAllFoodItemType",
+   },
 
-bookings: {
-   getBookings: "https://freeapi.miniprojectideas.com/api/Resort/GetAllBookings",
-   getBookingById: "https://freeapi.miniprojectideas.com/api/Resort/GetBookingByBookingId?id=",
-   createBookings: "https://freeapi.miniprojectideas.com/api/Resort/CreateUpdateBooking",
-   deleteBookings: "https://freeapi.miniprojectideas.com/api/Resort/DeleteBookingById?id="
-},
-order:{
-   getOrder: "https://freeapi.miniprojectideas.com/api/Resort/GetOrderList",
-   createOrder:"https://freeapi.miniprojectideas.com/api/Resort/AddOrder",
-   updateOrder:"https://freeapi.miniprojectideas.com/api/Resort/UpddateOrder",
-   deleteOrder:"https://freeapi.miniprojectideas.com/api/Resort/DeleteOrder"
-},
+
+   bookings: {
+      getBookings: "https://freeapi.miniprojectideas.com/api/Resort/GetAllBookings",
+      getBookingById: "https://freeapi.miniprojectideas.com/api/Resort/GetBookingByBookingId?id=",
+      createBookings: "https://freeapi.miniprojectideas.com/api/Resort/CreateUpdateBooking",
+      // deleteBookings: "https://freeapi.miniprojectideas.com/api/Resort/DeleteBookingById?id="
+      deleteBooking: "https://freeapi.miniprojectideas.com/api/Resort/DeleteBookingById?id="
+   },
+   order: {
+      getOrder: "https://freeapi.miniprojectideas.com/api/Resort/GetOrderList",
+      editOrder: "https://freeapi.miniprojectideas.com/api/Resort/GetOrder?id=",
+      createOrder: "https://freeapi.miniprojectideas.com/api/Resort/AddOrder",
+      updateOrder: "https://freeapi.miniprojectideas.com/api/Resort/UpddateOrder",
+      deleteOrder: "https://freeapi.miniprojectideas.com/api/Resort/DeleteOrder",
+      getOpenOrder: "https://freeapi.miniprojectideas.com/api/Resort/GetOpenOrderList",
+      getOrderStatus: "https://freeapi.miniprojectideas.com/api/Resort/GetOrderStatus"
+   },
 
 vists:{
    addVisit:"http://freeapi.miniprojectideas.com/api/Resort/AddVisit",
    filterAllVisit:"http://freeapi.miniprojectideas.com/api/Resort/GetAllVisit"
-}
+},
 
 
 

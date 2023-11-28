@@ -16,10 +16,12 @@ export class FoodItemListComponent implements OnInit{
   foodItemList:IfoodItemList[]=[];
   foodTypeItemList:IFoodTypeList[]=[];
   foodItemObj:foodItem=new foodItem
-  
+  isLoading: boolean = true;
 
   constructor(private foodItemSrv:FoodItemService){
-
+    setTimeout(() => {
+      this.isLoading = false;
+    }, 2000);
   }
   ngOnInit(): void {
     this.onloadFoodItem();
@@ -74,19 +76,22 @@ onEditFoodItem(item:any){
 
 
   deleteFoodItem(item:any){
-    const isDelete = confirm("Are you sure to delete");
-    this.foodItemSrv.trashFoodItem(item).subscribe((res:any)=>{
-      if(res.result){
-       alert("Food item deleted succesfully");
-       this.onloadFoodItem(); 
-      }else{
-        alert(res.message)
+    const isConfirm = confirm("Are you sure to delete");
+    if (isConfirm) {
+      this.foodItemSrv.trashFoodItem(item).subscribe((res:any)=>{
+        if(res.result){
+         alert("Food item deleted succesfully");
+         this.onloadFoodItem(); 
+        }else{
+          alert(res.message)
+        }
+      },
+      error=>{
+        alert(JSON.stringify(error.error))
       }
-    },
-    error=>{
-      alert(JSON.stringify(error.error))
+      )
     }
-    )
+    
   }
 
   openModel() {

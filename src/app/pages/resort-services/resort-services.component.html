@@ -1,18 +1,23 @@
-<div class="container">
-    <div class="row">
-        <div class="col-12 btn text-end pt-3 ">
-            <button type="button" class="btn btn-sm  text-light" style="background-color: rgb(182, 100, 182);"
+
+<app-loader *ngIf="isLoading"></app-loader>
+
+<div class="container-fluid" *ngIf=" !isLoading">
+    <div class="row pt-2">
+        <div class="col-6 text-start">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="#">Home</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">Resort Service</li>
+                </ol>
+              </nav>
+        </div>
+        <div class="col-6 text-end">
+            <button type="button" class="btn btn-sm  text-light" style="background-color:  rgb(136, 108, 127);"
                 data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo" (click)="openModel()">Add
                New Resort </button>
         </div>
     </div>
-
-    <div class="row">
-        <div class="col-12 text-center">
-            <h3>Resort Services</h3>
-        </div>
-    </div>
-</div>
+    
 
 <div class="parent">
     <div class="row">
@@ -68,13 +73,13 @@
                                 <div class="modal-footer mt-3 " style="padding-right: 147px;">
                                     <div class="row">
                                         <div class="col-12 ">
-                                            <button type="button" class="btn btn-sm"  style="background-color: rgb(156, 116, 156);" class="btn btn-sm text-light"
-                                                (click)="closeModel()"> Close </button>
-                                            <button class="btn btn-sm mx-3" style="background-color: violet;"
+                                            <button type="button" class="btn btn-sm text-light btn-secondary" (click)="closeModel()">
+                                                Close </button>
+                                            <button class="btn btn-sm mx-3 btn-success"
                                                 *ngIf="resortServiceObj.serviceId == 0"[disabled]="userForm.invalid"
                                                 (click)="creatAllResortSrvice();closeModel()">Save
                                             </button>
-                                            <button class="btn btn-sm mx-3" style="background-color: violet;"
+                                            <button class="btn btn-sm mx-3 btn-success" 
                                                 *ngIf="resortServiceObj.serviceId != 0"
                                                 (click)="upAllResortSrvice();closeModel()">Update
                                             </button>
@@ -90,11 +95,11 @@
         </div>
     </div>
 
-    <div class="container">
+    <div class="container-fluid">
         <div class="row ">
-            <div class="col-4 pt-4" *ngFor="let item of resortServiceList">
+            <div class="col-3 pt-3" *ngFor="let item of resortServiceList">
                 <div class="card">
-                    <div class="card-header" style="background-color:rgb(238, 173, 238);">
+                    <div class="card-header" style="background-color:rgb(185, 157, 175);">
                         <div class="row">
                             <div class="col-12">
                                 <h6> {{item.serviceName | titlecase}}</h6>
@@ -120,12 +125,16 @@
                     <div class="card-footer">
                         <div class="row">
                             <div class="col-6 text-start">
-                                <i class="fa fa-pencil-square-o fa-lg" aria-hidden="true"
+                                <span role="button" tabindex="0">
+                                <i class="fa fa-pencil-square-o fa-lg" style="color:  rgb(136, 108, 127)" aria-hidden="true"
                                     (click)="onEdit(item);openModel()"></i>
+                                </span>
                             </div>
                             <div class="col-6 text-end">
+                                <span role="button" tabindex="0">
                                 <i class="fa fa-trash fa-lg" aria-hidden="true"
                                     (click)="deletAllResortService(item)"></i>
+                                </span>
                             </div>
                         </div>
                     </div>

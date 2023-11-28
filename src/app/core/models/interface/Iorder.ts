@@ -1,13 +1,28 @@
-export interface IorderList{
-  orderId: 0,
+export interface IorderList {
+  orderId: number,
   name: string,
-  serviceId: 0,
+  serviceId: number,
   mobileNo: string,
-  orderDate:  Date,
-  orderTotal: 0,
-  bookingId: 0,
-  userId: 0,
+  orderDate: Date,
+  orderTotal: number,
+  bookingId: number,
+  userId: number,
   orderStatus: string,
-  orderNo: 0,
+  orderNo: number,
   orderUniqeId: string
 }
+
+export interface IopenOrderList {
+  orderId: number,
+  name: string,
+  serviceId: number,
+  mobileNo: string,
+  orderDate: Date,
+  orderTotal: number,
+  bookingId: number,
+  userId: number,
+  orderStatus: string,
+  orderNo: number,
+  orderUniqeId: string
+}
+

@@ -1,32 +1,34 @@
-<div class="container">
-  <div class="row">
-    <div class="col-12 text-end pt-3">
-      <button type="button" class="btn btn-sm text-end " style="background-color: rgb(185, 169, 185);" data-bs-toggle="modal"
-       data-bs-target="#exampleModal" data-bs-whatever="@mdo" (click)="openModel()">Add New User</button>
+<div class="container-fluid">
+  <div class="row  pt-2">
+    <div class="col-6">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="#">Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Resort-Users</li>
+        </ol>
+      </nav>
+    </div>
+    <div class="col-6 text-end">
+      <button type="button" class="btn btn-sm text-end text-light" style="background-color:   rgb(136, 108, 127)"
+        data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo" (click)="openModel()"> Add
+        New Users </button>
     </div>
   </div>
-  
-  <div class="row">
-    <div class="col-12 text-center">
-        <h2>Users</h2>
-    </div>
-  </div>
-</div>
 
-<div class="parent">
   <div class="row">
     <div class="col-12  pt-2 ">
       <div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':isModalPopUp}">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
-            <div class="modal-header" style="background-color: rgb(161, 147, 161);">
+            <div class="modal-header" style="background-color: rgb(185, 169, 185);">
               <h4 class="modal-title" style="padding-left: 141px;">Add New Users</h4>
             </div>
             <div class="modal-body">
               <div class="row mx-2 ">
                 <div class="col-6 ">
                   <label>UserName<span class="text-danger">*</span></label>
-                  <input type="text" [(ngModel)]="usersObj.userName" class="form-control  form-control-sm"  #userName="ngModel" required>
+                  <input type="text" [(ngModel)]="usersObj.userName" class="form-control  form-control-sm"
+                    #userName="ngModel" required>
                   <div class="text-danger" *ngIf="userName.touched || userName.dirty">
                     <span *ngIf="userName.errors?.['required']">Required Field</span>
                   </div>
@@ -34,7 +36,8 @@
 
                 <div class="col-6">
                   <label for="">Password<span class="text-danger">*</span></label>
-                  <input type="text" class="form-control  form-control-sm" [(ngModel)]="usersObj.password" #password="ngModel" required/>
+                  <input type="text" class="form-control  form-control-sm" [(ngModel)]="usersObj.password"
+                    #password="ngModel" required />
                   <div class="text-danger" *ngIf="password.touched || password.dirty">
                     <span *ngIf="password.errors?.['required']">Required Field</span>
                   </div>
@@ -46,7 +49,8 @@
 
                 <div class="col-6">
                   <label for="">Role<span class="text-danger">*</span></label>
-                  <input type="text" class="form-control  form-control-sm" [(ngModel)]="usersObj.role" #role="ngModel" required/>
+                  <input type="text" class="form-control  form-control-sm" [(ngModel)]="usersObj.role" #role="ngModel"
+                    required />
                   <div class="text-danger" *ngIf="role.touched || role.dirty">
                     <span *ngIf="role.errors?.['required']">Required Field</span>
                   </div>
@@ -54,19 +58,15 @@
 
 
               </div>
-              <div class="modal-footer mt-3 text-center"  style="padding-bottom: 1px;">
-                <div class="row ">
-                  <div class="col-12 ">
-                    <button type="button" class="btn btn-sm btn-danger" (click)="closeModel()">
-                      Close </button>
-                    <button class="btn btn-sm  btn-success mx-2" *ngIf="usersObj.userId == 0"
-                      (click)="creatAllUsers()">Save
-                    </button>
-                    <button class="btn btn-sm  btn-success mx-2" *ngIf="usersObj.userId !== 0"
-                      (click)="upAllUsers()">Update
-                    </button>
-                  </div>
-                </div>
+              <div class="modal-footer mt-3" style="padding-right: 144px;">
+                <button type="button" class="btn btn-sm btn-secondary" (click)="closeModel()">
+                  Close </button>
+                <button class="btn btn-sm  mx-3 btn-success" *ngIf="usersObj.userId == 0 "
+                  (click)="creatAllUsers();closeModel()">Save
+                </button>
+                <button class="btn btn-sm  mx-3 btn-success" *ngIf="usersObj.userId !== 0"
+                  (click)="upAllUsers();">Update
+                </button>
 
               </div>
             </div>
@@ -75,37 +75,36 @@
       </div>
     </div>
   </div>
-
-  <div class="container">
-    <div class="row ">
-      <div class="col-4 pt-4" *ngFor="let item of usersList">
-        <div class="card">
-          <div class="card-header" style="background-color:rgb(185, 169, 185);">
-            <div class="row">
-              <div class="col-12">
-               <h5> {{item.userName | titlecase}}</h5>
-              </div>
+  <div class="row ">
+    <div class="col-3 pt-3" *ngFor="let item of usersList">
+      <div class="card">
+        <div class="card-header" style="background-color:rgb(185, 169, 185);">
+          <div class="row">
+            <div class="col-12">
+              <h5> {{item.userName | titlecase}}</h5>
             </div>
           </div>
-          <div class="card-body" style="padding-bottom: 27px;">
-            <div class="row">
-              <div class="col-6 text-start">
-                 Password : {{item.password}}
-              </div>
-              <div class="col-6 text-end">
-                Role : {{item.role}}
-              </div>
-
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col-6 text-start">
+              Password : {{item.password}}
             </div>
+            <div class="col-6 text-end">
+              Role : {{item.role}}
+            </div>
+
           </div>
-          <div class="card-footer">
-            <div class="row ">
-              <div class="col-6 text-start">
-                <i class="fa fa-pencil-square-o fa-lg" aria-hidden="true" style="color: rgb(17, 17, 17);" (click)="onEdit(item);openModel()"></i>
-              </div>
-              <div class="col-6 text-end">
-                <i class="fa fa-trash fa-lg" aria-hidden="true" style="color: rgb(14, 12, 12);" (click)="deletAllUsers(item)"></i>
-              </div>
+        </div>
+        <div class="card-footer">
+          <div class="row ">
+            <div class="col-6 text-start">
+              <i class="fa fa-pencil-square-o fa-lg" aria-hidden="true" style="color:  rgb(136, 108, 127)"
+                (click)="onEdit(item);openModel()"></i>
+            </div>
+            <div class="col-6 text-end">
+              <i class="fa fa-trash fa-lg" aria-hidden="true" style="color: rgb(14, 12, 12);"
+                (click)="deletAllUsers(item)"></i>
             </div>
           </div>
         </div>

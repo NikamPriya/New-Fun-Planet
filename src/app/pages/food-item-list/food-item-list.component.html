@@ -1,16 +1,19 @@
-<div class="container">
-    <div class="row pt-3">
-        <div class="col-12 btn text-end">
-            <button type="button" class="btn btn-sm text-light text-end" style="background-color: rgb(182, 100, 182);"
+
+<app-loader *ngIf="isLoading"></app-loader>
+<div class="container-fluid" *ngIf="!isLoading">
+    <div class="row pt-2">
+        <div class="col-6 text-start">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="#">Home</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">Food Item List</li>
+                </ol>
+              </nav>
+        </div>
+        <div class="col-6 text-end">
+            <button type="button" class="btn btn-sm text-light text-end" style="background-color:  rgb(136, 108, 127);"
                 data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo" (click)="openModel()">Add New
                 Item</button>
-        </div>
-    </div>
-    
-    
-    <div class="row">
-        <div class="col-12 text-center">
-            <h3>Food Item List</h3>
         </div>
     </div>
     
@@ -21,7 +24,7 @@
             <div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':isModalPopUp}">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
-                        <div class="modal-header text-center" style="background-color: rgb(241, 194, 241);padding-left: 160px;">
+                        <div class="modal-header text-center" style="background-color: rgb(185, 157, 175);padding-left: 160px;">
                             <h5 class="modal-title ">Add New Item</h5>
                         </div>
                         <form #userForm="ngForm">
@@ -72,13 +75,12 @@
                             <div class="modal-footer mt-3" style="padding-right: 147px;">
                                 <div class="row ">
                                     <div class="col-12 ">
-                                        <button type="button" class="btn btn-sm text-light"
-                                            style="background-color: rgb(156, 116, 156);" (click)="closeModel()">
+                                        <button type="button" class="btn btn-sm text-light btn-secondary" (click)="closeModel()">
                                             Close </button>
-                                        <button class="btn btn-sm mx-3" style="background-color: violet;"
+                                        <button class="btn btn-sm mx-3 btn-success" 
                                             *ngIf="foodItemObj.itemId == 0" [disabled]="userForm.invalid"  (click)="saveFoodItem();closeModel()">Save 
                                         </button>
-                                        <button class="btn btn-sm mx-3" style="background-color: violet;"
+                                        <button class="btn btn-sm mx-3 btn-success "
                                             *ngIf="foodItemObj.itemId != 0" (click)="onUpdateFoodItem();closeModel()">Update
                                         </button>
                                     </div>
@@ -93,11 +95,11 @@
         </div>
     </div>
 
-    <div class="container">
+    <div class="container-fluid" *ngIf="!isLoading">
         <div class="row ">
-            <div class="col-4 pt-4" *ngFor="let item of foodItemList">
+            <div class="col-3 pt-4" *ngFor="let item of foodItemList">
                 <div class="card">
-                    <div class="card-header" style="background-color:rgb(238, 173, 238);">
+                    <div class="card-header" style="background-color:rgb(185, 157, 175);">
                         <div class="row">
                             <div class="col-12">
                                 <h6> {{item.itemName | titlecase}}</h6>
@@ -113,7 +115,7 @@
                                 Full: {{item.fullPrice | currency: 'INR'}}
                             </div>
                             <div class="row">
-                                <div class="col-12">
+                                <div class="col-12 text-center">
                                     {{item.foodItemName}}
                                 </div>
                             </div>
@@ -122,12 +124,17 @@
                     <div class="card-footer">
                         <div class="row">
                             <div class="col-6 text-start">
-                                <i class="fa fa-pencil-square-o fa-lg" aria-hidden="true"
+                                <span role="button" tabindex="0">
+                                <i class="fa fa-pencil-square-o fa-lg" aria-hidden="true" style="color:  rgb(136, 108, 127)"
                                     (click)="onEditFoodItem(item);openModel()"></i>
+                                </span>
                             </div>
                             <div class="col-6 text-end">
+                                <span role="button" tabindex="0">
                                 <i class="fa fa-trash fa-lg" aria-hidden="true" (click)="deleteFoodItem(item)"></i>
+                            </span>
                             </div>
+
                         </div>
                     </div>
                 </div>

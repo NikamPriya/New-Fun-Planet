@@ -15,8 +15,13 @@ export class ResortServicesComponent implements OnInit {
   displayStyle='none';
   resortServiceList: IresortService[] = [];
   resortServiceObj: resortServices= new resortServices;
+  isLoading: boolean = true;
 
-  constructor(private http: HttpClient, private resortSrv: ResortServiceService) { }
+  constructor(private http: HttpClient, private resortSrv: ResortServiceService) { 
+    setTimeout(() => {
+      this.isLoading = false;
+    }, 2000);
+  }
 
   ngOnInit(): void {
     this.getAllResortService();
@@ -64,8 +69,9 @@ export class ResortServicesComponent implements OnInit {
   }
 
   deletAllResortService(item:any) {
-    debugger;
-    const isDelete = confirm("Are you sure to delete")
+    
+    const isConfirm = confirm("Are you sure to delete")
+    if (isConfirm) {
     this.resortSrv.trashAllResortService(item).subscribe((res: any) => {
       if (res.result) {
         alert("Deleted Successfully");
@@ -78,6 +84,7 @@ export class ResortServicesComponent implements OnInit {
       alert(JSON.stringify(error.error))
     }
     )
+  }
   }
 
   openModel() {

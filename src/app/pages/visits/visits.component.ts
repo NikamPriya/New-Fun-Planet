@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { visit, visitObj} from 'src/app/core/models/classes/visits';
+import { filtervisitObj, visit} from 'src/app/core/models/classes/visits';
 import { IresortService } from 'src/app/core/models/interface/Iresort-Service';
 import { Iusers } from 'src/app/core/models/interface/Iusers';
 import { IweddingPackageList } from 'src/app/core/models/interface/Iwedding-packages';
@@ -19,15 +19,20 @@ export class VisitsComponent implements OnInit{
   displayStyle='none';
 
   allVisit:any[]=[];
-  filterAllVisitObj:visitObj= new visitObj;
+  filterAllVisitObj:filtervisitObj= new filtervisitObj;
  
   visitObj:visit=new visit ;
 
   packageList:IweddingPackageList[]=[];
   usersList:Iusers[]=[];
   resortServiceList:IresortService[]=[];
+  isLoading:boolean = true;
 
-constructor(private visitSrv:VisitService,private userSrv: UsersService,private resortSrv: ResortServiceService){}
+constructor(private visitSrv:VisitService,private userSrv: UsersService,private resortSrv: ResortServiceService){
+  setTimeout(() => {
+    this.isLoading = false;
+  }, 2000);
+}
 ngOnInit(): void {
   this.loadweddingPackages();
   this.getAllUsers();

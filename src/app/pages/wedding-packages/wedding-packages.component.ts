@@ -14,7 +14,13 @@ export class WeddingPackagesComponent implements OnInit{
 
   displayStyle: string = "none";
 
-  constructor(private wedPackageSer: MasterServiceService) { }
+  isLoading: boolean = true; // Set this to false when loading is complete
+
+
+  constructor(private wedPackageSer: MasterServiceService) {
+    setTimeout(() => {
+    this.isLoading = false;
+  }, 2000); }
 
   ngOnInit(): void {
     this.loadweddingPackages();

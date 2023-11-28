@@ -12,6 +12,7 @@ import { UsersComponent } from './pages/users/users.component';
 import { FoodTypeComponent } from './pages/food-type/food-type.component';
 import { FoodItemListComponent } from './pages/food-item-list/food-item-list.component';
 import { VisitsComponent } from './pages/visits/visits.component';
+import { OffersComponent } from './pages/offers/offers.component';
 
 
 const routes: Routes = [
@@ -29,8 +30,9 @@ const routes: Routes = [
     component: LayoutComponent,
     children: [
       {
-        path: 'home',
-        component: HomeComponent,
+
+        path:'home',
+        component:HomeComponent,
       },
 
       {
@@ -55,7 +57,7 @@ const routes: Routes = [
       },
       {
         path:"Users",
-        component:UsersComponent
+        component:UsersComponent,
       },
       {
         path:'FoodType',
@@ -68,6 +70,10 @@ const routes: Routes = [
       {
         path:'Visit',
         component:VisitsComponent
+      },
+      {
+        path:'Offers',
+        component:OffersComponent
       }
 
 
