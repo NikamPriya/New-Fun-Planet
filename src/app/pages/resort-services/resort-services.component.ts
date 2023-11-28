@@ -64,8 +64,9 @@ export class ResortServicesComponent implements OnInit {
   }
 
   deletAllResortService(item:any) {
-    debugger;
-    const isDelete = confirm("Are you sure to delete")
+    
+    const isConfirm = confirm("Are you sure to delete")
+    if (isConfirm) {
     this.resortSrv.trashAllResortService(item).subscribe((res: any) => {
       if (res.result) {
         alert("Deleted Successfully");
@@ -78,6 +79,7 @@ export class ResortServicesComponent implements OnInit {
       alert(JSON.stringify(error.error))
     }
     )
+  }
   }
 
   openModel() {

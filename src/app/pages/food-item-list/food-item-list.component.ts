@@ -74,19 +74,22 @@ onEditFoodItem(item:any){
 
 
   deleteFoodItem(item:any){
-    const isDelete = confirm("Are you sure to delete");
-    this.foodItemSrv.trashFoodItem(item).subscribe((res:any)=>{
-      if(res.result){
-       alert("Food item deleted succesfully");
-       this.onloadFoodItem(); 
-      }else{
-        alert(res.message)
+    const isConfirm = confirm("Are you sure to delete");
+    if (isConfirm) {
+      this.foodItemSrv.trashFoodItem(item).subscribe((res:any)=>{
+        if(res.result){
+         alert("Food item deleted succesfully");
+         this.onloadFoodItem(); 
+        }else{
+          alert(res.message)
+        }
+      },
+      error=>{
+        alert(JSON.stringify(error.error))
       }
-    },
-    error=>{
-      alert(JSON.stringify(error.error))
+      )
     }
-    )
+    
   }
 
   openModel() {
