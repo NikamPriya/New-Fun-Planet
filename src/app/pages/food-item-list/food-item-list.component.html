@@ -1,4 +1,6 @@
-<div class="container-fluid">
+
+<app-loader *ngIf="isLoading"></app-loader>
+<div class="container-fluid" *ngIf="!isLoading">
     <div class="row pt-2">
         <div class="col-6 text-start">
             <nav aria-label="breadcrumb">
@@ -93,7 +95,7 @@
         </div>
     </div>
 
-    <div class="container-fluid">
+    <div class="container-fluid" *ngIf="!isLoading">
         <div class="row ">
             <div class="col-3 pt-4" *ngFor="let item of foodItemList">
                 <div class="card">

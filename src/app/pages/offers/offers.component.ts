@@ -15,8 +15,13 @@ export class OffersComponent implements OnInit{
   displayStyle: string = "none";
   offersList: Ioffers[] = [];
   offersObj: offers= new offers;
+  isLoader:boolean=true;
 
-  constructor(private offerSrv: OffersService) { }
+  constructor(private offerSrv: OffersService) {
+    setTimeout(()=>{
+      this.isLoader=false;
+    },2000);
+   }
 
   ngOnInit(): void {
     this.loadAllOffers();
@@ -66,7 +71,6 @@ export class OffersComponent implements OnInit{
   }
 
   DeleteAllOffers(obj:any) {
-
     this.offerSrv.onDelete(obj).subscribe((res: any) => {
       if (res.result) {
         alert("Deleted Successfully");
@@ -88,5 +92,6 @@ export class OffersComponent implements OnInit{
     this.displayStyle = "none"
     this.offersObj = new offers
   }
+
 
 }

@@ -16,10 +16,12 @@ export class FoodItemListComponent implements OnInit{
   foodItemList:IfoodItemList[]=[];
   foodTypeItemList:IFoodTypeList[]=[];
   foodItemObj:foodItem=new foodItem
-  
+  isLoading: boolean = true;
 
   constructor(private foodItemSrv:FoodItemService){
-
+    setTimeout(() => {
+      this.isLoading = false;
+    }, 2000);
   }
   ngOnInit(): void {
     this.onloadFoodItem();

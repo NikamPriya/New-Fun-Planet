@@ -42,7 +42,7 @@ import { LoaderComponent } from './pages/loader/loader.component';
     FoodTypeComponent,
     FoodItemListComponent,
     LoaderComponent,
- 
+    VisitsComponent
   ],
   imports:[
     BrowserModule,
