@@ -1,7 +1,20 @@
-<div class="container">
-    <div class="row">
-        <div class="col-12 text-end pt-3">
-            <button type="button" class="btn btn-sm btn-primary text-end text-light " data-bs-toggle="modal"
+<!-- <div class="text-center">
+    <div class="spinner-grow" role="status" *ngIf="isLoader">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+</div> -->
+<div class="container-fluid">
+    <div class="row pt-2">
+        <div class="col-6">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="weddingServices">Wedding Services</li>
+                </ol>
+            </nav>
+        </div>
+        <div class="col-6 text-end">
+            <button type="button" class="btn btn-sm text-end text-light" style="background-color:  rgb(136, 108, 127)" data-bs-toggle="modal"
                 data-bs-target="#exampleModal" data-bs-whatever="@mdo" (click)="openPopup()">Add New Service</button>
         </div>
     </div>
@@ -10,83 +23,83 @@
             <h3>Wedding Services</h3>
         </div>
     </div>
-</div>
-<div class="parent">
-    <div class="row">
-        <div class="col-12  pt-2">
-            <div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':displayStyle}">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h4 class="modal-title" style="padding-left: 175px">Add Services</h4>
-                        </div>
-                        <form #userForm="ngForm">
-                            <div class="modal-body">
-                                <div class="row mx-2 ">
-                                    <div class="col-6 ">
-                                        <label>Services Name<span class="text-danger">*</span></label>
-                                        <input type="text" [(ngModel)]="weddingServicesObj.name" #name="ngModel"
-                                            required name="name" class="form-control form-control-sm">
-                                        <div class="text-danger" *ngIf="name.touched || name.dirty">
-                                            <span *ngIf="name.errors?.['required']"> Name is Required</span>
-                                        </div>
-                                    </div>
-                                    <div class="col-6">
-                                        <label>Service Type <span class="text-danger">*</span></label>
-                                        <input type="text" #serviceType="ngModel" required name="serviceType"
-                                            [(ngModel)]="weddingServicesObj.serviceType"
-                                            class="form-control form-control-sm">
-                                        <div class="text-danger" *ngIf="serviceType.touched || serviceType.dirty">
-                                            <span *ngIf="serviceType.errors?.['required']">Required Field</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row mx-2 pt-3">
-                                    <div class="col-6">
-                                        <label for="">Order No<span class="text-danger">*</span></label>
-                                        <input type="text" class="form-control form-control-sm" #orderNo="ngModel"
-                                            name="orderNo" [(ngModel)]="weddingServicesObj.orderNo" required />
-                                        <div class="text-danger" *ngIf="orderNo.touched || orderNo.dirty">
-                                            <span *ngIf="orderNo.errors?.['required']">Required Field</span>
-                                        </div>
-                                    </div>
-                                    <div class="col-6">
-                                        <label for="">Rate<span class="text-danger">*</span></label>
-                                        <input type="text" class="form-control form-control-sm" name="rate"
-                                            #rate="ngModel" required [(ngModel)]="weddingServicesObj.rate" />
-                                        <div class="text-danger" *ngIf="rate.touched || rate.dirty">
-                                            <span *ngIf="rate.errors?.['required']">Required Field</span>
-                                        </div>
-                                    </div>
-                                </div>
 
+    <div class="parent">
+        <div class="row">
+            <div class="col-12">
+                <div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':displayStyle}">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header" style=" padding-left: 175px; background-color:  rgb(185, 157, 175)">
+                                <h4 class="modal-title">Add Services</h4>
                             </div>
-                            <div class="modal-footer" style="padding-right: 160px;">
-                                <div class="row">
-                                    <div class="col-12">
-                                        <button type="button" class="btn btn-sm btn-danger"
-                                            (click)="closePopup()">Close</button>
-                                        <button class="btn btn-sm btn-success mx-3"
-                                            (click)="saveWeddingServices();closePopup()" [disabled]="userForm.invalid"
-                                            *ngIf="weddingServicesObj.serviceId==0">Save </button>
-                                        <button class="btn btn-sm btn-warning mx-3"
-                                            (click)="UpdateProduct();closePopup()"
-                                            *ngIf="weddingServicesObj.serviceId!=0">Update</button>
+                            <form #userForm="ngForm">
+                                <div class="modal-body">
+                                    <div class="row mx-2 ">
+                                        <div class="col-6 ">
+                                            <label>Services Name<span class="text-danger">*</span></label>
+                                            <input type="text" [(ngModel)]="weddingServicesObj.name" #name="ngModel"
+                                                required name="name" class="form-control form-control-sm">
+                                            <div class="text-danger" *ngIf="name.touched || name.dirty">
+                                                <span *ngIf="name.errors?.['required']"> Name is Required</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <label>Service Type <span class="text-danger">*</span></label>
+                                            <input type="text" #serviceType="ngModel" required name="serviceType"
+                                                [(ngModel)]="weddingServicesObj.serviceType"
+                                                class="form-control form-control-sm">
+                                            <div class="text-danger" *ngIf="serviceType.touched || serviceType.dirty">
+                                                <span *ngIf="serviceType.errors?.['required']">Required Field</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row mx-2 pt-3">
+                                        <div class="col-6">
+                                            <label for="">Order No<span class="text-danger">*</span></label>
+                                            <input type="text" class="form-control form-control-sm" #orderNo="ngModel"
+                                                name="orderNo" [(ngModel)]="weddingServicesObj.orderNo" required />
+                                            <div class="text-danger" *ngIf="orderNo.touched || orderNo.dirty">
+                                                <span *ngIf="orderNo.errors?.['required']">Required Field</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <label for="">Rate<span class="text-danger">*</span></label>
+                                            <input type="text" class="form-control form-control-sm" name="rate"
+                                                #rate="ngModel" required [(ngModel)]="weddingServicesObj.rate" />
+                                            <div class="text-danger" *ngIf="rate.touched || rate.dirty">
+                                                <span *ngIf="rate.errors?.['required']">Required Field</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="modal-footer" style="padding-right: 160px;">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <button type="button" class="btn btn-sm btn-secondary"
+                                                (click)="closePopup()">Close</button>
+                                            <button class="btn btn-sm btn-success mx-3"
+                                                (click)="saveWeddingServices();closePopup()"
+                                                [disabled]="userForm.invalid"
+                                                *ngIf="weddingServicesObj.serviceId==0">Save </button>
+                                            <button class="btn btn-sm btn-success mx-3"
+                                                (click)="UpdateProduct();closePopup()"
+                                                *ngIf="weddingServicesObj.serviceId!=0">Update</button>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </form>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-<div class="container">
     <div class="row">
         <div class="col-3 pt-3 pe-2" *ngFor="let service of weddingServiceList">
             <div class="card">
-                <div class="card-header" style="background-color: #86b7fe7d">
+                <div class="card-header" style="background-color: rgb(185, 157, 175)">
                     <h6>{{service.name | titlecase}}</h6>
                 </div>
                 <div class="card-body">
@@ -108,11 +121,14 @@
                 <div class="card-footer">
                     <div class="row">
                         <div class="col-6 text-start pb-3">
-                            <i class=" fa fa-solid fa-pen-to-square" style="color: #034cc9;"
-                                (click)="onEdit(service);openPopup()"></i>
+                            <span role="button" tabindex="0">
+                                <i class=" fa fa-solid fa-pen-to-square" style="color: rgb(185, 157, 175)"
+                                    (click)="onEdit(service);openPopup()"></i></span>
                         </div>
                         <div class="col-6 text-end pb-3">
-                            <i class=" fa fa-solid fa-trash" style="color: #215dc4;" (click)="onDelete(service)"></i>
+                            <span role="button" tabindex="0">
+                                <i class=" fa fa-solid fa-trash" style="color: #0a0405;"
+                                    (click)="onDelete(service)"></i></span>
                         </div>
                     </div>
                 </div>
