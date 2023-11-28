@@ -40,6 +40,7 @@ export const APIConstant = {
       deleteFoodItem: "http://freeapi.miniprojectideas.com/api/Resort/DeleteFoodItem"
    },
 
+
    bookings: {
       getBookings: "https://freeapi.miniprojectideas.com/api/Resort/GetAllBookings",
       getBookingById: "https://freeapi.miniprojectideas.com/api/Resort/GetBookingByBookingId?id=",
@@ -57,7 +58,10 @@ export const APIConstant = {
       getOrderStatus: "https://freeapi.miniprojectideas.com/api/Resort/GetOrderStatus"
    },
 
-
+vists:{
+   addVisit:"http://freeapi.miniprojectideas.com/api/Resort/AddVisit",
+   filterAllVisit:"http://freeapi.miniprojectideas.com/api/Resort/GetAllVisit"
+},
 
 
 

@@ -14,6 +14,10 @@ export class FoodItemService {
     return this.http.get(APIConstant.FoodItemList.getFoodItem);
   }
 
+  getFoodTypeItem(){
+    return this.http.get(APIConstant.FoodItemList.getAllFoodItemType);
+  }
+
   createFoodItem(Obj:any){
     return this.http.post(APIConstant.FoodItemList.createFoodItem,Obj);
   }

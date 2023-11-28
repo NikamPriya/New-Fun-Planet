@@ -18,3 +18,14 @@ export class resortServices {
 
     }
 }
+export class ReturnClass {
+
+    message: string;
+    result: boolean;
+    data: any
+    constructor() {
+        this.message ='',
+        this.result = false,
+        this.data = null
+    }
+}

@@ -1,3 +1,4 @@
+
 import { Component,OnInit } from '@angular/core';
 import { weddingServicesList } from 'src/app/core/models/classes/wedding-Services';
 import { IweddingServicesList } from 'src/app/core/models/interface/Iwedding-servicves';
@@ -9,11 +10,13 @@ import { WeddingServicesService } from 'src/app/core/services/wedding-services.s
   styleUrls: ['./wedding-services.component.css']
 })
 export class WeddingServicesComponent implements OnInit {
+  
 
   displayStyle: string = 'none';
 
   weddingServiceList: IweddingServicesList[] = [];
   weddingServicesObj: weddingServicesList = new weddingServicesList()
+  
 
   constructor(private weddingServ: WeddingServicesService) { }
 
@@ -35,6 +38,7 @@ export class WeddingServicesComponent implements OnInit {
       } else {
         alert(res.message)
       }
+    
     },
       error => {
         alert(JSON.stringify(error.error))
@@ -53,6 +57,8 @@ export class WeddingServicesComponent implements OnInit {
       } else {
         alert(res.message)
       }
+  
+    
     },
       error => {
         alert(JSON.stringify(error.error))
@@ -77,7 +83,11 @@ export class WeddingServicesComponent implements OnInit {
   }
   closePopup() {
     this.displayStyle = 'none'
-    this.weddingServicesObj = new weddingServicesList
+    this.weddingServicesObj = new weddingServicesList;
+    
+  
   }
 
 }
+
+

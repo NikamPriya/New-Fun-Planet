@@ -11,6 +11,8 @@ import { OrderComponent } from './pages/order/order.component';
 import { UsersComponent } from './pages/users/users.component';
 import { FoodTypeComponent } from './pages/food-type/food-type.component';
 import { FoodItemListComponent } from './pages/food-item-list/food-item-list.component';
+import { VisitsComponent } from './pages/visits/visits.component';
+import { OffersComponent } from './pages/offers/offers.component';
 
 
 const routes: Routes = [
@@ -65,6 +67,14 @@ const routes: Routes = [
         path:'FoodItemList',
         component:FoodItemListComponent
       },
+      {
+        path:'Visit',
+        component:VisitsComponent
+      },
+      {
+        path:'Offers',
+        component:OffersComponent
+      }
 
 
 

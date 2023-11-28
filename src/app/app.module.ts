@@ -14,10 +14,14 @@ import { HomeComponent } from './pages/home/home.component';
 import { UsersComponent } from './pages/users/users.component';
 import { FoodTypeComponent } from './pages/food-type/food-type.component';
 import { FoodItemListComponent } from './pages/food-item-list/food-item-list.component';
+
+import { VisitsComponent } from './pages/visits/visits.component';
+
 import { OffersComponent } from './pages/offers/offers.component';
 import { BookingComponent } from './pages/booking/booking.component';
 import { OrderComponent } from './pages/order/order.component';
 import { LoaderComponent } from './pages/loader/loader.component';
+
 
 
 @NgModule({
