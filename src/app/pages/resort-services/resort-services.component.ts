@@ -15,8 +15,13 @@ export class ResortServicesComponent implements OnInit {
   displayStyle='none';
   resortServiceList: IresortService[] = [];
   resortServiceObj: resortServices= new resortServices;
+  isLoading: boolean = true;
 
-  constructor(private http: HttpClient, private resortSrv: ResortServiceService) { }
+  constructor(private http: HttpClient, private resortSrv: ResortServiceService) { 
+    setTimeout(() => {
+      this.isLoading = false;
+    }, 2000);
+  }
 
   ngOnInit(): void {
     this.getAllResortService();

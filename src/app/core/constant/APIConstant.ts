@@ -37,7 +37,8 @@ export const APIConstant = {
    FoodItemList: {
       getFoodItem: "http://freeapi.miniprojectideas.com/api/Resort/GetFoodItemList",
       createFoodItem: "http://freeapi.miniprojectideas.com/api/Resort/AddFoodItem",
-      deleteFoodItem: "http://freeapi.miniprojectideas.com/api/Resort/DeleteFoodItem"
+      deleteFoodItem: "http://freeapi.miniprojectideas.com/api/Resort/DeleteFoodItem",
+      getAllFoodItemType: "https://freeapi.miniprojectideas.com/api/Resort/GetAllFoodItemType",
    },
 
 

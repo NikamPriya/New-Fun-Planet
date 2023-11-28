@@ -86,7 +86,7 @@ export class visit {
     }
 }
 
-export class visitObj{
+export class filtervisitObj{
   name: string;
   userId?: any;
   contactNo: string;

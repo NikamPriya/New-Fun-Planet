@@ -1,4 +1,7 @@
-<div class="container-fluid">
+
+<app-loader *ngIf="isLoading"></app-loader>
+
+<div class="container-fluid" *ngIf=" !isLoading">
     <div class="row pt-2">
         <div class="col-6 text-start">
             <nav aria-label="breadcrumb">

@@ -41,7 +41,8 @@ import { LoaderComponent } from './pages/loader/loader.component';
     OrderComponent,
     FoodTypeComponent,
     FoodItemListComponent,
-    LoaderComponent
+    LoaderComponent,
+    VisitsComponent
   ],
   imports:[
     BrowserModule,
