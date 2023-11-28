@@ -1,25 +1,28 @@
-export interface IorderList{
+export interface IorderList {
   orderId: number,
   name: string,
+  serviceId: number,
   mobileNo: string,
   orderDate: Date,
   orderTotal: number,
-  orderUniqeId: string,
-  orderStatus: string,
   bookingId: number,
   userId: number,
+  orderStatus: string,
   orderNo: number,
-  message: string,
-  result: true,
-  foodOrderItems: [
-    {
-      OrderItemId: number,
-      ItemId: number,
-      Quantity: number,
-      Rate: number,
-      Naration: string,
-      OrderId: number,
-      Total: number
-    }
-  ]
+  orderUniqeId: string
 }
+
+export interface IopenOrderList {
+  orderId: number,
+  name: string,
+  serviceId: number,
+  mobileNo: string,
+  orderDate: Date,
+  orderTotal: number,
+  bookingId: number,
+  userId: number,
+  orderStatus: string,
+  orderNo: number,
+  orderUniqeId: string
+}
+

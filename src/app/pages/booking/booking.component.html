@@ -1,74 +1,73 @@
-<!-- <div class="row">
-    <div class="col-12 pt-2 text-end">
-        <button type="button" class="btn  text-end btn-outline-secondary btn-sm" data-bs-toggle="modal"
-            data-bs-target="#exampleModal" data-bs-whatever="@mdo" (click)="openPopup()">Add New Booking</button>
+<app-loader *ngIf="isLoading"></app-loader>
+
+
+<div class="container-fluid"  *ngIf="!isLoading">
+    <div class="row  pt-2 ">
+        <div class="col-6">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Booking Details</li>
+                </ol>
+            </nav>
+        </div>
+        <div class="col-6 text-end ">
+            <button type="button" class="btn btn-sm text-end text-light" data-bs-toggle="modal"
+                style="background-color:  rgb(136, 108, 127); margin-right:   13px;" data-bs-target="#exampleModal"
+                data-bs-whatever="@mdo" (click)="openPopup()">Add New Booking</button>
+        </div>
     </div>
-</div>
 
-<h2 class="text-center"> Booking Details</h2>
-
-<div class="row pt-3 px-5">
-    <div class="col-4 pt-3" *ngFor="let data of bookingList">
-        <div class="card">
-            <div class="card-header" style="background-color: rgb(185, 157, 175);">
-                <h5><strong>{{data.customerName}}</strong></h5>
-            </div>
-            <div class="card-body">
-                <div class="row">
-                    <div class="col-6 text-start">
-                        No Of Members:
-                    </div>
-                    <div class="col-6 text-end">
-                        {{data.noOfMembers}}
-                    </div>
+    <div class="row ">
+        <div class="col-3 pt-3 " *ngFor="let data of bookingList">
+            <div class="card">
+                <div class="card-header" style="background-color: rgb(185, 157, 175);">
+                    <h5><strong>{{data.customerName}}</strong></h5>
                 </div>
-                <div class="row">
-                    <div class="col-6 text-start">
-                        Booking Date:
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-8 text-start">
+                            No Of Members:
+                        </div>
+                        <div class="col-4 text-end">
+                            {{data.noOfMembers}}
+                        </div>
                     </div>
-                    <div class="col-6 text-end">
-                        {{data.bookingDate}}
-                    </div>
-                </div>
 
-                <div class="row">
-                    <div class="col-6 text-start">
-                        Remaining Paid Amount :
+                    <div class="row">
+                        <div class="col-8 text-start">
+                            Advance Amount:
+                        </div>
+                        <div class="col-4 text-end">
+                            {{data.advanceAmount}}
+                        </div>
+
                     </div>
-                    <div class="col-6 text-end">
-                        {{data.remainingPaidAmount}}
+
+                    <div class="row">
+                        <div class="col-12 text-center">
+                            Total Amount: {{data.totalAmount}}
+
+                        </div>
                     </div>
 
                 </div>
-                <div class="row">
-                    <div class="col-6 text-start">
-                        Advance Amount:
-                    </div>
-                    <div class="col-6 text-end">
-                        {{data.advanceAmount}}
+                <div class="card-footer">
+                    <div class="row">
+                        <div class="col-6 text-start">
+                            <span role="button" tabindex="0">
+                                <i class="fa fa-pencil-square-o fa-lg" aria-hidden="true"
+                                    style="color:  rgb(136, 108, 127)" (click)="onEdit(data);openPopup()"></i>
+                            </span>
+                        </div>
+                        <div class="col-6 text-end">
+                            <span role="button" tabindex="0">
+                                <i class="fa fa-trash fa-lg" aria-hidden="true"
+                                    (click)="onDelete(data.bookingId)"></i></span>
+                        </div>
                     </div>
 
                 </div>
-
-                <div class="row">
-                    <div class="col-12 text-center">
-                        Total Amount: {{data.totalAmount}}
-
-                    </div>
-                </div>
-
-            </div>
-            <div class="card-footer">
-                <div class="row">
-                    <div class="col-6 text-start">
-                        <i class="fa fa-pencil-square-o fa-lg" aria-hidden="true"
-                            (click)="onEdit(data.bookingId);openPopup()"></i>
-                    </div>
-                    <div class="col-6 text-end">
-                        <i class="fa fa-trash fa-lg" aria-hidden="true" (click)="onDelete(data.bookingId)"></i>
-                    </div>
-                </div>
-
             </div>
         </div>
     </div>
@@ -80,120 +79,140 @@
             <div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':displayStyle}">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content ">
-                        <div class="modal-header text-center">
+                        <div class="modal-header text-center"
+                            style="padding-left: 150px; background-color: rgb(185, 157, 175)">
                             <h5 class="modal-title ">Add New Booking</h5>
                         </div>
                         <form #userForm="ngForm">
-                        <div class="modal-body">
-                            <div class="row mx-2 ">
-                                <div class="col-12 ">
-                                    <label>Customer Name <span class="text-danger">*</span></label>
-                                    <input type="text" #customerName="ngModel" required name="customerName"
-                                     [(ngModel)]="bookingObj.customerName" class="form-control form-control-sm">
-                                     <div class="text-danger" *ngIf="customerName.touched || customerName.dirty">
-                                        <span *ngIf="customerName.errors?.['required']">Required Field</span>
+                            <div class="modal-body">
+                                <div class="row mx-2 ">
+                                    <div class="col-6 ">
+                                        <label>Customer Name <span class="text-danger">*</span></label>
+                                        <input type="text" #customerName="ngModel" required name="customerName"
+                                            [(ngModel)]="bookingObj.customerName" class="form-control form-control-sm">
+                                        <div class="text-danger" *ngIf="customerName.touched || customerName.dirty">
+                                            <span *ngIf="customerName.errors?.['required']">Required Field</span>
+                                        </div>
                                     </div>
-
+                                    <div class="col-6 ">
+                                        <label>Booking Date<span class="text-danger">*</span></label>
+                                        <input type="date" #bookingDate="ngModel" required name="bookingDate"
+                                            [(ngModel)]="bookingObj.bookingDate" class="form-control form-control-sm">
+                                        <div class="text-danger" *ngIf="bookingDate.touched || bookingDate.dirty">
+                                            <span *ngIf="bookingDate.errors?.['required']">Required Field</span>
+                                        </div>
+                                    </div>
                                 </div>
+                                <div class="row mx-2 pt-3">
+                                    <div class="col-6 pt-2">
+                                        <label for="">Select Service</label>
+                                        <select class="form-control-sm form-control form-control-sm" name="serviceName"
+                                            [(ngModel)]="bookingObj.serviceId">
+                                            <option value="">Select Service</option>
+                                            <option *ngFor="let data of resortServiceList" [value]="data.serviceId">
+                                                {{data.serviceName}}
+                                            </option>
+                                        </select>
+                                    </div>
+                                    <div class="col-6 pt-2">
+                                        <label for="">Select User </label>
+                                        <select class="form-control form-control-sm"
+                                            [(ngModel)]="bookingObj.createdByUserId" name="userName">
+                                            <option value="">Select User </option>
+                                            <option *ngFor="let data of usersList" [value]="data.userId">
+                                                {{data.userName}}
+                                            </option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="row mx-2 pt-3">
+                                    <div class="col-6">
+                                        <label for="">Mobile No<span class="text-danger">*</span></label>
+                                        <input type="text" #mobileNo="ngModel" required name="mobileNo"
+                                            class="form-control form-control-sm" [(ngModel)]="bookingObj.mobileNo"
+                                            placeholder="" />
+                                        <div class="text-danger" *ngIf="mobileNo.touched || mobileNo.dirty">
+                                            <span *ngIf="mobileNo.errors?.['required']">Required Field</span>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-6">
+                                        <label for="">No Of Members<span class="text-danger">*</span></label>
+                                        <input type="text" #noOfMembers="ngModel" required name="noOfMembers"
+                                            class="form-control form-control-sm" [(ngModel)]="bookingObj.noOfMembers"
+                                            placeholder="" />
+                                        <div class="text-danger" *ngIf="noOfMembers.touched || noOfMembers.dirty">
+                                            <span *ngIf="noOfMembers.errors?.['required']">Required Field</span>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="row mx-2 pt-3">
+                                    <div class="col-6">
+                                        <label for="">Total Amount<span class="text-danger">*</span></label>
+                                        <input type="text" #totalAmount="ngModel" required name="totalAmount"
+                                            class="form-control form-control-sm" [(ngModel)]="bookingObj.totalAmount"
+                                            placeholder="" />
+                                        <div class="text-danger" *ngIf="totalAmount.touched || totalAmount.dirty">
+                                            <span *ngIf="totalAmount.errors?.['required']">Required Field</span>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-6">
+                                        <label for="">Discount<span class="text-danger">*</span></label>
+                                        <input type="text" #discount="ngModel" required name="discount"
+                                            class="form-control form-control-sm" [(ngModel)]="bookingObj.discount"
+                                            placeholder="" />
+                                        <div class="text-danger" *ngIf="discount.touched || discount.dirty">
+                                            <span *ngIf="discount.errors?.['required']">Required Field</span>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="row mx-2 pt-3">
+
+                                    <div class="col-6">
+                                        <label for="">Advance Amount<span class="text-danger">*</span></label>
+                                        <input type="text" #advanceAmount="ngModel" required name="advanceAmount"
+                                            class="form-control form-control-sm" [(ngModel)]="bookingObj.advanceAmount"
+                                            placeholder="" />
+                                        <div class="text-danger" *ngIf="advanceAmount.touched || advanceAmount.dirty">
+                                            <span *ngIf="advanceAmount.errors?.['required']">Required Field</span>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-6">
+                                        <label for="">Remaining Paid Amount<span class="text-danger">*</span></label>
+                                        <input type="text" #remainingPaidAmount="ngModel" required
+                                            name="remainingPaidAmount" class="form-control form-control-sm"
+                                            [(ngModel)]="bookingObj.remainingPaidAmount" placeholder="" />
+                                        <div class="text-danger"
+                                            *ngIf="remainingPaidAmount.touched || remainingPaidAmount.dirty">
+                                            <span *ngIf="remainingPaidAmount.errors?.['required']">Required Field</span>
+                                        </div>
+
+                                    </div>
+                                </div>
+
                             </div>
-                            <div class="row mx-2 pt-3">
-                                <div class="col-6">
-                                    <label>Created Date <span class="text-danger">*</span></label>
-                                    <input type="date" #creationDate="ngModel" required name=""
-                                        [(ngModel)]="bookingObj.creationDate" class="form-control form-control-sm">
-                                    <div class="text-danger" *ngIf="creationDate.touched || creationDate.dirty">
-                                        <span *ngIf="creationDate.errors?.['required']">Required Field</span>
-                                    </div>
-                                </div>
-                                <div class="col-6">
-                                    <label>Booking Date<span class="text-danger">*</span></label>
-                                    <input type="date" #bookingDate="ngModel" required name="bookingDate"
-                                     [(ngModel)]="bookingObj.bookingDate" class="form-control form-control-sm">
-                                     <div class="text-danger" *ngIf="bookingDate.touched || bookingDate.dirty">
-                                        <span *ngIf="bookingDate.errors?.['required']">Required Field</span>
-                                    </div>
-
-                                </div>
+                            <div class="modal-footer " style="padding-right: 170px;">
+                                <button type="button" class="btn  btn-sm btn-secondary" (click)="closePopup()"> Close
+                                </button>
+                                <button type="submit" class="btn btn-success btn-sm mx-3"
+                                    *ngIf="bookingObj.bookingId==0" [disabled]="userForm.invalid"
+                                    (click)="createNewBookings(); closePopup()">Save </button>
+                                <button class="btn btn-sm btn-success  mx-3" *ngIf="bookingObj.bookingId !==0"
+                                    (click)="onUpdate(); closePopup()">Update </button>
                             </div>
-
-
-                            <div class="row mx-2 pt-3">
-                                <div class="col-6">
-                                    <label for="">Mobile No<span class="text-danger">*</span></label>
-                                    <input type="text" #mobileNo="ngModel" required name="mobileNo"
-                                     class="form-control form-control-sm" [(ngModel)]="bookingObj.mobileNo" placeholder="" />
-                                     <div class="text-danger" *ngIf="mobileNo.touched || mobileNo.dirty">
-                                        <span *ngIf="mobileNo.errors?.['required']">Required Field</span>
-                                    </div>
-
-                                </div>
-                                <div class="col-6">
-                                    <label for="">No Of Members<span class="text-danger">*</span></label>
-                                    <input type="text" #noOfMembers="ngModel" required name="noOfMembers"
-                                     class="form-control form-control-sm" [(ngModel)]="bookingObj.noOfMembers" placeholder="" />
-                                     <div class="text-danger" *ngIf="noOfMembers.touched || noOfMembers.dirty">
-                                        <span *ngIf="noOfMembers.errors?.['required']">Required Field</span>
-                                    </div>
-
-                                </div>
-                            </div>
-
-                            <div class="row mx-2 pt-3">
-                                <div class="col-6">
-                                    <label for="">Total Amount<span class="text-danger">*</span></label>
-                                    <input type="text" #totalAmount="ngModel" required name="totalAmount"
-                                     class="form-control form-control-sm" [(ngModel)]="bookingObj.totalAmount" placeholder="" />
-                                     <div class="text-danger" *ngIf="totalAmount.touched || totalAmount.dirty">
-                                        <span *ngIf="totalAmount.errors?.['required']">Required Field</span>
-                                    </div>
-
-                                </div>
-                                <div class="col-6">
-                                    <label for="">Discount<span class="text-danger">*</span></label>
-                                    <input type="text" #discount="ngModel" required name="discount"
-                                     class="form-control form-control-sm" [(ngModel)]="bookingObj.discount" placeholder="" />
-                                     <div class="text-danger" *ngIf="discount.touched || discount.dirty">
-                                        <span *ngIf="discount.errors?.['required']">Required Field</span>
-                                    </div>
-
-                                </div>
-                            </div>
-                            <div class="row mx-2 pt-3">
-
-                                <div class="col-6">
-                                    <label for="">Advance Amount<span class="text-danger">*</span></label>
-                                    <input type="text" #advanceAmount="ngModel" required name=""
-                                     class="form-control form-control-sm" [(ngModel)]="bookingObj.advanceAmount" placeholder="" />
-                                     <div class="text-danger" *ngIf="advanceAmount.touched || advanceAmount.dirty">
-                                        <span *ngIf="advanceAmount.errors?.['required']">Required Field</span>
-                                    </div>
-
-                                </div>
-                                <div class="col-6">
-                                    <label for="">Remaining Paid Amount<span class="text-danger">*</span></label>
-                                    <input type="text" #remainingPaidAmount="ngModel" required name=""
-                                     class="form-control form-control-sm" [(ngModel)]="bookingObj.remainingPaidAmount" placeholder="" />
-                                     <div class="text-danger" *ngIf="remainingPaidAmount.touched || remainingPaidAmount.dirty">
-                                        <span *ngIf="remainingPaidAmount.errors?.['required']">Required Field</span>
-                                    </div>
-
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn  btn-sm " style="background-color: rgb(185, 157, 175)"
-                                (click)="closePopup()"> Close
-                            </button>
-                            <button class="btn  btn-sm mx-5" *ngIf="bookingObj.bookingId==0"
-                                style="background-color: rgb(131, 77, 112)" [disabled]="userForm.invalid" (click)="createNewBookings()">Save </button>
-                            <button class="btn btn-sm  mx-5" *ngIf="bookingObj.bookingId !==0"
-                                style="background-color: rgb(141, 93, 124)" (click)="onUpdate()">Update </button>
-                        </div>
-                    </form>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div> -->
+</div>
+
+<div class="container">
+</div>

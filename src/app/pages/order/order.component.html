@@ -1,1 +1,312 @@
-<p>order works!</p>
+<app-loader *ngIf="isLoading"></app-loader>
+
+
+<div class="container-fluid" *ngIf="!isLoading">
+    <div class="row   pt-2">
+        <div class="col-6">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Order</li>
+                </ol>
+            </nav>
+        </div>
+        <div class="col-6 pt-3 text-end ">
+            <button class="btn btn-sm text-end " style="background-color:  rgb(136, 108, 127); color: white; "
+                (click)=" orderView()">All Order List</button>
+
+            <button class="btn btn-sm text-end mx-3" style="background-color:  rgb(136, 108, 127); color: white;"
+                (click)="openOrderView()"> Open-Order List</button>
+
+            <button type="button" class="btn btn-sm text-end text-light" style="background-color:  rgb(136, 108, 127)"
+                data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo" (click)="openPopup()">Add
+                New Order</button>
+        </div>
+    </div>
+    <div class="row pt-3">
+        <div class="col-12">
+            <div class="card ">
+                <div class="card-header text-center " style="background-color: rgb(185, 157, 175)">
+                    <b>Order Status</b>
+                </div>
+                <div class="card-body">
+                    <table class="table table-bordered table-stripped table-hover table-sm">
+                        <thead>
+                            <tr>
+                                <th>Total Open</th>
+                                <th>Total Cancelled</th>
+                                <th>Total Delivered</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>{{openStatusObj.totalOpen}}</td>
+                                <td>{{openStatusObj.totalCanceled}}</td>
+                                <td>{{openStatusObj.totalDelievered }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row pt-3">
+        <div class="col-12">
+            <div class="card" *ngIf="!isOrderView">
+                <div class="card-header text-center " style="background-color: rgb(185, 157, 175)">
+                    <b>Open Order List</b>
+
+                </div>
+                <div class="card-body">
+                    <table class="table table-bordered table-stripped table-hover table-sm">
+                        <thead>
+                            <tr>
+                                <th>Sr No</th>
+                                <th>Order No</th>
+                                <th>Order Date</th>
+                                <th>Name</th>
+                                <th>Mobile No</th>
+                                <th>Order Total</th>
+                                <th>Order Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let data of openOrderList;let sr=index">
+                                <td>{{sr+1}}</td>
+                                <td>{{data.orderNo}}</td>
+                                <td>{{data.orderDate |date:'dd-MMM-yy'}}</td>
+                                <td>{{data.name }}</td>
+                                <td>{{data.mobileNo}}</td>
+                                <td>{{data.orderTotal | currency:'INR'}}</td>
+                                <td>{{data.orderStatus}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row pt-3">
+        <div class="col-12">
+            <div class="card" *ngIf="isOrderView">
+                <div class="card-header text-center " style="background-color: rgb(185, 157, 175)">
+                    <b> Order List</b>
+
+                </div>
+                <div class="card-body">
+                    <table class="table table-bordered table-striped table-hover table-sm">
+                        <thead>
+                            <tr>
+                                <th>Sr No</th>
+                                <th>Order No</th>
+                                <th>Order Date</th>
+                                <th>Name</th>
+                                <th>Mobile No</th>
+                                <th>Order Total</th>
+                                <th>Order Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let data of orderList;let sr=index">
+                                <td>{{sr+1}}</td>
+                                <td>{{data.orderNo}}</td>
+                                <td>{{data.orderDate |date:'dd-MMM-yy'}}</td>
+                                <td>{{data.name }}</td>
+                                <td>{{data.mobileNo}}</td>
+                                <td>{{data.orderTotal | currency: 'INR'}}</td>
+                                <td>{{data.orderStatus}}</td>
+                                <td><span role="button" tabindex="0">
+                                        <i class="fa fa-pencil-square-o fa-lg px-3" style="color:  rgb(136, 108, 127)"
+                                            aria-hidden="true" (click)="onEdit(data); openPopup()"></i>
+                                        <i class="fa fa-trash fa-lg  " aria-hidden="true"
+                                            (click)="deleteOrder()"></i></span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+<div class="parent">
+    <div class="row">
+        <div class="col-12  pt-2 ">
+            <div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':displayStyle}">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content ">
+                        <div class="modal-header text-center" style="padding-left: 150px; background-color: rgb(185, 157, 175)">
+                            <h5 class="modal-title ">Add New Order</h5>
+                        </div>
+                        <form #userForm="ngForm">
+                            <div class="modal-body">
+                                <div class="row mx-2 ">
+                                    <div class="col-6 ">
+                                        <label> Name <span class="text-danger">*</span></label>
+                                        <input type="text" #name="ngModel" required name="name"
+                                            [(ngModel)]="orderObj.name" class="form-control form-control-sm">
+                                        <div class="text-danger" *ngIf="name.touched || name.dirty">
+                                            <span *ngIf="name.errors?.['required']">Required Field</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <label for="">Order Status</label>
+                                        <select class="form-control-sm form-control form-control-sm" name="orderStatus"
+                                            [(ngModel)]="orderObj.orderStatus">
+                                            <option value="">Select Status</option>
+                                            <option value="">New</option>
+                                            <option value="">Canceled</option>
+                                            <option value="">Delivered</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="row mx-2 pt-3">
+                                    <div class="col-6">
+                                        <label>Order No <span class="text-danger">*</span></label>
+                                        <input type="text" #orderNo="ngModel" required name="orderNo"
+                                            [(ngModel)]="orderObj.orderNo" class="form-control form-control-sm">
+                                        <div class="text-danger" *ngIf="orderNo.touched || orderNo.dirty">
+                                            <span *ngIf="orderNo.errors?.['required']">Required Field</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 pt-2">
+                                        <label>Order Date<span class="text-danger">*</span></label>
+                                        <input type="date" #orderDate="ngModel" required name="orderDate"
+                                            [(ngModel)]="orderObj.orderDate" class="form-control form-control-sm">
+                                        <div class="text-danger" *ngIf="orderDate.touched || orderDate.dirty">
+                                            <span *ngIf="orderDate.errors?.['required']">Required Field</span>
+                                        </div>
+
+                                    </div>
+                                    <!-- <div class="col-6 pt-2">
+                                        <label for="">Is With Food</label>
+                                        <select class="form-control-sm form-control form-control-sm" name="isWithFood"
+                                            [(ngModel)]="orderObj.isWithFood">
+                                            <option value="">True</option>
+                                            <option value="">False</option>
+                                        </select>
+                                    </div> -->
+
+                                </div>
+
+                                <div class="row mx-2 pt-3">
+                                    <div class="col-6 pt-2">
+                                        <label for="">Select Customer</label>
+                                        <select class="form-control form-control-sm" name="customerName"
+                                            [(ngModel)]="orderObj.bookingId">
+                                            <option value="">Select Customer</option>
+                                            <option *ngFor="let data of bookingList" [value]="data.bookingId">
+                                                {{data.customerName}}
+                                            </option>
+                                        </select>
+                                    </div>
+                                    <div class="col-6 pt-2">
+                                        <label for="">Select User </label>
+                                        <select class="form-control form-control-sm" [(ngModel)]="orderObj.userId"
+                                            name="userName">
+                                            <option value="">Select User </option>
+                                            <option *ngFor="let data of userList" [value]="data.userId">
+                                                {{data.userName}}
+                                            </option>
+                                        </select>
+                                    </div>
+                                </div>
+
+
+
+
+                                <div class="row mx-2 pt-3">
+                                    <div class="col-6">
+                                        <label for="">Mobile No<span class="text-danger">*</span></label>
+                                        <input type="text" #mobileNo="ngModel" required name="mobileNo"
+                                            class="form-control form-control-sm" [(ngModel)]="orderObj.mobileNo"
+                                            placeholder="" />
+                                        <div class="text-danger" *ngIf="mobileNo.touched || mobileNo.dirty">
+                                            <span *ngIf="mobileNo.errors?.['required']">Required Field</span>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-6">
+                                        <label for="">Order Total<span class="text-danger">*</span></label>
+                                        <input type="text" #orderTotal="ngModel" required name="orderTotal"
+                                            class="form-control form-control-sm" [(ngModel)]="orderObj.orderTotal"
+                                            placeholder="" />
+                                        <div class="text-danger" *ngIf="orderTotal.touched || orderTotal.dirty">
+                                            <span *ngIf="orderTotal.errors?.['required']">Required Field</span>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="row mx-2 pt-3">
+                                    <div class="col-6 pt-2">
+                                        <label for="">Select Item </label>
+                                        <select class="form-control form-control-sm" [(ngModel)]="foodOrderObj.itemId"
+                                            name="itemName">
+                                            <option value="">Select Item </option>
+                                            <option *ngFor="let data of foodItemList" [value]="data.itemId">
+                                                {{data.itemName}}
+                                            </option>
+                                        </select>
+                                    </div>
+                                    <div class="col-6">
+                                        <label for="">Quantity<span class="text-danger">*</span></label>
+                                        <input type="text" #quantity="ngModel" required name="quantity"
+                                            class="form-control form-control-sm" [(ngModel)]="foodOrderObj.quantity"
+                                            placeholder="" />
+                                        <div class="text-danger" *ngIf="quantity.touched || quantity.dirty">
+                                            <span *ngIf="quantity.errors?.['required']">Required Field</span>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="row mx-2 pt-3">
+
+                                    <div class="col-6">
+                                        <label for="">Rate<span class="text-danger">*</span></label>
+                                        <input type="text" #rate="ngModel" required name="rate"
+                                            class="form-control form-control-sm" [(ngModel)]="foodOrderObj.rate"
+                                            placeholder="" />
+                                        <div class="text-danger" *ngIf="rate.touched || rate.dirty">
+                                            <span *ngIf="rate.errors?.['required']">Required Field</span>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-6">
+                                        <label for="">Total<span class="text-danger">*</span></label>
+                                        <input type="text" #total="ngModel" required name="total"
+                                            class="form-control form-control-sm" [(ngModel)]="  foodOrderObj.total"
+                                            placeholder="" />
+                                        <div class="text-danger" *ngIf="total.touched || total.dirty">
+                                            <span *ngIf="total.errors?.['required']">Required Field</span>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="modal-footer " style="padding-right: 170px;">
+                                <button type="button" class="btn  btn-sm btn-secondary" 
+                                    (click)="closePopup()"> Close
+                                </button>
+                                <button type="submit" class="btn btn-success btn-sm mx-3" *ngIf="orderObj.orderId == 0"
+                                    [disabled]="userForm.invalid"
+                                    (click)="saveOrder(); closePopup()">Save
+                                </button>
+                                <button class="btn btn-sm btn-success mx-3" *ngIf="orderObj.orderId !== 0"
+                                     (click)="updateOrder()">Update </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

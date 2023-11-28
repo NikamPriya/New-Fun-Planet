@@ -17,6 +17,7 @@ import { FoodItemListComponent } from './pages/food-item-list/food-item-list.com
 import { OffersComponent } from './pages/offers/offers.component';
 import { BookingComponent } from './pages/booking/booking.component';
 import { OrderComponent } from './pages/order/order.component';
+import { LoaderComponent } from './pages/loader/loader.component';
 
 
 @NgModule({
@@ -31,14 +32,12 @@ import { OrderComponent } from './pages/order/order.component';
     UsersComponent,
     FoodTypeComponent,
     FoodItemListComponent,
-    OffersComponent
-=======
-<<<<<<< HEAD
->>>>>>> bb17f1b46001a24f8d7aa600750e52b7b85a6f6b
+    OffersComponent,
     BookingComponent,
     OrderComponent,
     FoodTypeComponent,
-    FoodItemListComponent
+    FoodItemListComponent,
+    LoaderComponent
   ],
   imports:[
     BrowserModule,
