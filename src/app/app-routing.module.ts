@@ -30,8 +30,9 @@ const routes: Routes = [
     component: LayoutComponent,
     children: [
       {
-        path: 'home',
-        component: HomeComponent,
+
+        path:'home',
+        component:HomeComponent,
       },
 
       {
@@ -56,7 +57,7 @@ const routes: Routes = [
       },
       {
         path:"Users",
-        component:UsersComponent
+        component:UsersComponent,
       },
       {
         path:'FoodType',

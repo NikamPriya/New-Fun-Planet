@@ -18,9 +18,11 @@ import { FoodItemListComponent } from './pages/food-item-list/food-item-list.com
 import { VisitsComponent } from './pages/visits/visits.component';
 
 import { OffersComponent } from './pages/offers/offers.component';
-
 import { BookingComponent } from './pages/booking/booking.component';
 import { OrderComponent } from './pages/order/order.component';
+import { LoaderComponent } from './pages/loader/loader.component';
+
+
 
 @NgModule({
   declarations: [
@@ -38,12 +40,8 @@ import { OrderComponent } from './pages/order/order.component';
     BookingComponent,
     OrderComponent,
     FoodTypeComponent,
-
     FoodItemListComponent,
-    VisitsComponent,
-
-    FoodItemListComponent
-
+    LoaderComponent
   ],
   imports:[
     BrowserModule,
