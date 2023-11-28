@@ -1,16 +1,9 @@
 <div class="container">
-  <div class="row">
-    <!-- <div class="col-12 text-end pt-3">
-      <button type="button" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-        Add Food Type
-      </button>
-    </div> -->
-  </div>
   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
     [ngStyle]="{'display':displayStyle}">
     <div class="modal-dialog">
       <div class="modal-content">
-        <div class="modal-header">
+        <div class="modal-header" style="padding-left: 200px;">
           <h5 class="modal-title" id="exampleModalLabel" (click)="OpenPopUp()">Add Food Type</h5>
           <button type="button" class="btn btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
@@ -27,7 +20,7 @@
             </div>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-sm btn-secondary" data-bs-dismiss="modal" (click)="closePopUp()">
+            <button type="button" class="btn btn-sm btn-secondary" data-bs-dismiss="modal" (click)="closePopup()">
               Close
             </button>
             <button type="button" class="btn btn-sm btn-primary" [disabled]="userForm.invalid" (click)="saveFoodTypes()">Save</button>

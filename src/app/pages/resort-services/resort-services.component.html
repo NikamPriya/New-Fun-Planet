@@ -11,7 +11,7 @@
         <div class="col-6 text-end">
             <button type="button" class="btn btn-sm  text-light" style="background-color:  rgb(136, 108, 127);"
                 data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo" (click)="openModel()">Add
-                Resort Service</button>
+               New Resort </button>
         </div>
     </div>
     
@@ -30,30 +30,33 @@
                                 <div class="row mx-2 ">
                                     <div class="col-6 ">
                                         <label>Service Name<span class="text-danger">*</span></label>
-                                        <input type="text" #serviceName="ngModel" required name="serviceName" [(ngModel)]="resortServiceObj.serviceName"
+                                        <input type="text" #serviceName="ngModel" required name="serviceName"
+                                            [(ngModel)]="resortServiceObj.serviceName"
                                             class="form-control form-control-sm">
-                                            <div class="text-danger" *ngIf="serviceName.touched || serviceName.dirty">
-                                                <span *ngIf="serviceName.errors?.['required']">This is required</span>
-                                            </div>
+                                        <div class="text-danger" *ngIf="serviceName.touched || serviceName.dirty">
+                                            <span *ngIf="serviceName.errors?.['required']">This is required</span>
+                                        </div>
                                     </div>
                                     <div class="col-6">
                                         <label for="">Taxable Amount<span class="text-danger">*</span></label>
-                                        <input type="text" #taxableAmount="ngModel" required name="taxableAmount" class="form-control form-control-sm"
+                                        <input type="text" #taxableAmount="ngModel" required name="taxableAmount"
+                                            class="form-control form-control-sm"
                                             [(ngModel)]="resortServiceObj.taxableAmount" placeholder="" />
-                                            <div class="text-danger" *ngIf="taxableAmount.touched || taxableAmount.dirty">
-                                                <span *ngIf="taxableAmount.errors?.['requierd']">This is requierd</span>
-                                            </div>
+                                        <div class="text-danger" *ngIf="taxableAmount.touched || taxableAmount.dirty">
+                                            <span *ngIf="taxableAmount.errors?.['requierd']">This is requierd</span>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="row mx-2 pt-3">
 
                                     <div class="col-6">
                                         <label for="">Cgst<span class="text-danger">*</span></label>
-                                        <input type="text" #cgst="ngModel" required name="cgst" class="form-control form-control-sm"
-                                            [(ngModel)]="resortServiceObj.cgst" placeholder="" />
-                                            <div class="text-danger" *ngIf="cgst.touched || cgst.dirty">
-                                                <span *ngIf="cgst.errors?.['requierd']">This is requierd</span>
-                                            </div>
+                                        <input type="text" #cgst="ngModel" required name="cgst"
+                                            class="form-control form-control-sm" [(ngModel)]="resortServiceObj.cgst"
+                                            placeholder="" />
+                                        <div class="text-danger" *ngIf="cgst.touched || cgst.dirty">
+                                            <span *ngIf="cgst.errors?.['requierd']">This is requierd</span>
+                                        </div>
                                     </div>
                                     <div class="col-6">
                                         <label for="">Sgst<span class="text-danger">*</span></label>

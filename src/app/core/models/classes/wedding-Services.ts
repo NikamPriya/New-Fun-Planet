@@ -1,28 +1,28 @@
-export class weddingServicesList{
+export class weddingServicesList {
     serviceId: number;
     rate: number;
     isActive: boolean;
     isDeleted: boolean;
     isPax: boolean;
-    message:  string;
+    message: string;
     orderNo: number;
     result: boolean;
     serviceType: string;
     name: string
 
 
-    constructor(){
+    constructor() {
 
-        this.serviceId= 0,
-        this.rate= 0,
-        this.isActive=true,
-        this.isDeleted=true,
-        this.isPax = true,
-        this.message='',
-        this.orderNo=0,
-        this.result=false,
-        this.serviceType='',
-        this.name=''
+        this.serviceId = 0,
+            this.rate = 0,
+            this.isActive = true,
+            this.isDeleted = true,
+            this.isPax = true,
+            this.message = '',
+            this.orderNo = 0,
+            this.result = false,
+            this.serviceType = '',
+            this.name = ''
     }
 }
 
@@ -34,6 +34,6 @@ export class ReturnClass {
     constructor() {
         this.message = '';
         this.data = null;
-        this.result = false;
-    }
+        this.result = false;
+    }
 }

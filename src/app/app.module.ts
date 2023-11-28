@@ -11,7 +11,6 @@ import { WeddingServicesComponent } from './pages/wedding-services/wedding-servi
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './pages/home/home.component';
-
 import { UsersComponent } from './pages/users/users.component';
 import { FoodTypeComponent } from './pages/food-type/food-type.component';
 import { FoodItemListComponent } from './pages/food-item-list/food-item-list.component';
@@ -19,9 +18,11 @@ import { FoodItemListComponent } from './pages/food-item-list/food-item-list.com
 import { VisitsComponent } from './pages/visits/visits.component';
 
 import { OffersComponent } from './pages/offers/offers.component';
-
 import { BookingComponent } from './pages/booking/booking.component';
 import { OrderComponent } from './pages/order/order.component';
+import { LoaderComponent } from './pages/loader/loader.component';
+
+
 
 @NgModule({
   declarations: [
@@ -32,21 +33,15 @@ import { OrderComponent } from './pages/order/order.component';
     ResortServicesComponent,
     WeddingServicesComponent,
     HomeComponent,
-
     UsersComponent,
     FoodTypeComponent,
     FoodItemListComponent,
     OffersComponent,
-
     BookingComponent,
     OrderComponent,
     FoodTypeComponent,
-
     FoodItemListComponent,
-    VisitsComponent,
-
-    FoodItemListComponent
-
+    LoaderComponent
   ],
   imports:[
     BrowserModule,

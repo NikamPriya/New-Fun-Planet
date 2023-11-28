@@ -4,17 +4,17 @@ export class bookings {
     mobileNo: string;
     altMobNo: string;
     serviceId: 0;
-    noOfMembers: 0;
+    noOfMembers: null;
     creationDate: Date;
     isWithFood: boolean;
     bookingDate: Date;
     createdByUserId: 0;
-    totalAmount: 0;
-    advanceAmount: 0;
-    remainingPaidAmount: 0;
+    totalAmount: null;
+    advanceAmount: null;
+    remainingPaidAmount: null;
     isConfirmed: boolean;
     naration: string;
-    discount: 0;
+    discount: null;
     isDeleted: boolean
 
     constructor() {
@@ -23,18 +23,18 @@ export class bookings {
         this.mobileNo = '';
         this.altMobNo = '';
         this.serviceId = 0;
-        this.noOfMembers = 0;
+        this.noOfMembers = null;
         this.creationDate = new Date();
         this.isWithFood = true;
         this.bookingDate = new Date();
         this.createdByUserId = 0;
-        this.totalAmount = 0;
-        this.advanceAmount = 0;
-        this.remainingPaidAmount = 0;
+        this.totalAmount = null;
+        this.advanceAmount = null;
+        this.remainingPaidAmount = null;
         this.isConfirmed = true;
         this.naration = '';
-        this.discount = 0;
-        this.isDeleted = true
+        this.discount = null;
+        this.isDeleted = false
     };
 }
 
