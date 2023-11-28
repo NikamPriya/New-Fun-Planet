@@ -9,6 +9,7 @@ import { UsersService } from 'src/app/core/services/users.service';
   styleUrls: ['./users.component.css']
 })
 export class UsersComponent implements OnInit{
+[x: string]: any;
   isModalPopUp: String = "none";
   displayStyle='none';
   usersList: Iusers[] = [];
@@ -63,7 +64,6 @@ export class UsersComponent implements OnInit{
 
   deletAllUsers(item:any) {
     debugger;
-    const isDelete = confirm("Are you sure to delete")
     this.userSrv.trashAllUsers(item).subscribe((res: any) => {
       if (res.result) {
         alert("Deleted Successfully");
