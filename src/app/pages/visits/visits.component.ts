@@ -26,8 +26,11 @@ export class VisitsComponent implements OnInit{
   packageList:IweddingPackageList[]=[];
   usersList:Iusers[]=[];
   resortServiceList:IresortService[]=[];
+  isLoader:boolean = true;
 
-constructor(private visitSrv:VisitService,private userSrv: UsersService,private resortSrv: ResortServiceService){}
+constructor(private visitSrv:VisitService,private userSrv: UsersService,private resortSrv: ResortServiceService){
+ 
+}
 ngOnInit(): void {
   this.loadweddingPackages();
   this.getAllUsers();
