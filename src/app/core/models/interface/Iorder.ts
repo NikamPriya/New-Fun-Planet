@@ -1,13 +1,25 @@
 export interface IorderList{
-  orderId: 0,
+  orderId: number,
   name: string,
-  serviceId: 0,
   mobileNo: string,
-  orderDate:  Date,
-  orderTotal: 0,
-  bookingId: 0,
-  userId: 0,
+  orderDate: Date,
+  orderTotal: number,
+  orderUniqeId: string,
   orderStatus: string,
-  orderNo: 0,
-  orderUniqeId: string
+  bookingId: number,
+  userId: number,
+  orderNo: number,
+  message: string,
+  result: true,
+  foodOrderItems: [
+    {
+      OrderItemId: number,
+      ItemId: number,
+      Quantity: number,
+      Rate: number,
+      Naration: string,
+      OrderId: number,
+      Total: number
+    }
+  ]
 }
