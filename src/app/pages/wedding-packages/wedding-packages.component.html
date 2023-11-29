@@ -5,19 +5,20 @@
         <div class="col-6">
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                  <li class="breadcrumb-item"><a href="#">Home</a></li>
-                  <li class="breadcrumb-item active" aria-current="page">Wedding Packages</li>
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Wedding Packages</li>
                 </ol>
-              </nav>        
+            </nav>
         </div>
-            <div class="col-6 text-end " >
-                <button type="button" class="btn btn-sm  text-light" style="background-color:  rgb(136, 108, 127); margin-right: 18px;"
-                    data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo" (click)="openPopup()">Add
-                    New Package</button>
-            </div>    
+        <div class="col-6 text-end ">
+            <button type="button" class="btn btn-sm  text-light"
+                style="background-color:  rgb(136, 108, 127); margin-right: 18px;" data-bs-toggle="modal"
+                data-bs-target="#exampleModal" data-bs-whatever="@mdo" (click)="openPopup()">Add
+                New Package</button>
+        </div>
     </div>
     <div class="row ">
-        <div class="col-3 pt-3  "  *ngFor="let package of weddingPackagesList">
+        <div class="col-3 pt-3  " *ngFor="let package of weddingPackagesList">
             <div class="card">
                 <div class="card-header" style="background-color: rgb(185, 157, 175);">
                     <h5>{{package.packageName | titlecase}}</h5>
@@ -39,7 +40,6 @@
                             {{package.withoutFoodCost}}
                         </div>
                     </div>
-
                     <div class="row">
                         <div class="col-8 text-start">
                             Per Person Cost:
@@ -47,54 +47,36 @@
                         <div class="col-4 text-end">
                             {{package.perPersonCost}}
                         </div>
-
                     </div>
-
                 </div>
                 <div class="card-footer">
                     <div class="row">
                         <div class="col-6 text-start">
-                            <span role="button" tabindex="0"> 
-                            <i class="fa fa-pencil-square-o fa-lg" style="color:  rgb(136, 108, 127)" aria-hidden="true"
-                                (click)="onEdit(package); openPopup()"></i></span>
+                            <span role="button" tabindex="0">
+                                <i class="fa fa-pencil-square-o fa-lg" style="color:  rgb(136, 108, 127)"
+                                    aria-hidden="true" (click)="onEdit(package); openPopup()"></i></span>
                         </div>
                         <div class="col-6 text-end">
-                            <span role="button" tabindex="0"> 
-                            <i class="fa fa-trash fa-lg" aria-hidden="true"
-                                (click)="onDelete(package.weddingPackageId)"></i></span>
+                            <span role="button" tabindex="0">
+                                <i class="fa fa-trash fa-lg" aria-hidden="true"
+                                    (click)="onDelete(package.weddingPackageId)"></i></span>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
     </div>
-
-    
 </div>
 
-  
 
-    <!-- <div class="row">
-        <div class="col-12 pt-3 text-end " >
-            <button type="button" class="btn btn-sm text-end text-light" style="background-color:  rgb(136, 108, 127); margin-right: 18px;"
-                data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo" (click)="openPopup()">Add
-                New Package</button>
-        </div>
-    </div> -->
-    <!-- <div class="row">
-       <div class="col-12 text-center">
-        <h3>Wedding Packages</h3>
-       </div>
-    </div> -->
 <div class="parent">
     <div class="row">
         <div class="col-12  pt-2">
             <div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':displayStyle}">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content ">
-                        <div class="modal-header "  style="padding-left: 150px; background-color: rgb(185, 157, 175)">
-                            <h5 class="modal-title text-center" >Add New Package</h5>
+                        <div class="modal-header " style="padding-left: 150px; background-color: rgb(185, 157, 175)">
+                            <h5 class="modal-title text-center">Add New Package</h5>
                         </div>
                         <form #userForm="ngForm">
                             <div class="modal-body">
@@ -127,7 +109,6 @@
                                         <div class="text-danger" *ngIf="withFoodCost.touched || withFoodCost.dirty">
                                             <span *ngIf="withFoodCost.errors?.['required']">Required Field</span>
                                         </div>
-
                                     </div>
                                     <div class="col-6">
                                         <label for="">Without Food Cost <span class="text-danger">*</span></label>
@@ -138,7 +119,6 @@
                                             *ngIf="withoutFoodCost.touched || withoutFoodCost.dirty">
                                             <span *ngIf="withoutFoodCost.errors?.['required']">Required Field</span>
                                         </div>
-
                                     </div>
                                 </div>
                                 <div class="row mx-2 pt-3">
@@ -150,7 +130,6 @@
                                         <div class="text-danger" *ngIf="perPersonCost.touched || perPersonCost.dirty">
                                             <span *ngIf="perPersonCost.errors?.['required']">Required Field</span>
                                         </div>
-
                                     </div>
                                     <div class="col-6">
                                         <label for="">Range Of Peoples <span class="text-danger">*</span></label>
@@ -160,7 +139,6 @@
                                         <div class="text-danger" *ngIf="rangeOfPeoples.touched || rangeOfPeoples.dirty">
                                             <span *ngIf="rangeOfPeoples.errors?.['required']">Required Field</span>
                                         </div>
-
                                     </div>
                                 </div>
                                 <div class="row mx-2 pt-3">
@@ -172,7 +150,6 @@
                                         <div class="text-danger" *ngIf="description.touched || description.dirty">
                                             <span *ngIf="description.errors?.['required']">Required Field</span>
                                         </div>
-
                                     </div>
                                 </div>
                             </div>
@@ -180,20 +157,18 @@
                                 <button type="button" class="btn btn-secondary btn-sm float-left"
                                     (click)="closePopup()"> Close
                                 </button>
-                                <button class="btn btn-success btn-sm mx-3" *ngIf="weddingPackageObj.weddingPackageId==0"
-                                   [disabled]="userForm.invalid"
+                                <button class="btn btn-success btn-sm mx-3"
+                                    *ngIf="weddingPackageObj.weddingPackageId==0" [disabled]="userForm.invalid"
                                     (click)="saveWeddingPackage(); closePopup()">Save
                                 </button>
-                                <button class="btn btn-sm btn-success mx-3" *ngIf="weddingPackageObj.weddingPackageId !==0"
-                                     (click)="onUpdate(); closePopup() ">Update </button>
+                                <button class="btn btn-sm btn-success mx-3"
+                                    *ngIf="weddingPackageObj.weddingPackageId !==0"
+                                    (click)="onUpdate(); closePopup() ">Update </button>
                             </div>
                         </form>
-
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-
-
