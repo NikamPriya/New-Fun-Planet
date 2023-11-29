@@ -14,7 +14,14 @@ export class FoodTypeComponent implements OnInit {
   foodItemTypeObj: foodTypeList = new foodTypeList();
   displayStyle: string = "none";
 
-  constructor(private foodTypeServ: FoodTypeService) { }
+  isLoading: boolean = true; // Set this to false when loading is complete
+
+
+  constructor(private foodTypeServ: FoodTypeService) { 
+    setTimeout(() => {
+      this.isLoading = false;
+    }, 2000);
+  }
 
   ngOnInit(): void {
     this.getAllFoodTypes();
