@@ -1,5 +1,5 @@
 <app-loader *ngIf="isLoader"></app-loader>
-<div class="container-fluid"  *ngIf="!isLoader">
+<div class="container-fluid" *ngIf="!isLoader">
   <div class="row pt-2">
     <div class="col-6">
       <nav aria-label="breadcrumb">
@@ -9,32 +9,33 @@
         </ol>
       </nav>
     </div>
-    <div class="col-6 text-end pt-2">
+    <div class="col-6 text-end ">
       <button type="button" class="btn btn-sm text-end text-light" style="background-color:   rgb(136, 108, 127)"
         data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo" (click)="openPopup()">Add
         New Offers </button>
     </div>
   </div>
-  <div class="row pt-3 px-3">
+  <div class="row">
     <div class="col-3 pt-3" *ngFor="let offer of offersList">
       <div class="card">
-        <div class="card-header" style="background-color: rgb(185, 169, 185);">
+        <div class="card-header" style="background-color: rgb(185, 157, 175);">
           <h5>{{offer.offerName | titlecase}}</h5>
         </div>
-        <div class="card-body" style="padding-bottom: 27px;">
+        <div class="card-body">
           <div class="row">
             <div class="col-6 text-start">
               Offer Details : {{offer.offerDetails}}
             </div>
             <div class="col-6 text-end">
-              Amount : {{offer.amount}}
+              Amount : {{offer.amount | currency:'INR' }}
             </div>
           </div>
         </div>
         <div class="card-footer"><span role="button" tabindex="0">
             <div class="row">
               <div class="col-6 text-start">
-                <i class="fa fa-pencil-square-o fa-lg"  style="color:  rgb(136, 108, 127)" aria-hidden="true" (click)="onEdit(offer); openPopup()"></i>
+                <i class="fa fa-pencil-square-o fa-lg" style="color:  rgb(136, 108, 127)" aria-hidden="true"
+                  (click)="onEdit(offer); openPopup()"></i>
               </div>
               <div class="col-6 text-end">
                 <i class="fa fa-trash fa-lg" aria-hidden="true" (click)="DeleteAllOffers(offer);closePopup()"></i>
@@ -53,7 +54,7 @@
         <div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':displayStyle}">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
-              <div class="modal-header " style="    padding-left: 139px; background-color: rgb(185, 169, 185);">
+              <div class="modal-header " style="    padding-left: 139px; background-color: rgb(185, 157, 175);">
                 <h4 class="modal-title text-center">Add New offer</h4>
               </div>
               <form #userForm="ngForm">
