@@ -27,7 +27,7 @@
         <div class="col-12">
             <div class="card ">
                 <div class="card-header text-center " style="background-color: rgb(185, 157, 175)">
-                    <b>Order Status</b>
+                    <h5>Order Status</h5>
                 </div>
                 <div class="card-body">
                     <table class="table table-bordered table-stripped table-hover table-sm">
@@ -55,7 +55,7 @@
         <div class="col-12">
             <div class="card" *ngIf="!isOrderView">
                 <div class="card-header text-center " style="background-color: rgb(185, 157, 175)">
-                    <b>Open Order List</b>
+                    <h5>Open Order List</h5>
 
                 </div>
                 <div class="card-body">
@@ -92,7 +92,7 @@
         <div class="col-12">
             <div class="card" *ngIf="isOrderView">
                 <div class="card-header text-center " style="background-color: rgb(185, 157, 175)">
-                    <b> Order List</b>
+                    <h5> Order List</h5>
 
                 </div>
                 <div class="card-body">
@@ -131,7 +131,6 @@
             </div>
         </div>
     </div>
-
 </div>
 
 
@@ -176,24 +175,14 @@
                                             <span *ngIf="orderNo.errors?.['required']">Required Field</span>
                                         </div>
                                     </div>
-                                    <div class="col-6 pt-2">
+                                    <div class="col-6 ">
                                         <label>Order Date<span class="text-danger">*</span></label>
                                         <input type="date" #orderDate="ngModel" required name="orderDate"
                                             [(ngModel)]="orderObj.orderDate" class="form-control form-control-sm">
                                         <div class="text-danger" *ngIf="orderDate.touched || orderDate.dirty">
                                             <span *ngIf="orderDate.errors?.['required']">Required Field</span>
                                         </div>
-
                                     </div>
-                                    <!-- <div class="col-6 pt-2">
-                                        <label for="">Is With Food</label>
-                                        <select class="form-control-sm form-control form-control-sm" name="isWithFood"
-                                            [(ngModel)]="orderObj.isWithFood">
-                                            <option value="">True</option>
-                                            <option value="">False</option>
-                                        </select>
-                                    </div> -->
-
                                 </div>
 
                                 <div class="row mx-2 pt-3">
@@ -219,9 +208,6 @@
                                     </div>
                                 </div>
 
-
-
-
                                 <div class="row mx-2 pt-3">
                                     <div class="col-6">
                                         <label for="">Mobile No<span class="text-danger">*</span></label>
@@ -231,7 +217,6 @@
                                         <div class="text-danger" *ngIf="mobileNo.touched || mobileNo.dirty">
                                             <span *ngIf="mobileNo.errors?.['required']">Required Field</span>
                                         </div>
-
                                     </div>
                                     <div class="col-6">
                                         <label for="">Order Total<span class="text-danger">*</span></label>
@@ -241,7 +226,6 @@
                                         <div class="text-danger" *ngIf="orderTotal.touched || orderTotal.dirty">
                                             <span *ngIf="orderTotal.errors?.['required']">Required Field</span>
                                         </div>
-
                                     </div>
                                 </div>
 
@@ -264,11 +248,9 @@
                                         <div class="text-danger" *ngIf="quantity.touched || quantity.dirty">
                                             <span *ngIf="quantity.errors?.['required']">Required Field</span>
                                         </div>
-
                                     </div>
                                 </div>
                                 <div class="row mx-2 pt-3">
-
                                     <div class="col-6">
                                         <label for="">Rate<span class="text-danger">*</span></label>
                                         <input type="text" #rate="ngModel" required name="rate"
@@ -277,7 +259,6 @@
                                         <div class="text-danger" *ngIf="rate.touched || rate.dirty">
                                             <span *ngIf="rate.errors?.['required']">Required Field</span>
                                         </div>
-
                                     </div>
                                     <div class="col-6">
                                         <label for="">Total<span class="text-danger">*</span></label>
@@ -287,10 +268,8 @@
                                         <div class="text-danger" *ngIf="total.touched || total.dirty">
                                             <span *ngIf="total.errors?.['required']">Required Field</span>
                                         </div>
-
                                     </div>
                                 </div>
-
                             </div>
                             <div class="modal-footer " style="padding-right: 170px;">
                                 <button type="button" class="btn  btn-sm btn-secondary" 

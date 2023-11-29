@@ -17,12 +17,12 @@ export class WeddingServicesComponent implements OnInit {
   weddingServiceList: IweddingServicesList[] = [];
   weddingServicesObj: weddingServicesList = new weddingServicesList()
   
-  isLoader:boolean = true;
+  isLoading:boolean = true;
 
   constructor(private weddingServ: WeddingServicesService) { 
     setTimeout(() => {
-      this.isLoader = false;
-    }, 4000);
+      this.isLoading = false;
+    }, 2000);
   }
 
   ngOnInit(): void {

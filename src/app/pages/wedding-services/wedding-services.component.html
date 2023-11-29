@@ -1,9 +1,6 @@
-<!-- <div class="text-center">
-    <div class="spinner-grow" role="status" *ngIf="isLoader">
-        <span class="visually-hidden">Loading...</span>
-      </div>
-</div> -->
-<div class="container-fluid">
+<app-loader *ngIf="isLoading"></app-loader>
+
+<div class="container-fluid" *ngIf="!isLoading">
     <div class="row pt-2">
         <div class="col-6">
             <nav aria-label="breadcrumb">
@@ -18,12 +15,6 @@
                 data-bs-target="#exampleModal" data-bs-whatever="@mdo" (click)="openPopup()">Add New Service</button>
         </div>
     </div>
-    <div class="row">
-        <div class="col-12 text-center">
-            <h3>Wedding Services</h3>
-        </div>
-    </div>
-
     <div class="parent">
         <div class="row">
             <div class="col-12">
@@ -97,7 +88,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-3 pt-3 pe-2" *ngFor="let service of weddingServiceList">
+        <div class="col-3 pt-3" *ngFor="let service of weddingServiceList">
             <div class="card">
                 <div class="card-header" style="background-color: rgb(185, 157, 175)">
                     <h6>{{service.name | titlecase}}</h6>
