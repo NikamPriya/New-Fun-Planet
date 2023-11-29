@@ -8,11 +8,11 @@ import { Component } from '@angular/core';
 export class HomeComponent {
 
 
-  isLoader:boolean = true;
+  isLoading:boolean = true;
 
   constructor(){
     setTimeout(() => {
-      this.isLoader = false;
-    }, 4000);
+      this.isLoading = false;
+    }, 2000);
   }
 }
