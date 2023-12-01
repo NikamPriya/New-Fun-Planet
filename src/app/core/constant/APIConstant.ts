@@ -64,6 +64,12 @@ vists:{
    filterAllVisit:"http://freeapi.miniprojectideas.com/api/Resort/GetAllVisit"
 },
 
+home:{
+   GetTodaysVisit:"https://freeapi.miniprojectideas.com/api/Resort/GetTodaysVisit",
+   GetDasboardData:"https://freeapi.miniprojectideas.com/api/Resort/GetDasboardData",
+   getTodayDashboardCount:"https://freeapi.miniprojectideas.com/api/Resort/getTodayDashboardCount",
+   getDateWiseVisit:"https://freeapi.miniprojectideas.com/api/Resort/getDateWiseVisit",
+}
 
 
 }
