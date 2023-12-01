@@ -13,6 +13,7 @@ export class WeddingServicesComponent implements OnInit {
   
 
   displayStyle: string = 'none';
+  isLoading:boolean = true;
 
   weddingServiceList: IweddingServicesList[] = [];
   weddingServicesObj: weddingServicesList = new weddingServicesList()
@@ -20,8 +21,8 @@ export class WeddingServicesComponent implements OnInit {
 
   constructor(private weddingServ: WeddingServicesService) { 
     setTimeout(() => {
-      this.isLoader = false;
-    }, 4000);
+      this.isLoading = false;
+    }, 2000);
   }
 
   ngOnInit(): void {

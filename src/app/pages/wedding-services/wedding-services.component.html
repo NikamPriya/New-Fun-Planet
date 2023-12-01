@@ -1,9 +1,5 @@
-<!-- <div class="text-center">
-    <div class="spinner-grow" role="status" *ngIf="isLoader">
-        <span class="visually-hidden">Loading...</span>
-      </div>
-</div> -->
-<div class="container-fluid">
+<app-loader *ngIf="isLoading"></app-loader>
+<div class="container-fluid" *ngIf="!isLoading">
     <div class="row pt-2">
         <div class="col-6">
             <nav aria-label="breadcrumb">
@@ -14,8 +10,9 @@
             </nav>
         </div>
         <div class="col-6 text-end">
-            <button type="button" class="btn btn-sm text-end text-light" style="background-color:  rgb(136, 108, 127)" data-bs-toggle="modal"
-                data-bs-target="#exampleModal" data-bs-whatever="@mdo" (click)="openPopup()">Add New Service</button>
+            <button type="button" class="btn btn-sm text-end text-light" style="background-color:  rgb(136, 108, 127)"
+                data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo" (click)="openPopup()">Add
+                New Service</button>
         </div>
     </div>
     <div class="parent">
@@ -24,7 +21,8 @@
                 <div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':displayStyle}">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
-                            <div class="modal-header" style=" padding-left: 175px; background-color:  rgb(185, 157, 175)">
+                            <div class="modal-header"
+                                style=" padding-left: 175px; background-color:  rgb(185, 157, 175)">
                                 <h4 class="modal-title">Add Services</h4>
                             </div>
                             <form #userForm="ngForm">
