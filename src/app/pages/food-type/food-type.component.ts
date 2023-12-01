@@ -14,6 +14,7 @@ export class FoodTypeComponent implements OnInit {
   foodItemTypeObj: foodTypeList = new foodTypeList();
   displayStyle: string = "none";
 
+  
   isLoading: boolean = true; // Set this to false when loading is complete
 
 
@@ -23,6 +24,7 @@ export class FoodTypeComponent implements OnInit {
     }, 2000);
   }
 
+  
   ngOnInit(): void {
     this.getAllFoodTypes();
   }

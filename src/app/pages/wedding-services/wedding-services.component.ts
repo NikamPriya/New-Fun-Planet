@@ -13,11 +13,11 @@ export class WeddingServicesComponent implements OnInit {
   
 
   displayStyle: string = 'none';
+  isLoading:boolean = true;
 
   weddingServiceList: IweddingServicesList[] = [];
   weddingServicesObj: weddingServicesList = new weddingServicesList()
   
-  isLoading:boolean = true;
 
   constructor(private weddingServ: WeddingServicesService) { 
     setTimeout(() => {
