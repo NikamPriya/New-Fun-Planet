@@ -14,9 +14,7 @@ export class FoodTypeComponent implements OnInit {
   foodItemTypeObj: foodTypeList = new foodTypeList();
   displayStyle: string = "none";
 
-<<<<<<< HEAD
-  isLoading:boolean = true;
-=======
+  
   isLoading: boolean = true; // Set this to false when loading is complete
 
 
