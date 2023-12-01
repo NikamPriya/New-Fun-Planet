@@ -8,11 +8,12 @@ import { HomeService } from 'src/app/core/services/home.service';
 })
 export class HomeComponent implements OnInit{
 
+
   todayVisitsList:any[]=[];
   dashBoardDataList:any[]=[];
   todayDashBoardCount:any[]=[];
   dateWiseVistList:any[]=[];
-
+  
   isLoading:boolean = true;
 
   constructor(private homeSrv:HomeService){
@@ -52,5 +53,6 @@ export class HomeComponent implements OnInit{
       this.dateWiseVistList = res;
     })
   }
+
 
 }
