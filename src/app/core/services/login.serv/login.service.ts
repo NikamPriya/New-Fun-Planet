@@ -10,6 +10,6 @@ export class LoginService {
   constructor(private http:HttpClient) { }
 
   onLogin(obj:any) : Observable<any>{
-    return this.http.post('http://freeapi.miniprojectideas.com/api/Resort/Login',obj);
+    return this.http.post('https://freeapi.miniprojectideas.com/api/Resort/Login',obj);
   }
 }

@@ -9,10 +9,18 @@ export class HomeComponent {
 
 
   isLoading:boolean = true;
+  status = false;
+
 
   constructor(){
     setTimeout(() => {
       this.isLoading = false;
     }, 2000);
   }
+  addToggle()
+{
+  this.status = !this.status;       
+}
+
+  
 }
