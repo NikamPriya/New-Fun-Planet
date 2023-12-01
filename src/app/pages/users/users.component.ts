@@ -14,8 +14,11 @@ export class UsersComponent implements OnInit{
   displayStyle='none';
   usersList: Iusers[] = [];
   usersObj: users= new users;
+  isLoading: boolean = true;
 
-  constructor(private userSrv: UsersService) { }
+  constructor(private userSrv: UsersService) {setTimeout(() => {
+    this.isLoading = false;
+  }, 2000); }
 
   ngOnInit(): void {
     this.getAllUsers();

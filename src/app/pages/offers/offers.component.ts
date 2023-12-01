@@ -18,10 +18,10 @@ export class OffersComponent implements OnInit{
   isLoader:boolean=true;
 
   constructor(private offerSrv: OffersService) {
-    setTimeout(()=>{
-      this.isLoader=false;
-    },2000);
-   }
+    setTimeout(() => {
+      this.isLoader = false;
+    }, 2000); }
+
 
   ngOnInit(): void {
     this.loadAllOffers();

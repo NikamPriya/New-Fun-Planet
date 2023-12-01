@@ -14,7 +14,18 @@ export class FoodTypeComponent implements OnInit {
   foodItemTypeObj: foodTypeList = new foodTypeList();
   displayStyle: string = "none";
 
+<<<<<<< HEAD
   isLoading:boolean = true;
+=======
+  isLoading: boolean = true; // Set this to false when loading is complete
+
+
+  constructor(private foodTypeServ: FoodTypeService) { 
+    setTimeout(() => {
+      this.isLoading = false;
+    }, 2000);
+  }
+>>>>>>> 55e94d130058e28b3e71631a25a73ce07b5fe4fc
 
   constructor(private foodTypeServ: FoodTypeService) { 
     setTimeout(() => {

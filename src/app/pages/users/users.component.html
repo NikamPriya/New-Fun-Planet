@@ -1,4 +1,5 @@
-<div class="container-fluid">
+<app-loader *ngIf="isLoading"></app-loader>
+<div class="container-fluid" *ngIf="!isLoading">
   <div class="row  pt-2">
     <div class="col-6">
       <nav aria-label="breadcrumb">
@@ -20,7 +21,7 @@
       <div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':isModalPopUp}">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
-            <div class="modal-header" style="background-color: rgb(185, 169, 185);">
+            <div class="modal-header" style="background-color: rgb(185, 157, 175);">
               <h4 class="modal-title" style="padding-left: 141px;">Add New Users</h4>
             </div>
             <div class="modal-body">
@@ -78,7 +79,7 @@
   <div class="row ">
     <div class="col-3 pt-3" *ngFor="let item of usersList">
       <div class="card">
-        <div class="card-header" style="background-color:rgb(185, 169, 185);">
+        <div class="card-header"  style="background-color: rgb(185, 157, 175)">
           <div class="row">
             <div class="col-12">
               <h5> {{item.userName | titlecase}}</h5>
