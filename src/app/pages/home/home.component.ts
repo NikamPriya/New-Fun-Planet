@@ -7,12 +7,4 @@ import { Component } from '@angular/core';
 })
 export class HomeComponent {
 
-
-  isLoader:boolean = true;
-
-  constructor(){
-    setTimeout(() => {
-      this.isLoader = false;
-    }, 4000);
-  }
 }

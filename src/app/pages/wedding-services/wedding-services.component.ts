@@ -17,7 +17,6 @@ export class WeddingServicesComponent implements OnInit {
   weddingServiceList: IweddingServicesList[] = [];
   weddingServicesObj: weddingServicesList = new weddingServicesList()
   
-  isLoader:boolean = true;
 
   constructor(private weddingServ: WeddingServicesService) { 
     setTimeout(() => {
